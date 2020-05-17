@@ -4,7 +4,7 @@
 // MODULE: altsyncram 
 
 // ============================================================
-// File Name: data_mem.v
+// File Name: ram2.v
 // Megafunction Name(s):
 // 			altsyncram
 //
@@ -31,7 +31,7 @@
 //Intel and sold by Intel or its authorized distributors.  Please
 //refer to the applicable agreement for further details.
 
-module data_mem (
+module ram2 (
 	address_a,
 	address_b,
 	clock,
@@ -42,8 +42,8 @@ module data_mem (
 	q_a,
 	q_b);
 
-	input	[10:0]  address_a;
-	input	[10:0]  address_b;
+	input	[11:0]  address_a;
+	input	[11:0]  address_b;
 	input	  clock;
 	input	[15:0]  data_a;
 	input	[15:0]  data_b;
@@ -96,7 +96,7 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MEMSIZE NUMERIC "32768"
+// Retrieval info: PRIVATE: MEMSIZE NUMERIC "65536"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
 // Retrieval info: PRIVATE: MIFfilename STRING ""
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "3"
@@ -134,8 +134,8 @@ endmodule
 // Retrieval info: CONSTANT: INDATA_REG_B STRING "CLOCK0"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
-// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "2048"
-// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "2048"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "4096"
+// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "4096"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "BIDIR_DUAL_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
@@ -145,15 +145,15 @@ endmodule
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_A STRING "NEW_DATA_NO_NBE_READ"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_PORT_B STRING "NEW_DATA_NO_NBE_READ"
-// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "11"
-// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "11"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "12"
+// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "12"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "16"
 // Retrieval info: CONSTANT: WIDTH_B NUMERIC "16"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_B NUMERIC "1"
 // Retrieval info: CONSTANT: WRCONTROL_WRADDRESS_REG_B STRING "CLOCK0"
-// Retrieval info: USED_PORT: address_a 0 0 11 0 INPUT NODEFVAL "address_a[10..0]"
-// Retrieval info: USED_PORT: address_b 0 0 11 0 INPUT NODEFVAL "address_b[10..0]"
+// Retrieval info: USED_PORT: address_a 0 0 12 0 INPUT NODEFVAL "address_a[11..0]"
+// Retrieval info: USED_PORT: address_b 0 0 12 0 INPUT NODEFVAL "address_b[11..0]"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
 // Retrieval info: USED_PORT: data_a 0 0 16 0 INPUT NODEFVAL "data_a[15..0]"
 // Retrieval info: USED_PORT: data_b 0 0 16 0 INPUT NODEFVAL "data_b[15..0]"
@@ -161,8 +161,8 @@ endmodule
 // Retrieval info: USED_PORT: q_b 0 0 16 0 OUTPUT NODEFVAL "q_b[15..0]"
 // Retrieval info: USED_PORT: wren_a 0 0 0 0 INPUT GND "wren_a"
 // Retrieval info: USED_PORT: wren_b 0 0 0 0 INPUT GND "wren_b"
-// Retrieval info: CONNECT: @address_a 0 0 11 0 address_a 0 0 11 0
-// Retrieval info: CONNECT: @address_b 0 0 11 0 address_b 0 0 11 0
+// Retrieval info: CONNECT: @address_a 0 0 12 0 address_a 0 0 12 0
+// Retrieval info: CONNECT: @address_b 0 0 12 0 address_b 0 0 12 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 16 0 data_a 0 0 16 0
 // Retrieval info: CONNECT: @data_b 0 0 16 0 data_b 0 0 16 0
@@ -170,10 +170,10 @@ endmodule
 // Retrieval info: CONNECT: @wren_b 0 0 0 0 wren_b 0 0 0 0
 // Retrieval info: CONNECT: q_a 0 0 16 0 @q_a 0 0 16 0
 // Retrieval info: CONNECT: q_b 0 0 16 0 @q_b 0 0 16 0
-// Retrieval info: GEN_FILE: TYPE_NORMAL data_mem.v TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL data_mem.inc FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL data_mem.cmp FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL data_mem.bsf TRUE
-// Retrieval info: GEN_FILE: TYPE_NORMAL data_mem_inst.v FALSE
-// Retrieval info: GEN_FILE: TYPE_NORMAL data_mem_bb.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram2.v TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram2.inc FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram2.cmp FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram2.bsf TRUE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram2_inst.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ram2_bb.v TRUE
 // Retrieval info: LIB_FILE: altera_mf
