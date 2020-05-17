@@ -65,6 +65,20 @@ refer to the applicable agreement for further details.
 		(text "wen" (rect 164 43 179 55)(font "Arial" ))
 		(line (pt 200 48)(pt 184 48)(line_width 1))
 	)
+	(port
+		(pt 200 64)
+		(output)
+		(text "ldr" (rect 0 0 9 12)(font "Arial" ))
+		(text "ldr" (rect 170 59 179 71)(font "Arial" ))
+		(line (pt 200 64)(pt 184 64)(line_width 1))
+	)
+	(port
+		(pt 200 80)
+		(output)
+		(text "reg_mux" (rect 0 0 36 12)(font "Arial" ))
+		(text "reg_mux" (rect 143 75 179 87)(font "Arial" ))
+		(line (pt 200 80)(pt 184 80)(line_width 1))
+	)
 	(drawing
 		(rectangle (rect 16 16 184 96)(line_width 1))
 	)
