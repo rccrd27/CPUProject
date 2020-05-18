@@ -93,13 +93,6 @@ refer to the applicable agreement for further details.
 		(text "prog_mux" (rect 122 123 163 135)(font "Arial" ))
 		(line (pt 184 128)(pt 168 128)(line_width 1))
 	)
-	(port
-		(pt 184 144)
-		(output)
-		(text "ld_mux" (rect 0 0 29 12)(font "Arial" ))
-		(text "ld_mux" (rect 134 139 163 151)(font "Arial" ))
-		(line (pt 184 144)(pt 168 144)(line_width 1))
-	)
 	(drawing
 		(rectangle (rect 16 16 168 160)(line_width 1))
 	)

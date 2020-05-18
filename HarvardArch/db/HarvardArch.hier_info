@@ -15,31 +15,6 @@ alu_out[12] <= arm_alu:inst12.d_out[12]
 alu_out[13] <= arm_alu:inst12.d_out[13]
 alu_out[14] <= arm_alu:inst12.d_out[14]
 alu_out[15] <= arm_alu:inst12.d_out[15]
-state[0] <= StateMachine:inst9.fetch
-state[1] <= StateMachine:inst9.exec1
-state[2] <= StateMachine:inst9.exec2
-CLK => regfile:inst11.clock
-CLK => data_mem:inst1.clock
-CLK => LPM_FF:inst4.clock
-CLK => prog_mem:inst.clock
-CLK => LPM_COUNTER:inst3.clock
-CLK => StateMachine:inst9.CLK
-data_b[0] <= data_mem:inst1.q_b[0]
-data_b[1] <= data_mem:inst1.q_b[1]
-data_b[2] <= data_mem:inst1.q_b[2]
-data_b[3] <= data_mem:inst1.q_b[3]
-data_b[4] <= data_mem:inst1.q_b[4]
-data_b[5] <= data_mem:inst1.q_b[5]
-data_b[6] <= data_mem:inst1.q_b[6]
-data_b[7] <= data_mem:inst1.q_b[7]
-data_b[8] <= data_mem:inst1.q_b[8]
-data_b[9] <= data_mem:inst1.q_b[9]
-data_b[10] <= data_mem:inst1.q_b[10]
-data_b[11] <= data_mem:inst1.q_b[11]
-data_b[12] <= data_mem:inst1.q_b[12]
-data_b[13] <= data_mem:inst1.q_b[13]
-data_b[14] <= data_mem:inst1.q_b[14]
-data_b[15] <= data_mem:inst1.q_b[15]
 ir_mux[0] <= BUSMUX:inst10.result[0]
 ir_mux[1] <= BUSMUX:inst10.result[1]
 ir_mux[2] <= BUSMUX:inst10.result[2]
@@ -56,6 +31,31 @@ ir_mux[12] <= BUSMUX:inst10.result[12]
 ir_mux[13] <= BUSMUX:inst10.result[13]
 ir_mux[14] <= BUSMUX:inst10.result[14]
 ir_mux[15] <= BUSMUX:inst10.result[15]
+state[0] <= StateMachine:inst9.fetch
+state[1] <= StateMachine:inst9.exec1
+state[2] <= StateMachine:inst9.exec2
+CLK => regfile:inst11.clock
+CLK => data_mem:inst1.clock
+CLK => StateMachine:inst9.CLK
+CLK => LPM_FF:inst4.clock
+CLK => prog_mem:inst.clock
+CLK => LPM_COUNTER:inst3.clock
+data_b[0] <= data_mem:inst1.q_b[0]
+data_b[1] <= data_mem:inst1.q_b[1]
+data_b[2] <= data_mem:inst1.q_b[2]
+data_b[3] <= data_mem:inst1.q_b[3]
+data_b[4] <= data_mem:inst1.q_b[4]
+data_b[5] <= data_mem:inst1.q_b[5]
+data_b[6] <= data_mem:inst1.q_b[6]
+data_b[7] <= data_mem:inst1.q_b[7]
+data_b[8] <= data_mem:inst1.q_b[8]
+data_b[9] <= data_mem:inst1.q_b[9]
+data_b[10] <= data_mem:inst1.q_b[10]
+data_b[11] <= data_mem:inst1.q_b[11]
+data_b[12] <= data_mem:inst1.q_b[12]
+data_b[13] <= data_mem:inst1.q_b[13]
+data_b[14] <= data_mem:inst1.q_b[14]
+data_b[15] <= data_mem:inst1.q_b[15]
 r0[0] <= regfile:inst11.r0q[0]
 r0[1] <= regfile:inst11.r0q[1]
 r0[2] <= regfile:inst11.r0q[2]
@@ -356,6 +356,7 @@ inst[12] => Mux12.IN10
 inst[12] => Mux13.IN10
 inst[12] => Mux14.IN10
 inst[12] => Mux15.IN10
+inst[12] => ldr.IN1
 inst[13] => Mux0.IN9
 inst[13] => Mux1.IN9
 inst[13] => Mux2.IN9
@@ -390,12 +391,14 @@ inst[14] => Mux12.IN8
 inst[14] => Mux13.IN8
 inst[14] => Mux14.IN8
 inst[14] => Mux15.IN8
-inst[14] => reg_mux.IN0
 inst[14] => ldr.IN0
+inst[14] => reg_mux.IN0
 inst[15] => ldr.IN1
-inst[15] => reg_mux.IN1
 inst[15] => wen.IN0
-exec1 => wen.IN1
+inst[15] => reg_mux.IN1
+state[0] => ~NO_FANOUT~
+state[1] => wen.IN1
+state[2] => wen.IN1
 d_out[0] <= Mux15.DB_MAX_OUTPUT_PORT_TYPE
 d_out[1] <= Mux14.DB_MAX_OUTPUT_PORT_TYPE
 d_out[2] <= Mux13.DB_MAX_OUTPUT_PORT_TYPE
@@ -415,6 +418,196 @@ d_out[15] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 wen <= wen.DB_MAX_OUTPUT_PORT_TYPE
 ldr <= ldr.DB_MAX_OUTPUT_PORT_TYPE
 reg_mux <= reg_mux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HarvardArch|BUSMUX:inst10
+dataa[0] => lpm_mux:$00000.data[0][0]
+dataa[1] => lpm_mux:$00000.data[0][1]
+dataa[2] => lpm_mux:$00000.data[0][2]
+dataa[3] => lpm_mux:$00000.data[0][3]
+dataa[4] => lpm_mux:$00000.data[0][4]
+dataa[5] => lpm_mux:$00000.data[0][5]
+dataa[6] => lpm_mux:$00000.data[0][6]
+dataa[7] => lpm_mux:$00000.data[0][7]
+dataa[8] => lpm_mux:$00000.data[0][8]
+dataa[9] => lpm_mux:$00000.data[0][9]
+dataa[10] => lpm_mux:$00000.data[0][10]
+dataa[11] => lpm_mux:$00000.data[0][11]
+dataa[12] => lpm_mux:$00000.data[0][12]
+dataa[13] => lpm_mux:$00000.data[0][13]
+dataa[14] => lpm_mux:$00000.data[0][14]
+dataa[15] => lpm_mux:$00000.data[0][15]
+datab[0] => lpm_mux:$00000.data[1][0]
+datab[1] => lpm_mux:$00000.data[1][1]
+datab[2] => lpm_mux:$00000.data[1][2]
+datab[3] => lpm_mux:$00000.data[1][3]
+datab[4] => lpm_mux:$00000.data[1][4]
+datab[5] => lpm_mux:$00000.data[1][5]
+datab[6] => lpm_mux:$00000.data[1][6]
+datab[7] => lpm_mux:$00000.data[1][7]
+datab[8] => lpm_mux:$00000.data[1][8]
+datab[9] => lpm_mux:$00000.data[1][9]
+datab[10] => lpm_mux:$00000.data[1][10]
+datab[11] => lpm_mux:$00000.data[1][11]
+datab[12] => lpm_mux:$00000.data[1][12]
+datab[13] => lpm_mux:$00000.data[1][13]
+datab[14] => lpm_mux:$00000.data[1][14]
+datab[15] => lpm_mux:$00000.data[1][15]
+sel => lpm_mux:$00000.sel[0]
+result[0] <= lpm_mux:$00000.result[0]
+result[1] <= lpm_mux:$00000.result[1]
+result[2] <= lpm_mux:$00000.result[2]
+result[3] <= lpm_mux:$00000.result[3]
+result[4] <= lpm_mux:$00000.result[4]
+result[5] <= lpm_mux:$00000.result[5]
+result[6] <= lpm_mux:$00000.result[6]
+result[7] <= lpm_mux:$00000.result[7]
+result[8] <= lpm_mux:$00000.result[8]
+result[9] <= lpm_mux:$00000.result[9]
+result[10] <= lpm_mux:$00000.result[10]
+result[11] <= lpm_mux:$00000.result[11]
+result[12] <= lpm_mux:$00000.result[12]
+result[13] <= lpm_mux:$00000.result[13]
+result[14] <= lpm_mux:$00000.result[14]
+result[15] <= lpm_mux:$00000.result[15]
+
+
+|HarvardArch|BUSMUX:inst10|lpm_mux:$00000
+data[0][0] => mux_flc:auto_generated.data[0]
+data[0][1] => mux_flc:auto_generated.data[1]
+data[0][2] => mux_flc:auto_generated.data[2]
+data[0][3] => mux_flc:auto_generated.data[3]
+data[0][4] => mux_flc:auto_generated.data[4]
+data[0][5] => mux_flc:auto_generated.data[5]
+data[0][6] => mux_flc:auto_generated.data[6]
+data[0][7] => mux_flc:auto_generated.data[7]
+data[0][8] => mux_flc:auto_generated.data[8]
+data[0][9] => mux_flc:auto_generated.data[9]
+data[0][10] => mux_flc:auto_generated.data[10]
+data[0][11] => mux_flc:auto_generated.data[11]
+data[0][12] => mux_flc:auto_generated.data[12]
+data[0][13] => mux_flc:auto_generated.data[13]
+data[0][14] => mux_flc:auto_generated.data[14]
+data[0][15] => mux_flc:auto_generated.data[15]
+data[1][0] => mux_flc:auto_generated.data[16]
+data[1][1] => mux_flc:auto_generated.data[17]
+data[1][2] => mux_flc:auto_generated.data[18]
+data[1][3] => mux_flc:auto_generated.data[19]
+data[1][4] => mux_flc:auto_generated.data[20]
+data[1][5] => mux_flc:auto_generated.data[21]
+data[1][6] => mux_flc:auto_generated.data[22]
+data[1][7] => mux_flc:auto_generated.data[23]
+data[1][8] => mux_flc:auto_generated.data[24]
+data[1][9] => mux_flc:auto_generated.data[25]
+data[1][10] => mux_flc:auto_generated.data[26]
+data[1][11] => mux_flc:auto_generated.data[27]
+data[1][12] => mux_flc:auto_generated.data[28]
+data[1][13] => mux_flc:auto_generated.data[29]
+data[1][14] => mux_flc:auto_generated.data[30]
+data[1][15] => mux_flc:auto_generated.data[31]
+sel[0] => mux_flc:auto_generated.sel[0]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_flc:auto_generated.result[0]
+result[1] <= mux_flc:auto_generated.result[1]
+result[2] <= mux_flc:auto_generated.result[2]
+result[3] <= mux_flc:auto_generated.result[3]
+result[4] <= mux_flc:auto_generated.result[4]
+result[5] <= mux_flc:auto_generated.result[5]
+result[6] <= mux_flc:auto_generated.result[6]
+result[7] <= mux_flc:auto_generated.result[7]
+result[8] <= mux_flc:auto_generated.result[8]
+result[9] <= mux_flc:auto_generated.result[9]
+result[10] <= mux_flc:auto_generated.result[10]
+result[11] <= mux_flc:auto_generated.result[11]
+result[12] <= mux_flc:auto_generated.result[12]
+result[13] <= mux_flc:auto_generated.result[13]
+result[14] <= mux_flc:auto_generated.result[14]
+result[15] <= mux_flc:auto_generated.result[15]
+
+
+|HarvardArch|BUSMUX:inst10|lpm_mux:$00000|mux_flc:auto_generated
+data[0] => l1_w0_n0_mux_dataout.IN1
+data[1] => l1_w1_n0_mux_dataout.IN1
+data[2] => l1_w2_n0_mux_dataout.IN1
+data[3] => l1_w3_n0_mux_dataout.IN1
+data[4] => l1_w4_n0_mux_dataout.IN1
+data[5] => l1_w5_n0_mux_dataout.IN1
+data[6] => l1_w6_n0_mux_dataout.IN1
+data[7] => l1_w7_n0_mux_dataout.IN1
+data[8] => l1_w8_n0_mux_dataout.IN1
+data[9] => l1_w9_n0_mux_dataout.IN1
+data[10] => l1_w10_n0_mux_dataout.IN1
+data[11] => l1_w11_n0_mux_dataout.IN1
+data[12] => l1_w12_n0_mux_dataout.IN1
+data[13] => l1_w13_n0_mux_dataout.IN1
+data[14] => l1_w14_n0_mux_dataout.IN1
+data[15] => l1_w15_n0_mux_dataout.IN1
+data[16] => l1_w0_n0_mux_dataout.IN1
+data[17] => l1_w1_n0_mux_dataout.IN1
+data[18] => l1_w2_n0_mux_dataout.IN1
+data[19] => l1_w3_n0_mux_dataout.IN1
+data[20] => l1_w4_n0_mux_dataout.IN1
+data[21] => l1_w5_n0_mux_dataout.IN1
+data[22] => l1_w6_n0_mux_dataout.IN1
+data[23] => l1_w7_n0_mux_dataout.IN1
+data[24] => l1_w8_n0_mux_dataout.IN1
+data[25] => l1_w9_n0_mux_dataout.IN1
+data[26] => l1_w10_n0_mux_dataout.IN1
+data[27] => l1_w11_n0_mux_dataout.IN1
+data[28] => l1_w12_n0_mux_dataout.IN1
+data[29] => l1_w13_n0_mux_dataout.IN1
+data[30] => l1_w14_n0_mux_dataout.IN1
+data[31] => l1_w15_n0_mux_dataout.IN1
+result[0] <= l1_w0_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[1] <= l1_w1_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[2] <= l1_w2_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[3] <= l1_w3_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[4] <= l1_w4_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[5] <= l1_w5_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[6] <= l1_w6_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[7] <= l1_w7_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[8] <= l1_w8_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[9] <= l1_w9_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[10] <= l1_w10_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[11] <= l1_w11_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[12] <= l1_w12_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[13] <= l1_w13_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[14] <= l1_w14_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+result[15] <= l1_w15_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => l1_w0_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w10_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w11_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w12_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w13_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w14_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w15_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w1_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w2_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w3_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w4_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w5_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w6_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w7_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w8_n0_mux_dataout.IN0
+sel[0] => _.IN0
+sel[0] => l1_w9_n0_mux_dataout.IN0
+sel[0] => _.IN0
 
 
 |HarvardArch|StateMachine:inst9
@@ -471,27 +664,22 @@ state[0] => ~NO_FANOUT~
 state[1] => WrEn.IN1
 state[1] => pc_load.IN1
 state[1] => pc_inc.IN1
-state[1] => acc_load.IN1
 state[2] => acc_load.IN1
-inst[0] => sta.IN1
 inst[0] => jmp.IN1
 inst[0] => lda.IN1
 inst[0] => ldr.IN1
-inst[0] => add.IN1
-inst[0] => ldi.IN1
-inst[0] => jeq.IN1
+inst[0] => sta.IN1
 inst[0] => stp.IN1
-inst[1] => add.IN1
-inst[1] => jeq.IN1
+inst[1] => sta.IN1
 inst[1] => ldr.IN1
 inst[1] => lda.IN1
-inst[1] => ldi.IN1
+inst[1] => jeq.IN1
 inst[2] => lda.IN0
 inst[2] => ldr.IN0
-inst[2] => add.IN0
+inst[2] => sta.IN0
 inst[3] => ldr.IN1
-inst[3] => add.IN1
 inst[3] => lda.IN1
+inst[3] => sta.IN1
 eq => pc_load.IN1
 acc_load <= acc_load.DB_MAX_OUTPUT_PORT_TYPE
 e <= acc_load.DB_MAX_OUTPUT_PORT_TYPE
@@ -500,7 +688,6 @@ pc_load <= pc_load.DB_MAX_OUTPUT_PORT_TYPE
 pc_inc <= pc_inc.DB_MAX_OUTPUT_PORT_TYPE
 p <= <GND>
 prog_mux <= <GND>
-ld_mux <= ldi.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |HarvardArch|LPM_OR:inst18
@@ -715,7 +902,7 @@ testr3q[14] <= muxin[3][14].DB_MAX_OUTPUT_PORT_TYPE
 testr3q[15] <= muxin[3][15].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|HarvardArch|regfile:inst11|LPM_MUX:MUX4A
+|HarvardArch|regfile:inst11|lpm_mux:MUX4A
 data[0][0] => mux_ilc:auto_generated.data[0]
 data[0][1] => mux_ilc:auto_generated.data[1]
 data[0][2] => mux_ilc:auto_generated.data[2]
@@ -803,7 +990,7 @@ result[14] <= mux_ilc:auto_generated.result[14]
 result[15] <= mux_ilc:auto_generated.result[15]
 
 
-|HarvardArch|regfile:inst11|LPM_MUX:MUX4A|mux_ilc:auto_generated
+|HarvardArch|regfile:inst11|lpm_mux:MUX4A|mux_ilc:auto_generated
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -1358,7 +1545,7 @@ result[14] <= lpm_mux:$00000.result[14]
 result[15] <= lpm_mux:$00000.result[15]
 
 
-|HarvardArch|regfile:inst11|BUSMUX:MUX2|LPM_MUX:$00000
+|HarvardArch|regfile:inst11|BUSMUX:MUX2|lpm_mux:$00000
 data[0][0] => mux_flc:auto_generated.data[0]
 data[0][1] => mux_flc:auto_generated.data[1]
 data[0][2] => mux_flc:auto_generated.data[2]
@@ -1413,7 +1600,7 @@ result[14] <= mux_flc:auto_generated.result[14]
 result[15] <= mux_flc:auto_generated.result[15]
 
 
-|HarvardArch|regfile:inst11|BUSMUX:MUX2|LPM_MUX:$00000|mux_flc:auto_generated
+|HarvardArch|regfile:inst11|BUSMUX:MUX2|lpm_mux:$00000|mux_flc:auto_generated
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -1496,7 +1683,7 @@ sel[0] => l1_w9_n0_mux_dataout.IN0
 sel[0] => _.IN0
 
 
-|HarvardArch|regfile:inst11|LPM_MUX:MUX4B
+|HarvardArch|regfile:inst11|lpm_mux:MUX4B
 data[0][0] => mux_ilc:auto_generated.data[0]
 data[0][1] => mux_ilc:auto_generated.data[1]
 data[0][2] => mux_ilc:auto_generated.data[2]
@@ -1584,7 +1771,7 @@ result[14] <= mux_ilc:auto_generated.result[14]
 result[15] <= mux_ilc:auto_generated.result[15]
 
 
-|HarvardArch|regfile:inst11|LPM_MUX:MUX4B|mux_ilc:auto_generated
+|HarvardArch|regfile:inst11|lpm_mux:MUX4B|mux_ilc:auto_generated
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -1815,7 +2002,7 @@ result[14] <= lpm_mux:$00000.result[14]
 result[15] <= lpm_mux:$00000.result[15]
 
 
-|HarvardArch|BUSMUX:inst16|LPM_MUX:$00000
+|HarvardArch|BUSMUX:inst16|lpm_mux:$00000
 data[0][0] => mux_flc:auto_generated.data[0]
 data[0][1] => mux_flc:auto_generated.data[1]
 data[0][2] => mux_flc:auto_generated.data[2]
@@ -1870,7 +2057,7 @@ result[14] <= mux_flc:auto_generated.result[14]
 result[15] <= mux_flc:auto_generated.result[15]
 
 
-|HarvardArch|BUSMUX:inst16|LPM_MUX:$00000|mux_flc:auto_generated
+|HarvardArch|BUSMUX:inst16|lpm_mux:$00000|mux_flc:auto_generated
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -2657,7 +2844,7 @@ result[9] <= lpm_mux:$00000.result[9]
 result[10] <= lpm_mux:$00000.result[10]
 
 
-|HarvardArch|BUSMUX:inst8|LPM_MUX:$00000
+|HarvardArch|BUSMUX:inst8|lpm_mux:$00000
 data[0][0] => mux_alc:auto_generated.data[0]
 data[0][1] => mux_alc:auto_generated.data[1]
 data[0][2] => mux_alc:auto_generated.data[2]
@@ -2697,7 +2884,7 @@ result[9] <= mux_alc:auto_generated.result[9]
 result[10] <= mux_alc:auto_generated.result[10]
 
 
-|HarvardArch|BUSMUX:inst8|LPM_MUX:$00000|mux_alc:auto_generated
+|HarvardArch|BUSMUX:inst8|lpm_mux:$00000|mux_alc:auto_generated
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -2755,193 +2942,64 @@ sel[0] => l1_w9_n0_mux_dataout.IN0
 sel[0] => _.IN0
 
 
-|HarvardArch|BUSMUX:inst10
+|HarvardArch|increment:inst15
+x[0] => Add0.IN22
+x[1] => Add0.IN21
+x[2] => Add0.IN20
+x[3] => Add0.IN19
+x[4] => Add0.IN18
+x[5] => Add0.IN17
+x[6] => Add0.IN16
+x[7] => Add0.IN15
+x[8] => Add0.IN14
+x[9] => Add0.IN13
+x[10] => Add0.IN12
+y[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[8] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[9] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+y[10] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HarvardArch|BUSMUX:inst7
 dataa[0] => lpm_mux:$00000.data[0][0]
 dataa[1] => lpm_mux:$00000.data[0][1]
-dataa[2] => lpm_mux:$00000.data[0][2]
-dataa[3] => lpm_mux:$00000.data[0][3]
-dataa[4] => lpm_mux:$00000.data[0][4]
-dataa[5] => lpm_mux:$00000.data[0][5]
-dataa[6] => lpm_mux:$00000.data[0][6]
-dataa[7] => lpm_mux:$00000.data[0][7]
-dataa[8] => lpm_mux:$00000.data[0][8]
-dataa[9] => lpm_mux:$00000.data[0][9]
-dataa[10] => lpm_mux:$00000.data[0][10]
-dataa[11] => lpm_mux:$00000.data[0][11]
-dataa[12] => lpm_mux:$00000.data[0][12]
-dataa[13] => lpm_mux:$00000.data[0][13]
-dataa[14] => lpm_mux:$00000.data[0][14]
-dataa[15] => lpm_mux:$00000.data[0][15]
 datab[0] => lpm_mux:$00000.data[1][0]
 datab[1] => lpm_mux:$00000.data[1][1]
-datab[2] => lpm_mux:$00000.data[1][2]
-datab[3] => lpm_mux:$00000.data[1][3]
-datab[4] => lpm_mux:$00000.data[1][4]
-datab[5] => lpm_mux:$00000.data[1][5]
-datab[6] => lpm_mux:$00000.data[1][6]
-datab[7] => lpm_mux:$00000.data[1][7]
-datab[8] => lpm_mux:$00000.data[1][8]
-datab[9] => lpm_mux:$00000.data[1][9]
-datab[10] => lpm_mux:$00000.data[1][10]
-datab[11] => lpm_mux:$00000.data[1][11]
-datab[12] => lpm_mux:$00000.data[1][12]
-datab[13] => lpm_mux:$00000.data[1][13]
-datab[14] => lpm_mux:$00000.data[1][14]
-datab[15] => lpm_mux:$00000.data[1][15]
 sel => lpm_mux:$00000.sel[0]
 result[0] <= lpm_mux:$00000.result[0]
 result[1] <= lpm_mux:$00000.result[1]
-result[2] <= lpm_mux:$00000.result[2]
-result[3] <= lpm_mux:$00000.result[3]
-result[4] <= lpm_mux:$00000.result[4]
-result[5] <= lpm_mux:$00000.result[5]
-result[6] <= lpm_mux:$00000.result[6]
-result[7] <= lpm_mux:$00000.result[7]
-result[8] <= lpm_mux:$00000.result[8]
-result[9] <= lpm_mux:$00000.result[9]
-result[10] <= lpm_mux:$00000.result[10]
-result[11] <= lpm_mux:$00000.result[11]
-result[12] <= lpm_mux:$00000.result[12]
-result[13] <= lpm_mux:$00000.result[13]
-result[14] <= lpm_mux:$00000.result[14]
-result[15] <= lpm_mux:$00000.result[15]
 
 
-|HarvardArch|BUSMUX:inst10|LPM_MUX:$00000
-data[0][0] => mux_flc:auto_generated.data[0]
-data[0][1] => mux_flc:auto_generated.data[1]
-data[0][2] => mux_flc:auto_generated.data[2]
-data[0][3] => mux_flc:auto_generated.data[3]
-data[0][4] => mux_flc:auto_generated.data[4]
-data[0][5] => mux_flc:auto_generated.data[5]
-data[0][6] => mux_flc:auto_generated.data[6]
-data[0][7] => mux_flc:auto_generated.data[7]
-data[0][8] => mux_flc:auto_generated.data[8]
-data[0][9] => mux_flc:auto_generated.data[9]
-data[0][10] => mux_flc:auto_generated.data[10]
-data[0][11] => mux_flc:auto_generated.data[11]
-data[0][12] => mux_flc:auto_generated.data[12]
-data[0][13] => mux_flc:auto_generated.data[13]
-data[0][14] => mux_flc:auto_generated.data[14]
-data[0][15] => mux_flc:auto_generated.data[15]
-data[1][0] => mux_flc:auto_generated.data[16]
-data[1][1] => mux_flc:auto_generated.data[17]
-data[1][2] => mux_flc:auto_generated.data[18]
-data[1][3] => mux_flc:auto_generated.data[19]
-data[1][4] => mux_flc:auto_generated.data[20]
-data[1][5] => mux_flc:auto_generated.data[21]
-data[1][6] => mux_flc:auto_generated.data[22]
-data[1][7] => mux_flc:auto_generated.data[23]
-data[1][8] => mux_flc:auto_generated.data[24]
-data[1][9] => mux_flc:auto_generated.data[25]
-data[1][10] => mux_flc:auto_generated.data[26]
-data[1][11] => mux_flc:auto_generated.data[27]
-data[1][12] => mux_flc:auto_generated.data[28]
-data[1][13] => mux_flc:auto_generated.data[29]
-data[1][14] => mux_flc:auto_generated.data[30]
-data[1][15] => mux_flc:auto_generated.data[31]
-sel[0] => mux_flc:auto_generated.sel[0]
+|HarvardArch|BUSMUX:inst7|lpm_mux:$00000
+data[0][0] => mux_qjc:auto_generated.data[0]
+data[0][1] => mux_qjc:auto_generated.data[1]
+data[1][0] => mux_qjc:auto_generated.data[2]
+data[1][1] => mux_qjc:auto_generated.data[3]
+sel[0] => mux_qjc:auto_generated.sel[0]
 clock => ~NO_FANOUT~
 aclr => ~NO_FANOUT~
 clken => ~NO_FANOUT~
-result[0] <= mux_flc:auto_generated.result[0]
-result[1] <= mux_flc:auto_generated.result[1]
-result[2] <= mux_flc:auto_generated.result[2]
-result[3] <= mux_flc:auto_generated.result[3]
-result[4] <= mux_flc:auto_generated.result[4]
-result[5] <= mux_flc:auto_generated.result[5]
-result[6] <= mux_flc:auto_generated.result[6]
-result[7] <= mux_flc:auto_generated.result[7]
-result[8] <= mux_flc:auto_generated.result[8]
-result[9] <= mux_flc:auto_generated.result[9]
-result[10] <= mux_flc:auto_generated.result[10]
-result[11] <= mux_flc:auto_generated.result[11]
-result[12] <= mux_flc:auto_generated.result[12]
-result[13] <= mux_flc:auto_generated.result[13]
-result[14] <= mux_flc:auto_generated.result[14]
-result[15] <= mux_flc:auto_generated.result[15]
+result[0] <= mux_qjc:auto_generated.result[0]
+result[1] <= mux_qjc:auto_generated.result[1]
 
 
-|HarvardArch|BUSMUX:inst10|LPM_MUX:$00000|mux_flc:auto_generated
+|HarvardArch|BUSMUX:inst7|lpm_mux:$00000|mux_qjc:auto_generated
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
-data[2] => l1_w2_n0_mux_dataout.IN1
-data[3] => l1_w3_n0_mux_dataout.IN1
-data[4] => l1_w4_n0_mux_dataout.IN1
-data[5] => l1_w5_n0_mux_dataout.IN1
-data[6] => l1_w6_n0_mux_dataout.IN1
-data[7] => l1_w7_n0_mux_dataout.IN1
-data[8] => l1_w8_n0_mux_dataout.IN1
-data[9] => l1_w9_n0_mux_dataout.IN1
-data[10] => l1_w10_n0_mux_dataout.IN1
-data[11] => l1_w11_n0_mux_dataout.IN1
-data[12] => l1_w12_n0_mux_dataout.IN1
-data[13] => l1_w13_n0_mux_dataout.IN1
-data[14] => l1_w14_n0_mux_dataout.IN1
-data[15] => l1_w15_n0_mux_dataout.IN1
-data[16] => l1_w0_n0_mux_dataout.IN1
-data[17] => l1_w1_n0_mux_dataout.IN1
-data[18] => l1_w2_n0_mux_dataout.IN1
-data[19] => l1_w3_n0_mux_dataout.IN1
-data[20] => l1_w4_n0_mux_dataout.IN1
-data[21] => l1_w5_n0_mux_dataout.IN1
-data[22] => l1_w6_n0_mux_dataout.IN1
-data[23] => l1_w7_n0_mux_dataout.IN1
-data[24] => l1_w8_n0_mux_dataout.IN1
-data[25] => l1_w9_n0_mux_dataout.IN1
-data[26] => l1_w10_n0_mux_dataout.IN1
-data[27] => l1_w11_n0_mux_dataout.IN1
-data[28] => l1_w12_n0_mux_dataout.IN1
-data[29] => l1_w13_n0_mux_dataout.IN1
-data[30] => l1_w14_n0_mux_dataout.IN1
-data[31] => l1_w15_n0_mux_dataout.IN1
+data[2] => l1_w0_n0_mux_dataout.IN1
+data[3] => l1_w1_n0_mux_dataout.IN1
 result[0] <= l1_w0_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
 result[1] <= l1_w1_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[2] <= l1_w2_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[3] <= l1_w3_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[4] <= l1_w4_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[5] <= l1_w5_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[6] <= l1_w6_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[7] <= l1_w7_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[8] <= l1_w8_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[9] <= l1_w9_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[10] <= l1_w10_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[11] <= l1_w11_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[12] <= l1_w12_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[13] <= l1_w13_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[14] <= l1_w14_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[15] <= l1_w15_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
 sel[0] => l1_w0_n0_mux_dataout.IN0
 sel[0] => _.IN0
-sel[0] => l1_w10_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w11_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w12_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w13_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w14_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w15_n0_mux_dataout.IN0
-sel[0] => _.IN0
 sel[0] => l1_w1_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w2_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w3_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w4_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w5_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w6_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w7_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w8_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w9_n0_mux_dataout.IN0
 sel[0] => _.IN0
 
 
@@ -3445,7 +3503,7 @@ result[9] <= lpm_mux:$00000.result[9]
 result[10] <= lpm_mux:$00000.result[10]
 
 
-|HarvardArch|BUSMUX:inst17|LPM_MUX:$00000
+|HarvardArch|BUSMUX:inst17|lpm_mux:$00000
 data[0][0] => mux_alc:auto_generated.data[0]
 data[0][1] => mux_alc:auto_generated.data[1]
 data[0][2] => mux_alc:auto_generated.data[2]
@@ -3485,7 +3543,7 @@ result[9] <= mux_alc:auto_generated.result[9]
 result[10] <= mux_alc:auto_generated.result[10]
 
 
-|HarvardArch|BUSMUX:inst17|LPM_MUX:$00000|mux_alc:auto_generated
+|HarvardArch|BUSMUX:inst17|lpm_mux:$00000|mux_alc:auto_generated
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -3635,256 +3693,5 @@ q[9] <= counter_reg_bit[9].DB_MAX_OUTPUT_PORT_TYPE
 q[10] <= counter_reg_bit[10].DB_MAX_OUTPUT_PORT_TYPE
 sload => _.IN1
 sload => counter_reg_bit[10].IN1
-
-
-|HarvardArch|increment:inst15
-x[0] => Add0.IN22
-x[1] => Add0.IN21
-x[2] => Add0.IN20
-x[3] => Add0.IN19
-x[4] => Add0.IN18
-x[5] => Add0.IN17
-x[6] => Add0.IN16
-x[7] => Add0.IN15
-x[8] => Add0.IN14
-x[9] => Add0.IN13
-x[10] => Add0.IN12
-y[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[5] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[6] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[7] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[8] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[9] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-y[10] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|HarvardArch|BUSMUX:inst7
-dataa[0] => lpm_mux:$00000.data[0][0]
-dataa[1] => lpm_mux:$00000.data[0][1]
-datab[0] => lpm_mux:$00000.data[1][0]
-datab[1] => lpm_mux:$00000.data[1][1]
-sel => lpm_mux:$00000.sel[0]
-result[0] <= lpm_mux:$00000.result[0]
-result[1] <= lpm_mux:$00000.result[1]
-
-
-|HarvardArch|BUSMUX:inst7|LPM_MUX:$00000
-data[0][0] => mux_qjc:auto_generated.data[0]
-data[0][1] => mux_qjc:auto_generated.data[1]
-data[1][0] => mux_qjc:auto_generated.data[2]
-data[1][1] => mux_qjc:auto_generated.data[3]
-sel[0] => mux_qjc:auto_generated.sel[0]
-clock => ~NO_FANOUT~
-aclr => ~NO_FANOUT~
-clken => ~NO_FANOUT~
-result[0] <= mux_qjc:auto_generated.result[0]
-result[1] <= mux_qjc:auto_generated.result[1]
-
-
-|HarvardArch|BUSMUX:inst7|LPM_MUX:$00000|mux_qjc:auto_generated
-data[0] => l1_w0_n0_mux_dataout.IN1
-data[1] => l1_w1_n0_mux_dataout.IN1
-data[2] => l1_w0_n0_mux_dataout.IN1
-data[3] => l1_w1_n0_mux_dataout.IN1
-result[0] <= l1_w0_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= l1_w1_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-sel[0] => l1_w0_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w1_n0_mux_dataout.IN0
-sel[0] => _.IN0
-
-
-|HarvardArch|BUSMUX:inst19
-dataa[0] => lpm_mux:$00000.data[0][0]
-dataa[1] => lpm_mux:$00000.data[0][1]
-dataa[2] => lpm_mux:$00000.data[0][2]
-dataa[3] => lpm_mux:$00000.data[0][3]
-dataa[4] => lpm_mux:$00000.data[0][4]
-dataa[5] => lpm_mux:$00000.data[0][5]
-dataa[6] => lpm_mux:$00000.data[0][6]
-dataa[7] => lpm_mux:$00000.data[0][7]
-dataa[8] => lpm_mux:$00000.data[0][8]
-dataa[9] => lpm_mux:$00000.data[0][9]
-dataa[10] => lpm_mux:$00000.data[0][10]
-dataa[11] => lpm_mux:$00000.data[0][11]
-dataa[12] => lpm_mux:$00000.data[0][12]
-dataa[13] => lpm_mux:$00000.data[0][13]
-dataa[14] => lpm_mux:$00000.data[0][14]
-dataa[15] => lpm_mux:$00000.data[0][15]
-datab[0] => lpm_mux:$00000.data[1][0]
-datab[1] => lpm_mux:$00000.data[1][1]
-datab[2] => lpm_mux:$00000.data[1][2]
-datab[3] => lpm_mux:$00000.data[1][3]
-datab[4] => lpm_mux:$00000.data[1][4]
-datab[5] => lpm_mux:$00000.data[1][5]
-datab[6] => lpm_mux:$00000.data[1][6]
-datab[7] => lpm_mux:$00000.data[1][7]
-datab[8] => lpm_mux:$00000.data[1][8]
-datab[9] => lpm_mux:$00000.data[1][9]
-datab[10] => lpm_mux:$00000.data[1][10]
-datab[11] => lpm_mux:$00000.data[1][11]
-datab[12] => lpm_mux:$00000.data[1][12]
-datab[13] => lpm_mux:$00000.data[1][13]
-datab[14] => lpm_mux:$00000.data[1][14]
-datab[15] => lpm_mux:$00000.data[1][15]
-sel => lpm_mux:$00000.sel[0]
-result[0] <= lpm_mux:$00000.result[0]
-result[1] <= lpm_mux:$00000.result[1]
-result[2] <= lpm_mux:$00000.result[2]
-result[3] <= lpm_mux:$00000.result[3]
-result[4] <= lpm_mux:$00000.result[4]
-result[5] <= lpm_mux:$00000.result[5]
-result[6] <= lpm_mux:$00000.result[6]
-result[7] <= lpm_mux:$00000.result[7]
-result[8] <= lpm_mux:$00000.result[8]
-result[9] <= lpm_mux:$00000.result[9]
-result[10] <= lpm_mux:$00000.result[10]
-result[11] <= lpm_mux:$00000.result[11]
-result[12] <= lpm_mux:$00000.result[12]
-result[13] <= lpm_mux:$00000.result[13]
-result[14] <= lpm_mux:$00000.result[14]
-result[15] <= lpm_mux:$00000.result[15]
-
-
-|HarvardArch|BUSMUX:inst19|LPM_MUX:$00000
-data[0][0] => mux_flc:auto_generated.data[0]
-data[0][1] => mux_flc:auto_generated.data[1]
-data[0][2] => mux_flc:auto_generated.data[2]
-data[0][3] => mux_flc:auto_generated.data[3]
-data[0][4] => mux_flc:auto_generated.data[4]
-data[0][5] => mux_flc:auto_generated.data[5]
-data[0][6] => mux_flc:auto_generated.data[6]
-data[0][7] => mux_flc:auto_generated.data[7]
-data[0][8] => mux_flc:auto_generated.data[8]
-data[0][9] => mux_flc:auto_generated.data[9]
-data[0][10] => mux_flc:auto_generated.data[10]
-data[0][11] => mux_flc:auto_generated.data[11]
-data[0][12] => mux_flc:auto_generated.data[12]
-data[0][13] => mux_flc:auto_generated.data[13]
-data[0][14] => mux_flc:auto_generated.data[14]
-data[0][15] => mux_flc:auto_generated.data[15]
-data[1][0] => mux_flc:auto_generated.data[16]
-data[1][1] => mux_flc:auto_generated.data[17]
-data[1][2] => mux_flc:auto_generated.data[18]
-data[1][3] => mux_flc:auto_generated.data[19]
-data[1][4] => mux_flc:auto_generated.data[20]
-data[1][5] => mux_flc:auto_generated.data[21]
-data[1][6] => mux_flc:auto_generated.data[22]
-data[1][7] => mux_flc:auto_generated.data[23]
-data[1][8] => mux_flc:auto_generated.data[24]
-data[1][9] => mux_flc:auto_generated.data[25]
-data[1][10] => mux_flc:auto_generated.data[26]
-data[1][11] => mux_flc:auto_generated.data[27]
-data[1][12] => mux_flc:auto_generated.data[28]
-data[1][13] => mux_flc:auto_generated.data[29]
-data[1][14] => mux_flc:auto_generated.data[30]
-data[1][15] => mux_flc:auto_generated.data[31]
-sel[0] => mux_flc:auto_generated.sel[0]
-clock => ~NO_FANOUT~
-aclr => ~NO_FANOUT~
-clken => ~NO_FANOUT~
-result[0] <= mux_flc:auto_generated.result[0]
-result[1] <= mux_flc:auto_generated.result[1]
-result[2] <= mux_flc:auto_generated.result[2]
-result[3] <= mux_flc:auto_generated.result[3]
-result[4] <= mux_flc:auto_generated.result[4]
-result[5] <= mux_flc:auto_generated.result[5]
-result[6] <= mux_flc:auto_generated.result[6]
-result[7] <= mux_flc:auto_generated.result[7]
-result[8] <= mux_flc:auto_generated.result[8]
-result[9] <= mux_flc:auto_generated.result[9]
-result[10] <= mux_flc:auto_generated.result[10]
-result[11] <= mux_flc:auto_generated.result[11]
-result[12] <= mux_flc:auto_generated.result[12]
-result[13] <= mux_flc:auto_generated.result[13]
-result[14] <= mux_flc:auto_generated.result[14]
-result[15] <= mux_flc:auto_generated.result[15]
-
-
-|HarvardArch|BUSMUX:inst19|LPM_MUX:$00000|mux_flc:auto_generated
-data[0] => l1_w0_n0_mux_dataout.IN1
-data[1] => l1_w1_n0_mux_dataout.IN1
-data[2] => l1_w2_n0_mux_dataout.IN1
-data[3] => l1_w3_n0_mux_dataout.IN1
-data[4] => l1_w4_n0_mux_dataout.IN1
-data[5] => l1_w5_n0_mux_dataout.IN1
-data[6] => l1_w6_n0_mux_dataout.IN1
-data[7] => l1_w7_n0_mux_dataout.IN1
-data[8] => l1_w8_n0_mux_dataout.IN1
-data[9] => l1_w9_n0_mux_dataout.IN1
-data[10] => l1_w10_n0_mux_dataout.IN1
-data[11] => l1_w11_n0_mux_dataout.IN1
-data[12] => l1_w12_n0_mux_dataout.IN1
-data[13] => l1_w13_n0_mux_dataout.IN1
-data[14] => l1_w14_n0_mux_dataout.IN1
-data[15] => l1_w15_n0_mux_dataout.IN1
-data[16] => l1_w0_n0_mux_dataout.IN1
-data[17] => l1_w1_n0_mux_dataout.IN1
-data[18] => l1_w2_n0_mux_dataout.IN1
-data[19] => l1_w3_n0_mux_dataout.IN1
-data[20] => l1_w4_n0_mux_dataout.IN1
-data[21] => l1_w5_n0_mux_dataout.IN1
-data[22] => l1_w6_n0_mux_dataout.IN1
-data[23] => l1_w7_n0_mux_dataout.IN1
-data[24] => l1_w8_n0_mux_dataout.IN1
-data[25] => l1_w9_n0_mux_dataout.IN1
-data[26] => l1_w10_n0_mux_dataout.IN1
-data[27] => l1_w11_n0_mux_dataout.IN1
-data[28] => l1_w12_n0_mux_dataout.IN1
-data[29] => l1_w13_n0_mux_dataout.IN1
-data[30] => l1_w14_n0_mux_dataout.IN1
-data[31] => l1_w15_n0_mux_dataout.IN1
-result[0] <= l1_w0_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[1] <= l1_w1_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[2] <= l1_w2_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[3] <= l1_w3_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[4] <= l1_w4_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[5] <= l1_w5_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[6] <= l1_w6_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[7] <= l1_w7_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[8] <= l1_w8_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[9] <= l1_w9_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[10] <= l1_w10_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[11] <= l1_w11_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[12] <= l1_w12_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[13] <= l1_w13_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[14] <= l1_w14_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-result[15] <= l1_w15_n0_mux_dataout.DB_MAX_OUTPUT_PORT_TYPE
-sel[0] => l1_w0_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w10_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w11_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w12_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w13_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w14_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w15_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w1_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w2_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w3_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w4_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w5_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w6_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w7_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w8_n0_mux_dataout.IN0
-sel[0] => _.IN0
-sel[0] => l1_w9_n0_mux_dataout.IN0
-sel[0] => _.IN0
 
 

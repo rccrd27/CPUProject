@@ -68,6 +68,70 @@
 					"strict" : false
 				},
 				{
+					"name" : "ir_mux[15]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[14]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[13]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[12]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[11]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[10]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[9]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[8]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ir_mux[0]",
+					"strict" : false
+				},
+				{
 					"name" : "state[2]",
 					"strict" : false
 				},
@@ -141,70 +205,6 @@
 				},
 				{
 					"name" : "data_b[0]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[15]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[14]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[13]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[12]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[11]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[10]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[9]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[8]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[7]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[6]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[5]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[4]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[3]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[2]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[1]",
-					"strict" : false
-				},
-				{
-					"name" : "ir_mux[0]",
 					"strict" : false
 				},
 				{

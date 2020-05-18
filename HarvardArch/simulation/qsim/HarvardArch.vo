@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition"
 
-// DATE "05/17/2020 23:01:11"
+// DATE "05/18/2020 11:35:36"
 
 // 
 // Device: Altera 5CGXFC7C7F23C8 Package FBGA484
@@ -30,10 +30,10 @@
 
 module HarvardArch (
 	alu_out,
+	ir_mux,
 	state,
 	CLK,
 	data_b,
-	ir_mux,
 	r0,
 	data_a,
 	pc_out,
@@ -42,10 +42,10 @@ module HarvardArch (
 	r2,
 	r3);
 output 	[15:0] alu_out;
+output 	[15:0] ir_mux;
 output 	[2:0] state;
 input 	CLK;
 output 	[15:0] data_b;
-output 	[15:0] ir_mux;
 output 	[15:0] r0;
 output 	[15:0] data_a;
 output 	[10:0] pc_out;
@@ -89,9 +89,10 @@ wire \inst3|auto_generated|counter_comb_bita9~sumout ;
 wire \inst3|auto_generated|counter_comb_bita9~COUT ;
 wire \inst3|auto_generated|counter_comb_bita10~sumout ;
 wire \inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ;
-wire \inst2|WrEn~1_combout ;
 wire \inst2|WrEn~0_combout ;
+wire \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ;
 wire \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ;
+wire \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ;
 wire \inst15|Add0~1_sumout ;
 wire \inst15|Add0~2 ;
 wire \inst15|Add0~5_sumout ;
@@ -113,13 +114,10 @@ wire \inst15|Add0~34 ;
 wire \inst15|Add0~37_sumout ;
 wire \inst15|Add0~38 ;
 wire \inst15|Add0~41_sumout ;
-wire \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ;
-wire \inst2|ld_mux~combout ;
-wire \inst2|acc_load~combout ;
 wire \inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ;
 wire \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ;
 wire \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ;
-wire \inst12|ldr~combout ;
+wire \inst12|wen~0_combout ;
 wire \inst11|MUX4A|auto_generated|l2_w10_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~73_combout ;
 wire \inst12|Add0~74_combout ;
@@ -141,11 +139,14 @@ wire \inst11|MUX4A|auto_generated|l2_w2_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~90_combout ;
 wire \inst11|MUX4A|auto_generated|l2_w1_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~92_combout ;
-wire \inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~94_combout ;
-wire \inst12|Add0~99_combout ;
-wire \inst12|Add0~97_cout ;
+wire \inst12|Add0~95_combout ;
+wire \inst12|Add0~96_combout ;
+wire \inst12|Add0~97_combout ;
+wire \inst12|Add0~102_combout ;
+wire \inst12|Add0~100_cout ;
 wire \inst12|Add0~61_sumout ;
+wire \inst12|ldr~combout ;
 wire \inst16|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ;
 wire \inst11|MUX4A|auto_generated|l2_w0_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~93_combout ;
@@ -188,28 +189,18 @@ wire \inst12|Add0~75_combout ;
 wire \inst12|Add0~26 ;
 wire \inst12|Add0~21_sumout ;
 wire \inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ;
+wire \inst2|acc_load~0_combout ;
 wire \inst11|G1~combout ;
 wire \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ;
 wire \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~64_combout ;
 wire \inst11|MUX4A|auto_generated|l2_w14_n0_mux_dataout~0_combout ;
@@ -223,32 +214,28 @@ wire \inst12|Add0~72_combout ;
 wire \inst12|Add0~22 ;
 wire \inst12|Add0~17_sumout ;
 wire \inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~71_combout ;
 wire \inst12|Add0~18 ;
 wire \inst12|Add0~13_sumout ;
 wire \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~69_combout ;
 wire \inst12|Add0~14 ;
 wire \inst12|Add0~9_sumout ;
 wire \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~67_combout ;
 wire \inst12|Add0~10 ;
 wire \inst12|Add0~5_sumout ;
 wire \inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ;
 wire \inst12|Add0~65_combout ;
 wire \inst12|Add0~6 ;
 wire \inst12|Add0~1_sumout ;
 wire \inst16|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ;
-wire \inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ;
 wire \inst11|MUX4A|auto_generated|l2_w15_n0_mux_dataout~0_combout ;
 wire \inst2|pc_load~0_combout ;
 wire \inst2|pc_load~1_combout ;
 wire \inst2|pc_load~2_combout ;
 wire \inst2|pc_load~3_combout ;
+wire \inst2|WrEn~1_combout ;
 wire \inst2|pc_load~4_combout ;
 wire \inst3|auto_generated|_~0_combout ;
 wire \inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ;
@@ -261,7 +248,7 @@ wire \inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ;
 wire \inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ;
 wire \inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ;
 wire \inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ;
-wire \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ;
+wire \inst9|inst|n[1]~0_combout ;
 wire \inst9|inst3~combout ;
 wire \inst9|inst2|dffs[0]~0_combout ;
 wire \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ;
@@ -282,27 +269,35 @@ wire \inst12|Mux13~0_combout ;
 wire \inst12|Mux14~0_combout ;
 wire \inst12|Mux15~0_combout ;
 wire [2:0] \inst11|DEMUX4|auto_generated|w_anode22w ;
-wire [15:0] \inst11|R2|dffs ;
-wire [15:0] \inst4|dffs ;
-wire [2:0] \inst11|DEMUX4|auto_generated|w_anode30w ;
-wire [15:0] \inst1|altsyncram_component|auto_generated|q_a ;
-wire [2:0] \inst9|inst|n ;
-wire [10:0] \inst3|auto_generated|counter_reg_bit ;
 wire [2:0] \inst11|DEMUX4|auto_generated|w_anode14w ;
-wire [2:0] \inst9|inst2|dffs ;
-wire [15:0] \inst|altsyncram_component|auto_generated|q_a ;
-wire [15:0] \inst11|R0|dffs ;
+wire [15:0] \inst4|dffs ;
 wire [15:0] \inst11|R1|dffs ;
+wire [15:0] \inst11|R0|dffs ;
+wire [15:0] \inst|altsyncram_component|auto_generated|q_a ;
+wire [2:0] \inst9|inst2|dffs ;
+wire [15:0] \inst1|altsyncram_component|auto_generated|q_a ;
+wire [10:0] \inst3|auto_generated|counter_reg_bit ;
 wire [15:0] \inst1|altsyncram_component|auto_generated|q_b ;
+wire [15:0] \inst11|R2|dffs ;
+wire [2:0] \inst11|DEMUX4|auto_generated|w_anode30w ;
 wire [15:0] \inst11|R3|dffs ;
 
 wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a14_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a11_PORTADATAOUT_bus ;
 wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a13_PORTADATAOUT_bus ;
 wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a15_PORTADATAOUT_bus ;
 wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a12_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a11_PORTADATAOUT_bus ;
 wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a12_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a10_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a9_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a8_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus ;
+wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
 wire [0:0] \inst1|altsyncram_component|auto_generated|ram_block1a15_PORTADATAOUT_bus ;
 wire [0:0] \inst1|altsyncram_component|auto_generated|ram_block1a15_PORTBDATAOUT_bus ;
 wire [0:0] \inst1|altsyncram_component|auto_generated|ram_block1a14_PORTADATAOUT_bus ;
@@ -335,19 +330,8 @@ wire [0:0] \inst1|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_
 wire [0:0] \inst1|altsyncram_component|auto_generated|ram_block1a1_PORTBDATAOUT_bus ;
 wire [0:0] \inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
 wire [0:0] \inst1|altsyncram_component|auto_generated|ram_block1a0_PORTBDATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a10_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a9_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a8_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus ;
-wire [0:0] \inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus ;
 
 assign \inst|altsyncram_component|auto_generated|q_a [14] = \inst|altsyncram_component|auto_generated|ram_block1a14_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [11] = \inst|altsyncram_component|auto_generated|ram_block1a11_PORTADATAOUT_bus [0];
 
 assign \inst|altsyncram_component|auto_generated|q_a [13] = \inst|altsyncram_component|auto_generated|ram_block1a13_PORTADATAOUT_bus [0];
 
@@ -355,9 +339,29 @@ assign \inst|altsyncram_component|auto_generated|q_a [15] = \inst|altsyncram_com
 
 assign \inst|altsyncram_component|auto_generated|q_a [2] = \inst|altsyncram_component|auto_generated|ram_block1a2_PORTADATAOUT_bus [0];
 
-assign \inst|altsyncram_component|auto_generated|q_a [12] = \inst|altsyncram_component|auto_generated|ram_block1a12_PORTADATAOUT_bus [0];
+assign \inst|altsyncram_component|auto_generated|q_a [11] = \inst|altsyncram_component|auto_generated|ram_block1a11_PORTADATAOUT_bus [0];
 
 assign \inst|altsyncram_component|auto_generated|q_a [3] = \inst|altsyncram_component|auto_generated|ram_block1a3_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [12] = \inst|altsyncram_component|auto_generated|ram_block1a12_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [10] = \inst|altsyncram_component|auto_generated|ram_block1a10_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [9] = \inst|altsyncram_component|auto_generated|ram_block1a9_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [8] = \inst|altsyncram_component|auto_generated|ram_block1a8_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [7] = \inst|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [6] = \inst|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [5] = \inst|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [4] = \inst|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [1] = \inst|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus [0];
+
+assign \inst|altsyncram_component|auto_generated|q_a [0] = \inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
 
 assign \inst1|altsyncram_component|auto_generated|q_a [15] = \inst1|altsyncram_component|auto_generated|ram_block1a15_PORTADATAOUT_bus [0];
 
@@ -422,24 +426,6 @@ assign \inst1|altsyncram_component|auto_generated|q_b [1] = \inst1|altsyncram_co
 assign \inst1|altsyncram_component|auto_generated|q_a [0] = \inst1|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
 
 assign \inst1|altsyncram_component|auto_generated|q_b [0] = \inst1|altsyncram_component|auto_generated|ram_block1a0_PORTBDATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [10] = \inst|altsyncram_component|auto_generated|ram_block1a10_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [9] = \inst|altsyncram_component|auto_generated|ram_block1a9_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [8] = \inst|altsyncram_component|auto_generated|ram_block1a8_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [7] = \inst|altsyncram_component|auto_generated|ram_block1a7_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [6] = \inst|altsyncram_component|auto_generated|ram_block1a6_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [5] = \inst|altsyncram_component|auto_generated|ram_block1a5_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [4] = \inst|altsyncram_component|auto_generated|ram_block1a4_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [1] = \inst|altsyncram_component|auto_generated|ram_block1a1_PORTADATAOUT_bus [0];
-
-assign \inst|altsyncram_component|auto_generated|q_a [0] = \inst|altsyncram_component|auto_generated|ram_block1a0_PORTADATAOUT_bus [0];
 
 cyclonev_io_obuf \alu_out[15]~output (
 	.i(\inst12|Mux0~0_combout ),
@@ -679,6 +665,246 @@ cyclonev_io_obuf \alu_out[0]~output (
 defparam \alu_out[0]~output .bus_hold = "false";
 defparam \alu_out[0]~output .open_drain_output = "false";
 defparam \alu_out[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[15]~output (
+	.i(\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[15]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[15]~output .bus_hold = "false";
+defparam \ir_mux[15]~output .open_drain_output = "false";
+defparam \ir_mux[15]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[14]~output (
+	.i(\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[14]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[14]~output .bus_hold = "false";
+defparam \ir_mux[14]~output .open_drain_output = "false";
+defparam \ir_mux[14]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[13]~output (
+	.i(\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[13]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[13]~output .bus_hold = "false";
+defparam \ir_mux[13]~output .open_drain_output = "false";
+defparam \ir_mux[13]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[12]~output (
+	.i(\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[12]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[12]~output .bus_hold = "false";
+defparam \ir_mux[12]~output .open_drain_output = "false";
+defparam \ir_mux[12]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[11]~output (
+	.i(\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[11]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[11]~output .bus_hold = "false";
+defparam \ir_mux[11]~output .open_drain_output = "false";
+defparam \ir_mux[11]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[10]~output (
+	.i(\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[10]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[10]~output .bus_hold = "false";
+defparam \ir_mux[10]~output .open_drain_output = "false";
+defparam \ir_mux[10]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[9]~output (
+	.i(\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[9]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[9]~output .bus_hold = "false";
+defparam \ir_mux[9]~output .open_drain_output = "false";
+defparam \ir_mux[9]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[8]~output (
+	.i(\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[8]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[8]~output .bus_hold = "false";
+defparam \ir_mux[8]~output .open_drain_output = "false";
+defparam \ir_mux[8]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[7]~output (
+	.i(\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[7]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[7]~output .bus_hold = "false";
+defparam \ir_mux[7]~output .open_drain_output = "false";
+defparam \ir_mux[7]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[6]~output (
+	.i(\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[6]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[6]~output .bus_hold = "false";
+defparam \ir_mux[6]~output .open_drain_output = "false";
+defparam \ir_mux[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[5]~output (
+	.i(\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[5]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[5]~output .bus_hold = "false";
+defparam \ir_mux[5]~output .open_drain_output = "false";
+defparam \ir_mux[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[4]~output (
+	.i(\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[4]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[4]~output .bus_hold = "false";
+defparam \ir_mux[4]~output .open_drain_output = "false";
+defparam \ir_mux[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[3]~output (
+	.i(\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[3]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[3]~output .bus_hold = "false";
+defparam \ir_mux[3]~output .open_drain_output = "false";
+defparam \ir_mux[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[2]~output (
+	.i(\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[2]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[2]~output .bus_hold = "false";
+defparam \ir_mux[2]~output .open_drain_output = "false";
+defparam \ir_mux[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[1]~output (
+	.i(\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[1]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[1]~output .bus_hold = "false";
+defparam \ir_mux[1]~output .open_drain_output = "false";
+defparam \ir_mux[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \ir_mux[0]~output (
+	.i(\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(ir_mux[0]),
+	.obar());
+// synopsys translate_off
+defparam \ir_mux[0]~output .bus_hold = "false";
+defparam \ir_mux[0]~output .open_drain_output = "false";
+defparam \ir_mux[0]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \state[2]~output (
@@ -964,246 +1190,6 @@ cyclonev_io_obuf \data_b[0]~output (
 defparam \data_b[0]~output .bus_hold = "false";
 defparam \data_b[0]~output .open_drain_output = "false";
 defparam \data_b[0]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[15]~output (
-	.i(\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[15]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[15]~output .bus_hold = "false";
-defparam \ir_mux[15]~output .open_drain_output = "false";
-defparam \ir_mux[15]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[14]~output (
-	.i(\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[14]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[14]~output .bus_hold = "false";
-defparam \ir_mux[14]~output .open_drain_output = "false";
-defparam \ir_mux[14]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[13]~output (
-	.i(\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[13]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[13]~output .bus_hold = "false";
-defparam \ir_mux[13]~output .open_drain_output = "false";
-defparam \ir_mux[13]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[12]~output (
-	.i(\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[12]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[12]~output .bus_hold = "false";
-defparam \ir_mux[12]~output .open_drain_output = "false";
-defparam \ir_mux[12]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[11]~output (
-	.i(\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[11]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[11]~output .bus_hold = "false";
-defparam \ir_mux[11]~output .open_drain_output = "false";
-defparam \ir_mux[11]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[10]~output (
-	.i(\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[10]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[10]~output .bus_hold = "false";
-defparam \ir_mux[10]~output .open_drain_output = "false";
-defparam \ir_mux[10]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[9]~output (
-	.i(\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[9]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[9]~output .bus_hold = "false";
-defparam \ir_mux[9]~output .open_drain_output = "false";
-defparam \ir_mux[9]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[8]~output (
-	.i(\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[8]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[8]~output .bus_hold = "false";
-defparam \ir_mux[8]~output .open_drain_output = "false";
-defparam \ir_mux[8]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[7]~output (
-	.i(\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[7]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[7]~output .bus_hold = "false";
-defparam \ir_mux[7]~output .open_drain_output = "false";
-defparam \ir_mux[7]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[6]~output (
-	.i(\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[6]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[6]~output .bus_hold = "false";
-defparam \ir_mux[6]~output .open_drain_output = "false";
-defparam \ir_mux[6]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[5]~output (
-	.i(\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[5]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[5]~output .bus_hold = "false";
-defparam \ir_mux[5]~output .open_drain_output = "false";
-defparam \ir_mux[5]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[4]~output (
-	.i(\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[4]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[4]~output .bus_hold = "false";
-defparam \ir_mux[4]~output .open_drain_output = "false";
-defparam \ir_mux[4]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[3]~output (
-	.i(\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[3]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[3]~output .bus_hold = "false";
-defparam \ir_mux[3]~output .open_drain_output = "false";
-defparam \ir_mux[3]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[2]~output (
-	.i(\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[2]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[2]~output .bus_hold = "false";
-defparam \ir_mux[2]~output .open_drain_output = "false";
-defparam \ir_mux[2]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[1]~output (
-	.i(\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[1]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[1]~output .bus_hold = "false";
-defparam \ir_mux[1]~output .open_drain_output = "false";
-defparam \ir_mux[1]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \ir_mux[0]~output (
-	.i(\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(ir_mux[0]),
-	.obar());
-// synopsys translate_off
-defparam \ir_mux[0]~output .bus_hold = "false";
-defparam \ir_mux[0]~output .open_drain_output = "false";
-defparam \ir_mux[0]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \r0[15]~output (
@@ -3202,6 +3188,60 @@ defparam \inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .lut_mask = 64'h1
 defparam \inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
+cyclonev_ram_block \inst|altsyncram_component|auto_generated|ram_block1a12 (
+	.portawe(gnd),
+	.portare(vcc),
+	.portaaddrstall(gnd),
+	.portbwe(gnd),
+	.portbre(vcc),
+	.portbaddrstall(gnd),
+	.clk0(\CLK~input_o ),
+	.clk1(gnd),
+	.ena0(vcc),
+	.ena1(vcc),
+	.ena2(vcc),
+	.ena3(vcc),
+	.clr0(gnd),
+	.clr1(gnd),
+	.nerror(vcc),
+	.portadatain({\~GND~combout }),
+	.portaaddr({\inst3|auto_generated|counter_reg_bit [10],\inst3|auto_generated|counter_reg_bit [9],\inst3|auto_generated|counter_reg_bit [8],\inst3|auto_generated|counter_reg_bit [7],\inst3|auto_generated|counter_reg_bit [6],\inst3|auto_generated|counter_reg_bit [5],
+\inst3|auto_generated|counter_reg_bit [4],\inst3|auto_generated|counter_reg_bit [3],\inst3|auto_generated|counter_reg_bit [2],\inst3|auto_generated|counter_reg_bit [1],\inst3|auto_generated|counter_reg_bit [0]}),
+	.portabyteenamasks(1'b1),
+	.portbdatain(1'b0),
+	.portbaddr(11'b00000000000),
+	.portbbyteenamasks(1'b1),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.portadataout(\inst|altsyncram_component|auto_generated|ram_block1a12_PORTADATAOUT_bus ),
+	.portbdataout(),
+	.eccstatus(),
+	.dftout());
+// synopsys translate_off
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .data_interleave_offset_in_bits = 1;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .data_interleave_width_in_bits = 1;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .init_file = "prog_test.mif";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .init_file_layout = "port_a";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .logical_ram_name = "prog_mem:inst|altsyncram:altsyncram_component|altsyncram_mso1:auto_generated|ALTSYNCRAM";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .operation_mode = "single_port";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_address_clear = "none";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_address_width = 11;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_byte_enable_clock = "none";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_data_out_clear = "none";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_data_out_clock = "none";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_data_width = 1;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_first_address = 0;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_first_bit_number = 12;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_last_address = 2047;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_logical_ram_depth = 2048;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_logical_ram_width = 16;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_read_during_write_mode = "new_data_no_nbe_read";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_b_address_width = 11;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_b_data_width = 1;
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .ram_block_type = "M20K";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .mem_init0 = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000B5";
+// synopsys translate_on
+
 cyclonev_ram_block \inst|altsyncram_component|auto_generated|ram_block1a14 (
 	.portawe(gnd),
 	.portare(vcc),
@@ -3253,7 +3293,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a14 .port_a_read_du
 defparam \inst|altsyncram_component|auto_generated|ram_block1a14 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a14 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a14 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a14 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a14 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000115";
 // synopsys translate_on
 
 cyclonev_ram_block \inst|altsyncram_component|auto_generated|ram_block1a15 (
@@ -3307,94 +3347,17 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a15 .port_a_read_du
 defparam \inst|altsyncram_component|auto_generated|ram_block1a15 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a15 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a15 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a15 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-// synopsys translate_on
-
-cyclonev_ram_block \inst|altsyncram_component|auto_generated|ram_block1a12 (
-	.portawe(gnd),
-	.portare(vcc),
-	.portaaddrstall(gnd),
-	.portbwe(gnd),
-	.portbre(vcc),
-	.portbaddrstall(gnd),
-	.clk0(\CLK~input_o ),
-	.clk1(gnd),
-	.ena0(vcc),
-	.ena1(vcc),
-	.ena2(vcc),
-	.ena3(vcc),
-	.clr0(gnd),
-	.clr1(gnd),
-	.nerror(vcc),
-	.portadatain({\~GND~combout }),
-	.portaaddr({\inst3|auto_generated|counter_reg_bit [10],\inst3|auto_generated|counter_reg_bit [9],\inst3|auto_generated|counter_reg_bit [8],\inst3|auto_generated|counter_reg_bit [7],\inst3|auto_generated|counter_reg_bit [6],\inst3|auto_generated|counter_reg_bit [5],
-\inst3|auto_generated|counter_reg_bit [4],\inst3|auto_generated|counter_reg_bit [3],\inst3|auto_generated|counter_reg_bit [2],\inst3|auto_generated|counter_reg_bit [1],\inst3|auto_generated|counter_reg_bit [0]}),
-	.portabyteenamasks(1'b1),
-	.portbdatain(1'b0),
-	.portbaddr(11'b00000000000),
-	.portbbyteenamasks(1'b1),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.portadataout(\inst|altsyncram_component|auto_generated|ram_block1a12_PORTADATAOUT_bus ),
-	.portbdataout(),
-	.eccstatus(),
-	.dftout());
-// synopsys translate_off
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .data_interleave_offset_in_bits = 1;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .data_interleave_width_in_bits = 1;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .init_file = "prog_test.mif";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .init_file_layout = "port_a";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .logical_ram_name = "prog_mem:inst|altsyncram:altsyncram_component|altsyncram_mso1:auto_generated|ALTSYNCRAM";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .operation_mode = "single_port";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_address_clear = "none";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_address_width = 11;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_byte_enable_clock = "none";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_data_out_clear = "none";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_data_out_clock = "none";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_data_width = 1;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_first_address = 0;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_first_bit_number = 12;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_last_address = 2047;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_logical_ram_depth = 2048;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_logical_ram_width = 16;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_a_read_during_write_mode = "new_data_no_nbe_read";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_b_address_width = 11;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .port_b_data_width = 1;
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a12 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000026";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst2|WrEn~1 (
-// Equation(s):
-// \inst2|WrEn~1_combout  = (!\inst|altsyncram_component|auto_generated|q_a [14] & (!\inst|altsyncram_component|auto_generated|q_a [15] & \inst|altsyncram_component|auto_generated|q_a [12]))
-
-	.dataa(!\inst|altsyncram_component|auto_generated|q_a [14]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [15]),
-	.datac(!\inst|altsyncram_component|auto_generated|q_a [12]),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst2|WrEn~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst2|WrEn~1 .extended_lut = "off";
-defparam \inst2|WrEn~1 .lut_mask = 64'h0808080808080808;
-defparam \inst2|WrEn~1 .shared_arith = "off";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a15 .mem_init0 = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003A";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst2|WrEn~0 (
 // Equation(s):
-// \inst2|WrEn~0_combout  = ( \inst|altsyncram_component|auto_generated|q_a [12] & ( (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14] & (!\inst|altsyncram_component|auto_generated|q_a [13] & 
+// \inst2|WrEn~0_combout  = ( !\inst|altsyncram_component|auto_generated|q_a [12] & ( (\inst9|inst2|dffs [0] & (\inst|altsyncram_component|auto_generated|q_a [13] & (!\inst|altsyncram_component|auto_generated|q_a [14] & 
 // !\inst|altsyncram_component|auto_generated|q_a [15]))) ) )
 
 	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [14]),
-	.datac(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datab(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datac(!\inst|altsyncram_component|auto_generated|q_a [14]),
 	.datad(!\inst|altsyncram_component|auto_generated|q_a [15]),
 	.datae(!\inst|altsyncram_component|auto_generated|q_a [12]),
 	.dataf(gnd),
@@ -3407,8 +3370,49 @@ cyclonev_lcell_comb \inst2|WrEn~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst2|WrEn~0 .extended_lut = "off";
-defparam \inst2|WrEn~0 .lut_mask = 64'h0000400000004000;
+defparam \inst2|WrEn~0 .lut_mask = 64'h1000000010000000;
 defparam \inst2|WrEn~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \inst4|dffs[13] (
+	.clk(\CLK~input_o ),
+	.d(\inst|altsyncram_component|auto_generated|q_a [13]),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\inst9|inst2|dffs [0]),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\inst4|dffs [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \inst4|dffs[13] .is_wysiwyg = "true";
+defparam \inst4|dffs[13] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 (
+// Equation(s):
+// \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  = (!\inst9|inst2|dffs [0] & ((\inst4|dffs [13]))) # (\inst9|inst2|dffs [0] & (\inst|altsyncram_component|auto_generated|q_a [13]))
+
+	.dataa(!\inst9|inst2|dffs [0]),
+	.datab(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datac(!\inst4|dffs [13]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .extended_lut = "off";
+defparam \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst4|dffs[15] (
@@ -3450,6 +3454,47 @@ cyclonev_lcell_comb \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0 (
 defparam \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .extended_lut = "off";
 defparam \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .lut_mask = 64'h2727272727272727;
 defparam \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \inst4|dffs[12] (
+	.clk(\CLK~input_o ),
+	.d(\inst|altsyncram_component|auto_generated|q_a [12]),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\inst9|inst2|dffs [0]),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\inst4|dffs [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \inst4|dffs[12] .is_wysiwyg = "true";
+defparam \inst4|dffs[12] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 (
+// Equation(s):
+// \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  = (!\inst9|inst2|dffs [0] & (\inst4|dffs [12])) # (\inst9|inst2|dffs [0] & ((\inst|altsyncram_component|auto_generated|q_a [12])))
+
+	.dataa(!\inst9|inst2|dffs [0]),
+	.datab(!\inst4|dffs [12]),
+	.datac(!\inst|altsyncram_component|auto_generated|q_a [12]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .extended_lut = "off";
+defparam \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .lut_mask = 64'h2727272727272727;
+defparam \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst15|Add0~1 (
@@ -3784,97 +3829,6 @@ defparam \inst1|altsyncram_component|auto_generated|ram_block1a10 .ram_block_typ
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a10 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
-dffeas \inst4|dffs[12] (
-	.clk(\CLK~input_o ),
-	.d(\inst|altsyncram_component|auto_generated|q_a [12]),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\inst9|inst2|dffs [0]),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\inst4|dffs [12]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \inst4|dffs[12] .is_wysiwyg = "true";
-defparam \inst4|dffs[12] .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 (
-// Equation(s):
-// \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  = (!\inst9|inst2|dffs [0] & ((\inst4|dffs [12]))) # (\inst9|inst2|dffs [0] & (\inst|altsyncram_component|auto_generated|q_a [12]))
-
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [12]),
-	.datac(!\inst4|dffs [12]),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
-defparam \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst2|ld_mux (
-// Equation(s):
-// \inst2|ld_mux~combout  = (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & 
-// !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout )))
-
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst2|ld_mux~combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst2|ld_mux .extended_lut = "off";
-defparam \inst2|ld_mux .lut_mask = 64'h8000800080008000;
-defparam \inst2|ld_mux .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst2|acc_load (
-// Equation(s):
-// \inst2|acc_load~combout  = ( \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( \inst9|inst2|dffs [1] & ( (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & !\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) 
-// ) ) # ( !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( \inst9|inst2|dffs [1] & ( (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & 
-// ((\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # (\inst9|inst2|dffs [0])))) ) ) ) # ( !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( !\inst9|inst2|dffs [1] & ( (\inst9|inst2|dffs [0] & 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & !\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) ) ) )
-
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datac(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datad(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datae(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.dataf(!\inst9|inst2|dffs [1]),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst2|acc_load~combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst2|acc_load .extended_lut = "off";
-defparam \inst2|acc_load .lut_mask = 64'h400000004C003030;
-defparam \inst2|acc_load .shared_arith = "off";
-// synopsys translate_on
-
 cyclonev_ram_block \inst|altsyncram_component|auto_generated|ram_block1a11 (
 	.portawe(gnd),
 	.portare(vcc),
@@ -3926,7 +3880,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a11 .port_a_read_du
 defparam \inst|altsyncram_component|auto_generated|ram_block1a11 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a11 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a11 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a11 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a11 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000060";
 // synopsys translate_on
 
 dffeas \inst4|dffs[11] (
@@ -3972,16 +3926,16 @@ defparam \inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0 .shared_arith = "
 
 cyclonev_lcell_comb \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0 (
 // Equation(s):
-// \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ) ) ) # ( 
-// !\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  & ( (\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & 
-// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) ) )
+// \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & !\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ) ) ) # ( 
+// !\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout  & ( (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  & (((\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ))) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
 	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datac(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datad(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datae(!\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
+	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
+	.datad(!\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
+	.datae(!\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
@@ -3992,22 +3946,22 @@ cyclonev_lcell_comb \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .lut_mask = 64'h0001FFFD0001FFFD;
+defparam \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .lut_mask = 64'h007F80FF007F80FF;
 defparam \inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0 (
 // Equation(s):
-// \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) # ( 
-// !\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  & ( (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
-// (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) )
+// \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & !\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ) ) ) # ( 
+// !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  & (((\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ))) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.datae(!\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
+	.datad(!\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
+	.datae(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
@@ -4018,43 +3972,43 @@ cyclonev_lcell_comb \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .lut_mask = 64'h0001FEFF0001FEFF;
+defparam \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .lut_mask = 64'h007F80FF007F80FF;
 defparam \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst12|ldr (
+cyclonev_lcell_comb \inst12|wen~0 (
 // Equation(s):
-// \inst12|ldr~combout  = (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))
+// \inst12|wen~0_combout  = ( !\inst9|inst2|dffs [0] & ( (\inst4|dffs [15] & (\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & (\inst9|inst2|dffs [1] & (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & 
+// !\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout )))) ) ) # ( \inst9|inst2|dffs [0] & ( (((\inst|altsyncram_component|auto_generated|q_a [15]))) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
+	.dataa(!\inst4|dffs [15]),
+	.datab(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datac(!\inst|altsyncram_component|auto_generated|q_a [15]),
+	.datad(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
+	.datae(!\inst9|inst2|dffs [0]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datag(!\inst9|inst2|dffs [1]),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst12|ldr~combout ),
+	.combout(\inst12|wen~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \inst12|ldr .extended_lut = "off";
-defparam \inst12|ldr .lut_mask = 64'h0202020202020202;
-defparam \inst12|ldr .shared_arith = "off";
+defparam \inst12|wen~0 .extended_lut = "on";
+defparam \inst12|wen~0 .lut_mask = 64'h00010F0F00000F0F;
+defparam \inst12|wen~0 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst11|DEMUX4|auto_generated|w_anode14w[2] (
 // Equation(s):
-// \inst11|DEMUX4|auto_generated|w_anode14w [2] = ( \inst12|ldr~combout  & ( (\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & !\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ) ) ) # ( !\inst12|ldr~combout  & ( (\inst9|inst2|dffs 
-// [0] & (\inst|altsyncram_component|auto_generated|q_a [15] & (\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & !\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ))) ) )
+// \inst11|DEMUX4|auto_generated|w_anode14w [2] = (\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & (!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & \inst12|wen~0_combout ))
 
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [15]),
-	.datac(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.datad(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.datae(!\inst12|ldr~combout ),
+	.dataa(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.datab(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.datac(!\inst12|wen~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
@@ -4065,7 +4019,7 @@ cyclonev_lcell_comb \inst11|DEMUX4|auto_generated|w_anode14w[2] (
 	.shareout());
 // synopsys translate_off
 defparam \inst11|DEMUX4|auto_generated|w_anode14w[2] .extended_lut = "off";
-defparam \inst11|DEMUX4|auto_generated|w_anode14w[2] .lut_mask = 64'h01000F0001000F00;
+defparam \inst11|DEMUX4|auto_generated|w_anode14w[2] .lut_mask = 64'h0404040404040404;
 defparam \inst11|DEMUX4|auto_generated|w_anode14w[2] .shared_arith = "off";
 // synopsys translate_on
 
@@ -4089,14 +4043,13 @@ defparam \inst11|R1|dffs[10] .power_up = "low";
 
 cyclonev_lcell_comb \inst11|DEMUX4|auto_generated|w_anode22w[2] (
 // Equation(s):
-// \inst11|DEMUX4|auto_generated|w_anode22w [2] = ( \inst12|ldr~combout  & ( (!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ) ) ) # ( !\inst12|ldr~combout  & ( (\inst9|inst2|dffs 
-// [0] & (\inst|altsyncram_component|auto_generated|q_a [15] & (!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ))) ) )
+// \inst11|DEMUX4|auto_generated|w_anode22w [2] = (!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & (\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & \inst12|wen~0_combout ))
 
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [15]),
-	.datac(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.datad(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.datae(!\inst12|ldr~combout ),
+	.dataa(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.datab(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.datac(!\inst12|wen~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
@@ -4107,7 +4060,7 @@ cyclonev_lcell_comb \inst11|DEMUX4|auto_generated|w_anode22w[2] (
 	.shareout());
 // synopsys translate_off
 defparam \inst11|DEMUX4|auto_generated|w_anode22w[2] .extended_lut = "off";
-defparam \inst11|DEMUX4|auto_generated|w_anode22w[2] .lut_mask = 64'h001000F0001000F0;
+defparam \inst11|DEMUX4|auto_generated|w_anode22w[2] .lut_mask = 64'h0202020202020202;
 defparam \inst11|DEMUX4|auto_generated|w_anode22w[2] .shared_arith = "off";
 // synopsys translate_on
 
@@ -4131,14 +4084,13 @@ defparam \inst11|R2|dffs[10] .power_up = "low";
 
 cyclonev_lcell_comb \inst11|DEMUX4|auto_generated|w_anode30w[2] (
 // Equation(s):
-// \inst11|DEMUX4|auto_generated|w_anode30w [2] = ( \inst12|ldr~combout  & ( (\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ) ) ) # ( !\inst12|ldr~combout  & ( (\inst9|inst2|dffs 
-// [0] & (\inst|altsyncram_component|auto_generated|q_a [15] & (\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & \inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ))) ) )
+// \inst11|DEMUX4|auto_generated|w_anode30w [2] = (\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & (\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & \inst12|wen~0_combout ))
 
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [15]),
-	.datac(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.datad(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.datae(!\inst12|ldr~combout ),
+	.dataa(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.datab(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.datac(!\inst12|wen~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
@@ -4149,7 +4101,7 @@ cyclonev_lcell_comb \inst11|DEMUX4|auto_generated|w_anode30w[2] (
 	.shareout());
 // synopsys translate_off
 defparam \inst11|DEMUX4|auto_generated|w_anode30w[2] .extended_lut = "off";
-defparam \inst11|DEMUX4|auto_generated|w_anode30w[2] .lut_mask = 64'h0001000F0001000F;
+defparam \inst11|DEMUX4|auto_generated|w_anode30w[2] .lut_mask = 64'h0101010101010101;
 defparam \inst11|DEMUX4|auto_generated|w_anode30w[2] .shared_arith = "off";
 // synopsys translate_on
 
@@ -5105,12 +5057,11 @@ defparam \inst11|R3|dffs[0] .is_wysiwyg = "true";
 defparam \inst11|R3|dffs[0] .power_up = "low";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0 (
+cyclonev_lcell_comb \inst12|Add0~94 (
 // Equation(s):
-// \inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( \inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R3|dffs [0] ) ) ) # ( 
-// !\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( \inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R2|dffs [0] ) ) ) # ( \inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( 
-// !\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R1|dffs [0] ) ) ) # ( !\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( !\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [0] ) ) 
-// )
+// \inst12|Add0~94_combout  = ( \inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( \inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R3|dffs [0] ) ) ) # ( !\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & 
+// ( \inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R2|dffs [0] ) ) ) # ( \inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( !\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R1|dffs [0] ) ) 
+// ) # ( !\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( !\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [0] ) ) )
 
 	.dataa(!\inst11|R0|dffs [0]),
 	.datab(!\inst11|R1|dffs [0]),
@@ -5121,47 +5072,98 @@ cyclonev_lcell_comb \inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0 .lut_mask = 64'h555533330F0F00FF;
-defparam \inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst12|Add0~94 (
-// Equation(s):
-// \inst12|Add0~94_combout  = (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & ((!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  $ (!\inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout )))) # 
-// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & ((!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout )) # 
-// (\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ((\inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout )))))
-
-	.dataa(!\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datac(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
 	.combout(\inst12|Add0~94_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
 defparam \inst12|Add0~94 .extended_lut = "off";
-defparam \inst12|Add0~94 .lut_mask = 64'h1CD31CD31CD31CD3;
+defparam \inst12|Add0~94 .lut_mask = 64'h555533330F0F00FF;
 defparam \inst12|Add0~94 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst12|Add0~99 (
+cyclonev_lcell_comb \inst12|Add0~95 (
 // Equation(s):
-// \inst12|Add0~99_combout  = (\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout  & !\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout )
+// \inst12|Add0~95_combout  = (!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ((!\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & (\inst11|R0|dffs [0])) # (\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & 
+// ((\inst11|R1|dffs [0])))))
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.datac(!\inst11|R0|dffs [0]),
+	.datad(!\inst11|R1|dffs [0]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst12|Add0~95_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst12|Add0~95 .extended_lut = "off";
+defparam \inst12|Add0~95 .lut_mask = 64'h084C084C084C084C;
+defparam \inst12|Add0~95 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst12|Add0~96 (
+// Equation(s):
+// \inst12|Add0~96_combout  = ( \inst11|R2|dffs [0] & ( \inst11|R3|dffs [0] & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & 
+// !\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout )) ) ) ) # ( !\inst11|R2|dffs [0] & ( \inst11|R3|dffs [0] & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  
+// & ((!\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout )))) ) ) ) # ( \inst11|R2|dffs [0] & ( !\inst11|R3|dffs [0] & ( 
+// (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ((!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ) # 
+// (\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout )))) ) ) ) # ( !\inst11|R2|dffs [0] & ( !\inst11|R3|dffs [0] & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout 
+// ) ) ) )
+
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datac(!\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.datad(!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R2|dffs [0]),
+	.dataf(!\inst11|R3|dffs [0]),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst12|Add0~96_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst12|Add0~96 .extended_lut = "off";
+defparam \inst12|Add0~96 .lut_mask = 64'h2222220222202200;
+defparam \inst12|Add0~96 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst12|Add0~97 (
+// Equation(s):
+// \inst12|Add0~97_combout  = ( \inst12|Add0~96_combout  & ( (!\inst12|Add0~95_combout ) # ((\inst12|Add0~94_combout  & ((!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ) # (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout )))) ) 
+// ) # ( !\inst12|Add0~96_combout  & ( (\inst12|Add0~94_combout  & ((!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ) # (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ))) ) )
+
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datac(!\inst12|Add0~94_combout ),
+	.datad(!\inst12|Add0~95_combout ),
+	.datae(!\inst12|Add0~96_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst12|Add0~97_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst12|Add0~97 .extended_lut = "off";
+defparam \inst12|Add0~97 .lut_mask = 64'h0D0DFF0D0D0DFF0D;
+defparam \inst12|Add0~97 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst12|Add0~102 (
+// Equation(s):
+// \inst12|Add0~102_combout  = (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout )
+
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
@@ -5169,24 +5171,24 @@ cyclonev_lcell_comb \inst12|Add0~99 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst12|Add0~99_combout ),
+	.combout(\inst12|Add0~102_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \inst12|Add0~99 .extended_lut = "off";
-defparam \inst12|Add0~99 .lut_mask = 64'h4444444444444444;
-defparam \inst12|Add0~99 .shared_arith = "off";
+defparam \inst12|Add0~102 .extended_lut = "off";
+defparam \inst12|Add0~102 .lut_mask = 64'h2222222222222222;
+defparam \inst12|Add0~102 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst12|Add0~97 (
+cyclonev_lcell_comb \inst12|Add0~100 (
 // Equation(s):
-// \inst12|Add0~97_cout  = CARRY(( (\inst12|Add0~99_combout  & ((!\inst9|inst2|dffs [0] & ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( 
+// \inst12|Add0~100_cout  = CARRY(( (\inst12|Add0~102_combout  & ((!\inst9|inst2|dffs [0] & ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( 
 // !\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  ) + ( !VCC ))
 
 	.dataa(!\inst9|inst2|dffs [0]),
 	.datab(!\inst|altsyncram_component|auto_generated|q_a [14]),
-	.datac(!\inst12|Add0~99_combout ),
+	.datac(!\inst12|Add0~102_combout ),
 	.datad(!\inst4|dffs [14]),
 	.datae(gnd),
 	.dataf(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
@@ -5195,29 +5197,28 @@ cyclonev_lcell_comb \inst12|Add0~97 (
 	.sharein(gnd),
 	.combout(),
 	.sumout(),
-	.cout(\inst12|Add0~97_cout ),
+	.cout(\inst12|Add0~100_cout ),
 	.shareout());
 // synopsys translate_off
-defparam \inst12|Add0~97 .extended_lut = "off";
-defparam \inst12|Add0~97 .lut_mask = 64'h000000FF00000E04;
-defparam \inst12|Add0~97 .shared_arith = "off";
+defparam \inst12|Add0~100 .extended_lut = "off";
+defparam \inst12|Add0~100 .lut_mask = 64'h000000FF00000E04;
+defparam \inst12|Add0~100 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst12|Add0~61 (
 // Equation(s):
-// \inst12|Add0~61_sumout  = SUM(( (\inst12|Add0~93_combout  & ((!\inst9|inst2|dffs [0] & ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( (\inst12|Add0~94_combout  & ((!\inst9|inst2|dffs [0] & 
-// ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( \inst12|Add0~97_cout  ))
-// \inst12|Add0~62  = CARRY(( (\inst12|Add0~93_combout  & ((!\inst9|inst2|dffs [0] & ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( (\inst12|Add0~94_combout  & ((!\inst9|inst2|dffs [0] & 
-// ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( \inst12|Add0~97_cout  ))
+// \inst12|Add0~61_sumout  = SUM(( (\inst12|Add0~93_combout  & ((!\inst9|inst2|dffs [0] & ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( \inst12|Add0~97_combout  ) + ( \inst12|Add0~100_cout  
+// ))
+// \inst12|Add0~62  = CARRY(( (\inst12|Add0~93_combout  & ((!\inst9|inst2|dffs [0] & ((!\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14])))) ) + ( \inst12|Add0~97_combout  ) + ( \inst12|Add0~100_cout  ))
 
 	.dataa(!\inst9|inst2|dffs [0]),
 	.datab(!\inst|altsyncram_component|auto_generated|q_a [14]),
-	.datac(!\inst4|dffs [14]),
-	.datad(!\inst12|Add0~93_combout ),
+	.datac(!\inst12|Add0~93_combout ),
+	.datad(!\inst4|dffs [14]),
 	.datae(gnd),
-	.dataf(!\inst12|Add0~94_combout ),
+	.dataf(!\inst12|Add0~97_combout ),
 	.datag(gnd),
-	.cin(\inst12|Add0~97_cout ),
+	.cin(\inst12|Add0~100_cout ),
 	.sharein(gnd),
 	.combout(),
 	.sumout(\inst12|Add0~61_sumout ),
@@ -5225,7 +5226,7 @@ cyclonev_lcell_comb \inst12|Add0~61 (
 	.shareout());
 // synopsys translate_off
 defparam \inst12|Add0~61 .extended_lut = "off";
-defparam \inst12|Add0~61 .lut_mask = 64'h0000FF1B000000E4;
+defparam \inst12|Add0~61 .lut_mask = 64'h0000FF0000000E04;
 defparam \inst12|Add0~61 .shared_arith = "off";
 // synopsys translate_on
 
@@ -5295,7 +5296,31 @@ defparam \inst1|altsyncram_component|auto_generated|ram_block1a0 .port_b_read_du
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a0 .port_b_read_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a0 .port_b_write_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M20K";
-defparam \inst1|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst1|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000888800000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst12|ldr (
+// Equation(s):
+// \inst12|ldr~combout  = (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & 
+// \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout )))
+
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
+	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst12|ldr~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst12|ldr .extended_lut = "off";
+defparam \inst12|ldr .lut_mask = 64'h0002000200020002;
+defparam \inst12|ldr .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w0_n0_mux_dataout~0 (
@@ -5368,12 +5393,12 @@ defparam \inst11|MUX4A|auto_generated|l2_w0_n0_mux_dataout~0 .shared_arith = "of
 cyclonev_lcell_comb \inst12|Add0~93 (
 // Equation(s):
 // \inst12|Add0~93_combout  = (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (((\inst11|MUX4A|auto_generated|l2_w0_n0_mux_dataout~0_combout )))) # (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
-// (((\inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout )))
+// (((\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout )))
 
 	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.datac(!\inst11|MUX4A|auto_generated|l2_w0_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|MUX4B|auto_generated|l2_w0_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
+	.datac(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datad(!\inst11|MUX4A|auto_generated|l2_w0_n0_mux_dataout~0_combout ),
 	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
@@ -5385,7 +5410,7 @@ cyclonev_lcell_comb \inst12|Add0~93 (
 	.shareout());
 // synopsys translate_off
 defparam \inst12|Add0~93 .extended_lut = "off";
-defparam \inst12|Add0~93 .lut_mask = 64'h1B5F1B5F1B5F1B5F;
+defparam \inst12|Add0~93 .lut_mask = 64'h15BF15BF15BF15BF;
 defparam \inst12|Add0~93 .shared_arith = "off";
 // synopsys translate_on
 
@@ -5485,7 +5510,7 @@ defparam \inst1|altsyncram_component|auto_generated|ram_block1a1 .port_b_read_du
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a1 .port_b_read_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a1 .port_b_write_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a1 .ram_block_type = "M20K";
-defparam \inst1|altsyncram_component|auto_generated|ram_block1a1 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst1|altsyncram_component|auto_generated|ram_block1a1 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000B1B100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w1_n0_mux_dataout~0 (
@@ -5651,7 +5676,7 @@ defparam \inst1|altsyncram_component|auto_generated|ram_block1a2 .port_b_read_du
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a2 .port_b_read_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a2 .port_b_write_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a2 .ram_block_type = "M20K";
-defparam \inst1|altsyncram_component|auto_generated|ram_block1a2 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst1|altsyncram_component|auto_generated|ram_block1a2 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000BE1400000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w2_n0_mux_dataout~0 (
@@ -5817,7 +5842,7 @@ defparam \inst1|altsyncram_component|auto_generated|ram_block1a3 .port_b_read_du
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a3 .port_b_read_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a3 .port_b_write_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a3 .ram_block_type = "M20K";
-defparam \inst1|altsyncram_component|auto_generated|ram_block1a3 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst1|altsyncram_component|auto_generated|ram_block1a3 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000154000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w3_n0_mux_dataout~0 (
@@ -6813,7 +6838,7 @@ defparam \inst1|altsyncram_component|auto_generated|ram_block1a9 .port_b_read_du
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a9 .port_b_read_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a9 .port_b_write_enable_clock = "clock0";
 defparam \inst1|altsyncram_component|auto_generated|ram_block1a9 .ram_block_type = "M20K";
-defparam \inst1|altsyncram_component|auto_generated|ram_block1a9 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst1|altsyncram_component|auto_generated|ram_block1a9 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000155500000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w9_n0_mux_dataout~0 (
@@ -6937,43 +6962,40 @@ defparam \inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .lut_mask = 64'h1
 defparam \inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0 (
+cyclonev_lcell_comb \inst2|acc_load~0 (
 // Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & (\inst1|altsyncram_component|auto_generated|q_a [10])) # 
-// (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout )))) ) ) # ( !\inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// (\inst1|altsyncram_component|auto_generated|q_a [10])) # (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ))))) ) )
+// \inst2|acc_load~0_combout  = ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ) # (!\inst9|inst2|dffs [1]))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout )
 
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [10]),
-	.datab(!\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
+	.datac(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datad(!\inst9|inst2|dffs [1]),
+	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
+	.combout(\inst2|acc_load~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .lut_mask = 64'h0053FF530053FF53;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .shared_arith = "off";
+defparam \inst2|acc_load~0 .extended_lut = "off";
+defparam \inst2|acc_load~0 .lut_mask = 64'hFFFDFFFDFFFDFFFD;
+defparam \inst2|acc_load~0 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst11|G1 (
 // Equation(s):
-// \inst11|G1~combout  = ( \inst2|acc_load~combout  & ( \inst12|ldr~combout  ) ) # ( !\inst2|acc_load~combout  & ( \inst12|ldr~combout  & ( (!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & 
-// !\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ) ) ) ) # ( \inst2|acc_load~combout  & ( !\inst12|ldr~combout  ) ) # ( !\inst2|acc_load~combout  & ( !\inst12|ldr~combout  & ( (\inst9|inst2|dffs [0] & 
-// (\inst|altsyncram_component|auto_generated|q_a [15] & (!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & !\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ))) ) ) )
+// \inst11|G1~combout  = (!\inst2|acc_load~0_combout ) # ((!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & (!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & \inst12|wen~0_combout )))
 
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [15]),
-	.datac(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.datad(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.datae(!\inst2|acc_load~combout ),
-	.dataf(!\inst12|ldr~combout ),
+	.dataa(!\inst7|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.datab(!\inst7|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.datac(!\inst2|acc_load~0_combout ),
+	.datad(!\inst12|wen~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -6983,18 +7005,18 @@ cyclonev_lcell_comb \inst11|G1 (
 	.shareout());
 // synopsys translate_off
 defparam \inst11|G1 .extended_lut = "off";
-defparam \inst11|G1 .lut_mask = 64'h1000FFFFF000FFFF;
+defparam \inst11|G1 .lut_mask = 64'hF0F8F0F8F0F8F0F8;
 defparam \inst11|G1 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[10] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [10]),
+	.asdata(\inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7007,16 +7029,17 @@ defparam \inst11|R0|dffs[10] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst11|R0|dffs [10]))) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) ) ) # ( !\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  & ( 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst11|R0|dffs [10]))) ) )
+// \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [10] & ( \inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  ) ) # ( !\inst11|R0|dffs [10] & ( \inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  & ( 
+// ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) ) # ( \inst11|R0|dffs [10] & ( !\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|R0|dffs [10]),
-	.datae(!\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R0|dffs [10]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w10_n0_mux_dataout~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7026,43 +7049,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .lut_mask = 64'h0002FDFF0002FDFF;
+defparam \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .lut_mask = 64'h00000002FFFDFFFF;
 defparam \inst8|$00000|auto_generated|l1_w10_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & (\inst1|altsyncram_component|auto_generated|q_a [9])) # 
-// (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout )))) ) ) # ( !\inst16|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// (\inst1|altsyncram_component|auto_generated|q_a [9])) # (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ))))) ) )
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [9]),
-	.datab(!\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0 .lut_mask = 64'h0053FF530053FF53;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[9] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [9]),
+	.asdata(\inst16|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7075,16 +7073,17 @@ defparam \inst11|R0|dffs[9] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst11|R0|dffs [9]))) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) ) ) # ( !\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  & ( 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst11|R0|dffs [9]))) ) )
+// \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [9] & ( \inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  ) ) # ( !\inst11|R0|dffs [9] & ( \inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  & ( 
+// ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) ) # ( \inst11|R0|dffs [9] & ( !\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|R0|dffs [9]),
-	.datae(!\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R0|dffs [9]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w9_n0_mux_dataout~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7094,43 +7093,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0 .lut_mask = 64'h0002FDFF0002FDFF;
+defparam \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0 .lut_mask = 64'h00000002FFFDFFFF;
 defparam \inst8|$00000|auto_generated|l1_w9_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & (\inst1|altsyncram_component|auto_generated|q_a [8])) # 
-// (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout )))) ) ) # ( !\inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// (\inst1|altsyncram_component|auto_generated|q_a [8])) # (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ))))) ) )
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [8]),
-	.datab(!\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0 .lut_mask = 64'h0053FF530053FF53;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[8] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [8]),
+	.asdata(\inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7143,16 +7117,17 @@ defparam \inst11|R0|dffs[8] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst11|R0|dffs [8]))) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) ) ) # ( !\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  & ( 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst11|R0|dffs [8]))) ) )
+// \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [8] & ( \inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  ) ) # ( !\inst11|R0|dffs [8] & ( \inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  & ( 
+// ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) ) # ( \inst11|R0|dffs [8] & ( !\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|R0|dffs [8]),
-	.datae(!\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R0|dffs [8]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7162,43 +7137,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0 .lut_mask = 64'h0002FDFF0002FDFF;
+defparam \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0 .lut_mask = 64'h00000002FFFDFFFF;
 defparam \inst8|$00000|auto_generated|l1_w8_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & (\inst1|altsyncram_component|auto_generated|q_a [7])) # 
-// (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout )))) ) ) # ( !\inst16|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// (\inst1|altsyncram_component|auto_generated|q_a [7])) # (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ))))) ) )
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [7]),
-	.datab(!\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0 .lut_mask = 64'h0053FF530053FF53;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[7] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [7]),
+	.asdata(\inst16|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7211,16 +7161,17 @@ defparam \inst11|R0|dffs[7] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst11|R0|dffs [7]))) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) ) ) # ( !\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  & ( 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst11|R0|dffs [7]))) ) )
+// \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [7] & ( \inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  ) ) # ( !\inst11|R0|dffs [7] & ( \inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  & ( 
+// ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) ) # ( \inst11|R0|dffs [7] & ( !\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|R0|dffs [7]),
-	.datae(!\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R0|dffs [7]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w7_n0_mux_dataout~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7230,43 +7181,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0 .lut_mask = 64'h0002FDFF0002FDFF;
+defparam \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0 .lut_mask = 64'h00000002FFFDFFFF;
 defparam \inst8|$00000|auto_generated|l1_w7_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & (\inst1|altsyncram_component|auto_generated|q_a [6])) # 
-// (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout )))) ) ) # ( !\inst16|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// (\inst1|altsyncram_component|auto_generated|q_a [6])) # (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ))))) ) )
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [6]),
-	.datab(!\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0 .lut_mask = 64'h0053FF530053FF53;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[6] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [6]),
+	.asdata(\inst16|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7279,16 +7205,17 @@ defparam \inst11|R0|dffs[6] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst11|R0|dffs [6]))) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) ) ) # ( !\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  & ( 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst11|R0|dffs [6]))) ) )
+// \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [6] & ( \inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  ) ) # ( !\inst11|R0|dffs [6] & ( \inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  & ( 
+// ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) ) # ( \inst11|R0|dffs [6] & ( !\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|R0|dffs [6]),
-	.datae(!\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R0|dffs [6]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w6_n0_mux_dataout~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7298,43 +7225,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0 .lut_mask = 64'h0002FDFF0002FDFF;
+defparam \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0 .lut_mask = 64'h00000002FFFDFFFF;
 defparam \inst8|$00000|auto_generated|l1_w6_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & (\inst1|altsyncram_component|auto_generated|q_a [5])) # 
-// (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout )))) ) ) # ( !\inst16|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// (\inst1|altsyncram_component|auto_generated|q_a [5])) # (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ))))) ) )
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [5]),
-	.datab(!\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0 .lut_mask = 64'h0053FF530053FF53;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[5] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [5]),
+	.asdata(\inst16|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7347,16 +7249,17 @@ defparam \inst11|R0|dffs[5] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst11|R0|dffs [5]))) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) ) ) # ( !\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  & ( 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst11|R0|dffs [5]))) ) )
+// \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [5] & ( \inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  ) ) # ( !\inst11|R0|dffs [5] & ( \inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  & ( 
+// ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) ) # ( \inst11|R0|dffs [5] & ( !\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|R0|dffs [5]),
-	.datae(!\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R0|dffs [5]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w5_n0_mux_dataout~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7366,43 +7269,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0 .lut_mask = 64'h0002FDFF0002FDFF;
+defparam \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0 .lut_mask = 64'h00000002FFFDFFFF;
 defparam \inst8|$00000|auto_generated|l1_w5_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & (\inst1|altsyncram_component|auto_generated|q_a [4])) # 
-// (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout )))) ) ) # ( !\inst16|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// (\inst1|altsyncram_component|auto_generated|q_a [4])) # (\inst2|ld_mux~combout  & ((\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ))))) ) )
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [4]),
-	.datab(!\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0 .lut_mask = 64'h0053FF530053FF53;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[4] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [4]),
+	.asdata(\inst16|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7415,16 +7293,17 @@ defparam \inst11|R0|dffs[4] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # 
-// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (\inst11|R0|dffs [4]))) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) ) ) # ( !\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  & ( 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst11|R0|dffs [4]))) ) )
+// \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [4] & ( \inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  ) ) # ( !\inst11|R0|dffs [4] & ( \inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  & ( 
+// ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) ) # ( \inst11|R0|dffs [4] & ( !\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout  & ( (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|R0|dffs [4]),
-	.datae(!\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|R0|dffs [4]),
+	.dataf(!\inst10|$00000|auto_generated|l1_w4_n0_mux_dataout~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7434,43 +7313,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0 .lut_mask = 64'h0002FDFF0002FDFF;
+defparam \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0 .lut_mask = 64'h00000002FFFDFFFF;
 defparam \inst8|$00000|auto_generated|l1_w4_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & ((\inst1|altsyncram_component|auto_generated|q_a [3]))) # 
-// (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ))) ) ) # ( !\inst16|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// ((\inst1|altsyncram_component|auto_generated|q_a [3]))) # (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout )))) ) )
-
-	.dataa(!\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
-	.datab(!\inst1|altsyncram_component|auto_generated|q_a [3]),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0 .lut_mask = 64'h0035FF350035FF35;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[3] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [3]),
+	.asdata(\inst16|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7483,16 +7337,18 @@ defparam \inst11|R0|dffs[3] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [3] & ( ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
-// \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ) ) ) # ( !\inst11|R0|dffs [3] & ( (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  & 
-// (((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ))) ) )
+// \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [3] & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ) ) ) ) # ( 
+// !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [3] & ( \inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  ) ) ) # ( \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( !\inst11|R0|dffs [3] & ( 
+// (\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  & (((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout )) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ))) ) ) ) # ( !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( !\inst11|R0|dffs [3] & ( \inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout  ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
 	.datad(!\inst10|$00000|auto_generated|l1_w3_n0_mux_dataout~0_combout ),
-	.datae(!\inst11|R0|dffs [3]),
-	.dataf(gnd),
+	.datae(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.dataf(!\inst11|R0|dffs [3]),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7502,43 +7358,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0 .lut_mask = 64'h00FD02FF00FD02FF;
+defparam \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0 .lut_mask = 64'h00FF00FD00FF02FF;
 defparam \inst8|$00000|auto_generated|l1_w3_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & ((\inst1|altsyncram_component|auto_generated|q_a [2]))) # 
-// (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ))) ) ) # ( !\inst16|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// ((\inst1|altsyncram_component|auto_generated|q_a [2]))) # (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout )))) ) )
-
-	.dataa(!\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
-	.datab(!\inst1|altsyncram_component|auto_generated|q_a [2]),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0 .lut_mask = 64'h0035FF350035FF35;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[2] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [2]),
+	.asdata(\inst16|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7551,16 +7382,18 @@ defparam \inst11|R0|dffs[2] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [2] & ( ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
-// \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ) ) ) # ( !\inst11|R0|dffs [2] & ( (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  & 
-// (((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ))) ) )
+// \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [2] & ( ((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
+// (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ) ) ) ) # ( 
+// !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [2] & ( \inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  ) ) ) # ( \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( !\inst11|R0|dffs [2] & ( 
+// (\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  & (((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout )) # 
+// (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ))) ) ) ) # ( !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( !\inst11|R0|dffs [2] & ( \inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout  ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
 	.datad(!\inst10|$00000|auto_generated|l1_w2_n0_mux_dataout~0_combout ),
-	.datae(!\inst11|R0|dffs [2]),
-	.dataf(gnd),
+	.datae(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.dataf(!\inst11|R0|dffs [2]),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7570,43 +7403,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0 .lut_mask = 64'h00FD02FF00FD02FF;
+defparam \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0 .lut_mask = 64'h00FF00FD00FF02FF;
 defparam \inst8|$00000|auto_generated|l1_w2_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & ((\inst1|altsyncram_component|auto_generated|q_a [1]))) # 
-// (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ))) ) ) # ( !\inst16|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// ((\inst1|altsyncram_component|auto_generated|q_a [1]))) # (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout )))) ) )
-
-	.dataa(!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.datab(!\inst1|altsyncram_component|auto_generated|q_a [1]),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .lut_mask = 64'h0035FF350035FF35;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[1] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [1]),
+	.asdata(\inst16|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7619,16 +7427,17 @@ defparam \inst11|R0|dffs[1] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [1] & ( ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
-// \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ) ) ) # ( !\inst11|R0|dffs [1] & ( (\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & 
-// (((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ))) ) )
+// \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [1] ) ) # ( !\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [1] & ( 
+// (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & 
+// \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) ) # ( \inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout  & ( !\inst11|R0|dffs [1] & ( ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # 
+// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
-	.datae(!\inst11|R0|dffs [1]),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst10|$00000|auto_generated|l1_w1_n0_mux_dataout~0_combout ),
+	.dataf(!\inst11|R0|dffs [1]),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7638,43 +7447,18 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .lut_mask = 64'h00FD02FF00FD02FF;
+defparam \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .lut_mask = 64'h0000FFFD0002FFFF;
 defparam \inst8|$00000|auto_generated|l1_w1_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & ((\inst1|altsyncram_component|auto_generated|q_a [0]))) # 
-// (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ))) ) ) # ( !\inst16|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// ((\inst1|altsyncram_component|auto_generated|q_a [0]))) # (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout )))) ) )
-
-	.dataa(!\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.datab(!\inst1|altsyncram_component|auto_generated|q_a [0]),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .lut_mask = 64'h0035FF350035FF35;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst11|R0|dffs[0] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [0]),
+	.asdata(\inst16|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -7687,16 +7471,17 @@ defparam \inst11|R0|dffs[0] .power_up = "low";
 
 cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0 (
 // Equation(s):
-// \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  = ( \inst11|R0|dffs [0] & ( ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & 
-// \inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ) ) ) # ( !\inst11|R0|dffs [0] & ( (\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & 
-// (((!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout )) # (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ))) ) )
+// \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  = ( \inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [0] ) ) # ( !\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( \inst11|R0|dffs [0] & ( 
+// (!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  & 
+// \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) ) ) ) # ( \inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout  & ( !\inst11|R0|dffs [0] & ( ((!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ) # 
+// ((!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ) # (!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ))) # (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ) ) ) )
 
-	.dataa(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datab(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.dataa(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.datac(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datad(!\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
-	.datae(!\inst11|R0|dffs [0]),
-	.dataf(gnd),
+	.datad(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
+	.datae(!\inst10|$00000|auto_generated|l1_w0_n0_mux_dataout~0_combout ),
+	.dataf(!\inst11|R0|dffs [0]),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -7706,7 +7491,7 @@ cyclonev_lcell_comb \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .lut_mask = 64'h00FD02FF00FD02FF;
+defparam \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .lut_mask = 64'h0000FFFD0002FFFF;
 defparam \inst8|$00000|auto_generated|l1_w0_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
@@ -8620,39 +8405,14 @@ defparam \inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~0 .lut_mask = 64'h1
 defparam \inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout  = ( \inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout  & ( (!\inst2|acc_load~combout ) # ((!\inst2|ld_mux~combout  & ((\inst1|altsyncram_component|auto_generated|q_a [11]))) # 
-// (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ))) ) ) # ( !\inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout  & ( (\inst2|acc_load~combout  & ((!\inst2|ld_mux~combout  & 
-// ((\inst1|altsyncram_component|auto_generated|q_a [11]))) # (\inst2|ld_mux~combout  & (\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout )))) ) )
-
-	.dataa(!\inst10|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
-	.datab(!\inst1|altsyncram_component|auto_generated|q_a [11]),
-	.datac(!\inst2|ld_mux~combout ),
-	.datad(!\inst2|acc_load~combout ),
-	.datae(!\inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0 .lut_mask = 64'h0035FF350035FF35;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
 dffeas \inst11|R0|dffs[11] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [11]),
+	.asdata(\inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -8742,38 +8502,14 @@ defparam \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .lut_mask = 64'h1
 defparam \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  = (!\inst2|acc_load~combout  & (((\inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout )))) # (\inst2|acc_load~combout  & (\inst1|altsyncram_component|auto_generated|q_a [12] & 
-// (!\inst2|ld_mux~combout )))
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [12]),
-	.datab(!\inst2|ld_mux~combout ),
-	.datac(!\inst2|acc_load~combout ),
-	.datad(!\inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .lut_mask = 64'h04F404F404F404F4;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
 dffeas \inst11|R0|dffs[12] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [12]),
+	.asdata(\inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -8863,38 +8599,14 @@ defparam \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .lut_mask = 64'h1
 defparam \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  = (!\inst2|acc_load~combout  & (((\inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout )))) # (\inst2|acc_load~combout  & (\inst1|altsyncram_component|auto_generated|q_a [13] & 
-// (!\inst2|ld_mux~combout )))
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [13]),
-	.datab(!\inst2|ld_mux~combout ),
-	.datac(!\inst2|acc_load~combout ),
-	.datad(!\inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .lut_mask = 64'h04F404F404F404F4;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
 dffeas \inst11|R0|dffs[13] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [13]),
+	.asdata(\inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -8984,38 +8696,14 @@ defparam \inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .lut_mask = 64'h1
 defparam \inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  = (!\inst2|acc_load~combout  & (((\inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout )))) # (\inst2|acc_load~combout  & (\inst1|altsyncram_component|auto_generated|q_a [14] & 
-// (!\inst2|ld_mux~combout )))
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [14]),
-	.datab(!\inst2|ld_mux~combout ),
-	.datac(!\inst2|acc_load~combout ),
-	.datad(!\inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .lut_mask = 64'h04F404F404F404F4;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
 dffeas \inst11|R0|dffs[14] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [14]),
+	.asdata(\inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -9100,38 +8788,14 @@ defparam \inst16|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .lut_mask = 64'h1
 defparam \inst16|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0 (
-// Equation(s):
-// \inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout  = (!\inst2|acc_load~combout  & (((\inst16|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout )))) # (\inst2|acc_load~combout  & (\inst1|altsyncram_component|auto_generated|q_a [15] & 
-// (!\inst2|ld_mux~combout )))
-
-	.dataa(!\inst1|altsyncram_component|auto_generated|q_a [15]),
-	.datab(!\inst2|ld_mux~combout ),
-	.datac(!\inst2|acc_load~combout ),
-	.datad(!\inst16|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .lut_mask = 64'h04F404F404F404F4;
-defparam \inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
 dffeas \inst11|R0|dffs[15] (
 	.clk(\CLK~input_o ),
-	.d(\inst11|MUX2|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.asdata(vcc),
+	.d(\inst1|altsyncram_component|auto_generated|q_a [15]),
+	.asdata(\inst16|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
-	.sload(gnd),
+	.sload(\inst2|acc_load~0_combout ),
 	.ena(\inst11|G1~combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
@@ -9193,13 +8857,14 @@ defparam \inst2|pc_load~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst2|pc_load~1 (
 // Equation(s):
-// \inst2|pc_load~1_combout  = (\inst|altsyncram_component|auto_generated|q_a [14] & (\inst|altsyncram_component|auto_generated|q_a [15] & !\inst|altsyncram_component|auto_generated|q_a [12]))
+// \inst2|pc_load~1_combout  = ( !\inst11|MUX4A|auto_generated|l2_w1_n0_mux_dataout~0_combout  & ( (!\inst|altsyncram_component|auto_generated|q_a [13] & (!\inst11|MUX4A|auto_generated|l2_w4_n0_mux_dataout~0_combout  & 
+// (!\inst11|MUX4A|auto_generated|l2_w3_n0_mux_dataout~0_combout  & !\inst11|MUX4A|auto_generated|l2_w2_n0_mux_dataout~0_combout ))) ) )
 
-	.dataa(!\inst|altsyncram_component|auto_generated|q_a [14]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [15]),
-	.datac(!\inst|altsyncram_component|auto_generated|q_a [12]),
-	.datad(gnd),
-	.datae(gnd),
+	.dataa(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datab(!\inst11|MUX4A|auto_generated|l2_w4_n0_mux_dataout~0_combout ),
+	.datac(!\inst11|MUX4A|auto_generated|l2_w3_n0_mux_dataout~0_combout ),
+	.datad(!\inst11|MUX4A|auto_generated|l2_w2_n0_mux_dataout~0_combout ),
+	.datae(!\inst11|MUX4A|auto_generated|l2_w1_n0_mux_dataout~0_combout ),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
@@ -9210,21 +8875,21 @@ cyclonev_lcell_comb \inst2|pc_load~1 (
 	.shareout());
 // synopsys translate_off
 defparam \inst2|pc_load~1 .extended_lut = "off";
-defparam \inst2|pc_load~1 .lut_mask = 64'h1010101010101010;
+defparam \inst2|pc_load~1 .lut_mask = 64'h8000000080000000;
 defparam \inst2|pc_load~1 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst2|pc_load~2 (
 // Equation(s):
-// \inst2|pc_load~2_combout  = ( !\inst11|MUX4A|auto_generated|l2_w1_n0_mux_dataout~0_combout  & ( \inst2|pc_load~1_combout  & ( (!\inst11|MUX4A|auto_generated|l2_w5_n0_mux_dataout~0_combout  & (!\inst11|MUX4A|auto_generated|l2_w4_n0_mux_dataout~0_combout  & 
-// (!\inst11|MUX4A|auto_generated|l2_w3_n0_mux_dataout~0_combout  & !\inst11|MUX4A|auto_generated|l2_w2_n0_mux_dataout~0_combout ))) ) ) )
+// \inst2|pc_load~2_combout  = (!\inst11|MUX4A|auto_generated|l2_w9_n0_mux_dataout~0_combout  & (!\inst11|MUX4A|auto_generated|l2_w8_n0_mux_dataout~0_combout  & (!\inst11|MUX4A|auto_generated|l2_w7_n0_mux_dataout~0_combout  & 
+// !\inst11|MUX4A|auto_generated|l2_w6_n0_mux_dataout~0_combout )))
 
-	.dataa(!\inst11|MUX4A|auto_generated|l2_w5_n0_mux_dataout~0_combout ),
-	.datab(!\inst11|MUX4A|auto_generated|l2_w4_n0_mux_dataout~0_combout ),
-	.datac(!\inst11|MUX4A|auto_generated|l2_w3_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|MUX4A|auto_generated|l2_w2_n0_mux_dataout~0_combout ),
-	.datae(!\inst11|MUX4A|auto_generated|l2_w1_n0_mux_dataout~0_combout ),
-	.dataf(!\inst2|pc_load~1_combout ),
+	.dataa(!\inst11|MUX4A|auto_generated|l2_w9_n0_mux_dataout~0_combout ),
+	.datab(!\inst11|MUX4A|auto_generated|l2_w8_n0_mux_dataout~0_combout ),
+	.datac(!\inst11|MUX4A|auto_generated|l2_w7_n0_mux_dataout~0_combout ),
+	.datad(!\inst11|MUX4A|auto_generated|l2_w6_n0_mux_dataout~0_combout ),
+	.datae(gnd),
+	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -9234,21 +8899,21 @@ cyclonev_lcell_comb \inst2|pc_load~2 (
 	.shareout());
 // synopsys translate_off
 defparam \inst2|pc_load~2 .extended_lut = "off";
-defparam \inst2|pc_load~2 .lut_mask = 64'h0000000080000000;
+defparam \inst2|pc_load~2 .lut_mask = 64'h8000800080008000;
 defparam \inst2|pc_load~2 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst2|pc_load~3 (
 // Equation(s):
-// \inst2|pc_load~3_combout  = ( !\inst11|MUX4A|auto_generated|l2_w7_n0_mux_dataout~0_combout  & ( !\inst11|MUX4A|auto_generated|l2_w6_n0_mux_dataout~0_combout  & ( (!\inst11|MUX4A|auto_generated|l2_w11_n0_mux_dataout~0_combout  & 
-// (!\inst11|MUX4A|auto_generated|l2_w10_n0_mux_dataout~0_combout  & (!\inst11|MUX4A|auto_generated|l2_w9_n0_mux_dataout~0_combout  & !\inst11|MUX4A|auto_generated|l2_w8_n0_mux_dataout~0_combout ))) ) ) )
+// \inst2|pc_load~3_combout  = ( \inst2|pc_load~2_combout  & ( (!\inst11|MUX4A|auto_generated|l2_w11_n0_mux_dataout~0_combout  & (!\inst11|MUX4A|auto_generated|l2_w10_n0_mux_dataout~0_combout  & (!\inst11|MUX4A|auto_generated|l2_w5_n0_mux_dataout~0_combout  
+// & \inst2|pc_load~1_combout ))) ) )
 
 	.dataa(!\inst11|MUX4A|auto_generated|l2_w11_n0_mux_dataout~0_combout ),
 	.datab(!\inst11|MUX4A|auto_generated|l2_w10_n0_mux_dataout~0_combout ),
-	.datac(!\inst11|MUX4A|auto_generated|l2_w9_n0_mux_dataout~0_combout ),
-	.datad(!\inst11|MUX4A|auto_generated|l2_w8_n0_mux_dataout~0_combout ),
-	.datae(!\inst11|MUX4A|auto_generated|l2_w7_n0_mux_dataout~0_combout ),
-	.dataf(!\inst11|MUX4A|auto_generated|l2_w6_n0_mux_dataout~0_combout ),
+	.datac(!\inst11|MUX4A|auto_generated|l2_w5_n0_mux_dataout~0_combout ),
+	.datad(!\inst2|pc_load~1_combout ),
+	.datae(!\inst2|pc_load~2_combout ),
+	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -9258,23 +8923,44 @@ cyclonev_lcell_comb \inst2|pc_load~3 (
 	.shareout());
 // synopsys translate_off
 defparam \inst2|pc_load~3 .extended_lut = "off";
-defparam \inst2|pc_load~3 .lut_mask = 64'h8000000000000000;
+defparam \inst2|pc_load~3 .lut_mask = 64'h0000008000000080;
 defparam \inst2|pc_load~3 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst2|WrEn~1 (
+// Equation(s):
+// \inst2|WrEn~1_combout  = (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [14] & !\inst|altsyncram_component|auto_generated|q_a [15]))
+
+	.dataa(!\inst9|inst2|dffs [0]),
+	.datab(!\inst|altsyncram_component|auto_generated|q_a [14]),
+	.datac(!\inst|altsyncram_component|auto_generated|q_a [15]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst2|WrEn~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst2|WrEn~1 .extended_lut = "off";
+defparam \inst2|WrEn~1 .lut_mask = 64'h4040404040404040;
+defparam \inst2|WrEn~1 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst2|pc_load~4 (
 // Equation(s):
-// \inst2|pc_load~4_combout  = ( \inst2|pc_load~2_combout  & ( \inst2|pc_load~3_combout  & ( (\inst9|inst2|dffs [0] & (\inst|altsyncram_component|auto_generated|q_a [13] & ((\inst2|pc_load~0_combout ) # (\inst2|WrEn~1_combout )))) ) ) ) # ( 
-// !\inst2|pc_load~2_combout  & ( \inst2|pc_load~3_combout  & ( (\inst9|inst2|dffs [0] & (\inst|altsyncram_component|auto_generated|q_a [13] & \inst2|WrEn~1_combout )) ) ) ) # ( \inst2|pc_load~2_combout  & ( !\inst2|pc_load~3_combout  & ( (\inst9|inst2|dffs 
-// [0] & (\inst|altsyncram_component|auto_generated|q_a [13] & \inst2|WrEn~1_combout )) ) ) ) # ( !\inst2|pc_load~2_combout  & ( !\inst2|pc_load~3_combout  & ( (\inst9|inst2|dffs [0] & (\inst|altsyncram_component|auto_generated|q_a [13] & 
-// \inst2|WrEn~1_combout )) ) ) )
+// \inst2|pc_load~4_combout  = ( \inst2|WrEn~1_combout  & ( (!\inst|altsyncram_component|auto_generated|q_a [13] & (((\inst2|pc_load~0_combout  & \inst2|pc_load~3_combout )))) # (\inst|altsyncram_component|auto_generated|q_a [13] & 
+// (((\inst2|pc_load~0_combout  & \inst2|pc_load~3_combout )) # (\inst|altsyncram_component|auto_generated|q_a [12]))) ) )
 
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [13]),
-	.datac(!\inst2|WrEn~1_combout ),
-	.datad(!\inst2|pc_load~0_combout ),
-	.datae(!\inst2|pc_load~2_combout ),
-	.dataf(!\inst2|pc_load~3_combout ),
+	.dataa(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datab(!\inst|altsyncram_component|auto_generated|q_a [12]),
+	.datac(!\inst2|pc_load~0_combout ),
+	.datad(!\inst2|pc_load~3_combout ),
+	.datae(!\inst2|WrEn~1_combout ),
+	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
@@ -9284,18 +8970,18 @@ cyclonev_lcell_comb \inst2|pc_load~4 (
 	.shareout());
 // synopsys translate_off
 defparam \inst2|pc_load~4 .extended_lut = "off";
-defparam \inst2|pc_load~4 .lut_mask = 64'h0101010101010111;
+defparam \inst2|pc_load~4 .lut_mask = 64'h0000111F0000111F;
 defparam \inst2|pc_load~4 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst3|auto_generated|_~0 (
 // Equation(s):
-// \inst3|auto_generated|_~0_combout  = ( \inst|altsyncram_component|auto_generated|q_a [12] & ( \inst9|inst2|dffs [0] ) ) # ( !\inst|altsyncram_component|auto_generated|q_a [12] & ( (\inst9|inst2|dffs [0] & ((!\inst|altsyncram_component|auto_generated|q_a 
-// [14]) # ((\inst|altsyncram_component|auto_generated|q_a [15]) # (\inst|altsyncram_component|auto_generated|q_a [13])))) ) )
+// \inst3|auto_generated|_~0_combout  = ( \inst|altsyncram_component|auto_generated|q_a [12] & ( \inst9|inst2|dffs [0] ) ) # ( !\inst|altsyncram_component|auto_generated|q_a [12] & ( (\inst9|inst2|dffs [0] & (((!\inst|altsyncram_component|auto_generated|q_a 
+// [14]) # (\inst|altsyncram_component|auto_generated|q_a [15])) # (\inst|altsyncram_component|auto_generated|q_a [13]))) ) )
 
 	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [14]),
-	.datac(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datab(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datac(!\inst|altsyncram_component|auto_generated|q_a [14]),
 	.datad(!\inst|altsyncram_component|auto_generated|q_a [15]),
 	.datae(!\inst|altsyncram_component|auto_generated|q_a [12]),
 	.dataf(gnd),
@@ -9308,7 +8994,7 @@ cyclonev_lcell_comb \inst3|auto_generated|_~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst3|auto_generated|_~0 .extended_lut = "off";
-defparam \inst3|auto_generated|_~0 .lut_mask = 64'h4555555545555555;
+defparam \inst3|auto_generated|_~0 .lut_mask = 64'h5155555551555555;
 defparam \inst3|auto_generated|_~0 .shared_arith = "off";
 // synopsys translate_on
 
@@ -9494,7 +9180,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a8 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a8 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a8 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a8 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a8 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a8 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005";
 // synopsys translate_on
 
 dffeas \inst4|dffs[8] (
@@ -9720,7 +9406,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a6 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a6 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a6 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a6 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a6 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a6 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 dffeas \inst4|dffs[6] (
@@ -9833,7 +9519,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a5 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a5 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a5 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a5 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a5 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a5 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 dffeas \inst4|dffs[5] (
@@ -9946,7 +9632,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a4 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a4 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a4 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a4 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a4 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a4 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
 // synopsys translate_on
 
 dffeas \inst4|dffs[4] (
@@ -10059,7 +9745,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a3 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a3 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a3 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a3 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a3 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a3 .mem_init0 = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004A";
 // synopsys translate_on
 
 dffeas \inst4|dffs[3] (
@@ -10172,7 +9858,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a2 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a2 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a2 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a2 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a2 .mem_init0 = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001C";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a2 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000032";
 // synopsys translate_on
 
 dffeas \inst4|dffs[2] (
@@ -10285,7 +9971,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a1 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a1 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a1 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a1 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a1 .mem_init0 = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003B";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a1 .mem_init0 = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000A0";
 // synopsys translate_on
 
 dffeas \inst4|dffs[1] (
@@ -10398,7 +10084,7 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a0 .port_a_read_dur
 defparam \inst|altsyncram_component|auto_generated|ram_block1a0 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a0 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a0 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a0 .mem_init0 = "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000A1";
 // synopsys translate_on
 
 dffeas \inst4|dffs[0] (
@@ -10511,78 +10197,35 @@ defparam \inst|altsyncram_component|auto_generated|ram_block1a13 .port_a_read_du
 defparam \inst|altsyncram_component|auto_generated|ram_block1a13 .port_b_address_width = 11;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a13 .port_b_data_width = 1;
 defparam \inst|altsyncram_component|auto_generated|ram_block1a13 .ram_block_type = "M20K";
-defparam \inst|altsyncram_component|auto_generated|ram_block1a13 .mem_init0 = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004";
+defparam \inst|altsyncram_component|auto_generated|ram_block1a13 .mem_init0 = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008A";
 // synopsys translate_on
 
-dffeas \inst4|dffs[13] (
-	.clk(\CLK~input_o ),
-	.d(\inst|altsyncram_component|auto_generated|q_a [13]),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\inst9|inst2|dffs [0]),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\inst4|dffs [13]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \inst4|dffs[13] .is_wysiwyg = "true";
-defparam \inst4|dffs[13] .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 (
+cyclonev_lcell_comb \inst9|inst|n[1]~0 (
 // Equation(s):
-// \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  = (!\inst9|inst2|dffs [0] & (\inst4|dffs [13])) # (\inst9|inst2|dffs [0] & ((\inst|altsyncram_component|auto_generated|q_a [13])))
+// \inst9|inst|n[1]~0_combout  = ( !\inst9|inst2|dffs [1] & ( (\inst9|inst2|dffs [0] & (!\inst|altsyncram_component|auto_generated|q_a [13] & (\inst|altsyncram_component|auto_generated|q_a [14] & \inst|altsyncram_component|auto_generated|q_a [12]))) ) )
 
 	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst4|dffs [13]),
-	.datac(!\inst|altsyncram_component|auto_generated|q_a [13]),
-	.datad(gnd),
-	.datae(gnd),
+	.datab(!\inst|altsyncram_component|auto_generated|q_a [13]),
+	.datac(!\inst|altsyncram_component|auto_generated|q_a [14]),
+	.datad(!\inst|altsyncram_component|auto_generated|q_a [12]),
+	.datae(!\inst9|inst2|dffs [1]),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
+	.combout(\inst9|inst|n[1]~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .lut_mask = 64'h2727272727272727;
-defparam \inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst9|inst|n[1] (
-// Equation(s):
-// \inst9|inst|n [1] = ( \inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( !\inst9|inst2|dffs [1] & ( (\inst9|inst2|dffs [0] & (\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & 
-// !\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout )) ) ) ) # ( !\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout  & ( !\inst9|inst2|dffs [1] & ( (\inst9|inst2|dffs [0] & 
-// (!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  & (\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout  & !\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ))) ) ) )
-
-	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout ),
-	.datac(!\inst10|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ),
-	.datad(!\inst10|$00000|auto_generated|l1_w15_n0_mux_dataout~0_combout ),
-	.datae(!\inst10|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ),
-	.dataf(!\inst9|inst2|dffs [1]),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\inst9|inst|n [1]),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst9|inst|n[1] .extended_lut = "off";
-defparam \inst9|inst|n[1] .lut_mask = 64'h0400101000000000;
-defparam \inst9|inst|n[1] .shared_arith = "off";
+defparam \inst9|inst|n[1]~0 .extended_lut = "off";
+defparam \inst9|inst|n[1]~0 .lut_mask = 64'h0004000000040000;
+defparam \inst9|inst|n[1]~0 .shared_arith = "off";
 // synopsys translate_on
 
 dffeas \inst9|inst2|dffs[1] (
 	.clk(\CLK~input_o ),
-	.d(\inst9|inst|n [1]),
+	.d(\inst9|inst|n[1]~0_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -10664,11 +10307,11 @@ defparam \inst9|inst2|dffs[0] .power_up = "low";
 
 cyclonev_lcell_comb \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0 (
 // Equation(s):
-// \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  = (!\inst9|inst2|dffs [0] & ((\inst4|dffs [14]))) # (\inst9|inst2|dffs [0] & (\inst|altsyncram_component|auto_generated|q_a [14]))
+// \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0_combout  = (!\inst9|inst2|dffs [0] & (\inst4|dffs [14])) # (\inst9|inst2|dffs [0] & ((\inst|altsyncram_component|auto_generated|q_a [14])))
 
 	.dataa(!\inst9|inst2|dffs [0]),
-	.datab(!\inst|altsyncram_component|auto_generated|q_a [14]),
-	.datac(!\inst4|dffs [14]),
+	.datab(!\inst4|dffs [14]),
+	.datac(!\inst|altsyncram_component|auto_generated|q_a [14]),
 	.datad(gnd),
 	.datae(gnd),
 	.dataf(gnd),
@@ -10681,7 +10324,7 @@ cyclonev_lcell_comb \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0 (
 	.shareout());
 // synopsys translate_off
 defparam \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .extended_lut = "off";
-defparam \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .lut_mask = 64'h2727272727272727;
 defparam \inst10|$00000|auto_generated|l1_w14_n0_mux_dataout~0 .shared_arith = "off";
 // synopsys translate_on
 

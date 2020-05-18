@@ -1,37 +1,40 @@
-Quartus Prime Archive log --	L:/HarvardArch/HarvardArch_tmp_archive.qarlog
+Quartus Prime Archive log --	/home/es1219/nfshome/HarvardArch/HarvardArch_tmp_archive.qarlog
 
-Archive:	L:/HarvardArch/HarvardArch_tmp_archive.qar
-Date:		Sun May 17 12:51:34 2020
+Archive:	/home/es1219/nfshome/HarvardArch/HarvardArch_tmp_archive.qar
+Date:		Mon May 18 10:44:26 2020
 Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 	=========== Files Selected: ===========
-L:/DECA4MU0/Decoder.v
-L:/HarvardArch/Decoder.v
-L:/HarvardArch/HarvardArch.bdf
-L:/HarvardArch/HarvardArch.qpf
-L:/HarvardArch/HarvardArch.qsf
-L:/HarvardArch/StateMachine.bdf
-L:/HarvardArch/arm_alu.v
-L:/HarvardArch/data_mem.bsf
-L:/HarvardArch/data_mem.qip
-L:/HarvardArch/data_mem.v
-L:/HarvardArch/data_mem_bb.v
-L:/HarvardArch/executor.v
-L:/HarvardArch/prog_mem.bsf
-L:/HarvardArch/prog_mem.qip
-L:/HarvardArch/prog_mem.v
-L:/HarvardArch/prog_mem_bb.v
-L:/HarvardArch/regfile.bdf
-L:/HarvardArch/regfile16.bdf
-L:/HarvardArch/regfile8.bdf
-c:/intelfpga/18.1/quartus/bin64/assignment_defaults.qdf
-	======= Total: 20 files to archive =======
+/home/es1219/nfshome/HarvardArch/Decoder.v
+/home/es1219/nfshome/HarvardArch/HarvardArch.bdf
+/home/es1219/nfshome/HarvardArch/HarvardArch.qpf
+/home/es1219/nfshome/HarvardArch/HarvardArch.qsf
+/home/es1219/nfshome/HarvardArch/StateMachine.bdf
+/home/es1219/nfshome/HarvardArch/Waveform.vwf
+/home/es1219/nfshome/HarvardArch/arm_alu.v
+/home/es1219/nfshome/HarvardArch/data_mem.bsf
+/home/es1219/nfshome/HarvardArch/data_mem.qip
+/home/es1219/nfshome/HarvardArch/data_mem.v
+/home/es1219/nfshome/HarvardArch/data_mem_bb.v
+/home/es1219/nfshome/HarvardArch/data_test.mif
+/home/es1219/nfshome/HarvardArch/executor.v
+/home/es1219/nfshome/HarvardArch/increment.v
+/home/es1219/nfshome/HarvardArch/prog_mem.bsf
+/home/es1219/nfshome/HarvardArch/prog_mem.qip
+/home/es1219/nfshome/HarvardArch/prog_mem.v
+/home/es1219/nfshome/HarvardArch/prog_mem_bb.v
+/home/es1219/nfshome/HarvardArch/prog_test.mif
+/home/es1219/nfshome/HarvardArch/regfile.bdf
+/home/es1219/nfshome/HarvardArch/regfile16.bdf
+/home/es1219/nfshome/HarvardArch/regfile8.bdf
+/usr/local/altera/18.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 23 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.
 
 
-******* Archived project restoration attempt on Sun May 17 12:51:36 2020
-Source archive file:	L:/HarvardArch/HarvardArch_tmp_archive.qar
-Archive was extracted into	L:/HarvardArch1port/
+******* Archived project restoration attempt on Mon May 18 10:44:28 2020
+Source archive file:	/home/es1219/nfshome/HarvardArch/HarvardArch_tmp_archive.qar
+Archive was extracted into	/home/es1219/nfshome/HarvardArchNoPipeline/
 		 - successfully.
