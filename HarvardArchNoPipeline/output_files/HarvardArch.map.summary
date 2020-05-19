@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon May 18 12:07:28 2020
+Analysis & Synthesis Status : Successful - Tue May 19 22:51:11 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : HarvardArch
 Top-level Entity Name : HarvardArch
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 78
-Total pins : 143
+Total registers : 169
+Total pins : 154
 Total virtual pins : 0
 Total block memory bits : 65,536
 Total DSP Blocks : 0

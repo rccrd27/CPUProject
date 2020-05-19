@@ -50,7 +50,6 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 set_global_assignment -name BDF_FILE HarvardArch.bdf
 set_global_assignment -name QIP_FILE prog_mem.qip
 set_global_assignment -name QIP_FILE data_mem.qip
-set_global_assignment -name VERILOG_FILE ../DECA4MU0/Decoder.v
 set_global_assignment -name VERILOG_FILE executor.v
 set_global_assignment -name VERILOG_FILE Decoder.v
 set_global_assignment -name BDF_FILE StateMachine.bdf
@@ -58,12 +57,27 @@ set_global_assignment -name BDF_FILE regfile.bdf
 set_global_assignment -name VERILOG_FILE arm_alu.v
 set_global_assignment -name BDF_FILE regfile8.bdf
 set_global_assignment -name BDF_FILE regfile16.bdf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VERILOG_FILE increment.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name MIF_FILE prog_test.mif
 set_global_assignment -name MIF_FILE data_test.mif
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
+set_global_assignment -name BDF_FILE stack.bdf
+set_global_assignment -name VERILOG_FILE stack_pointer.v
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_FILE increment16.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name MIF_FILE ../HarvardArch/fib_prog.mif
+set_global_assignment -name MIF_FILE ../HarvardArch/fib_data.mif
+set_global_assignment -name VECTOR_WAVEFORM_FILE ../HarvardArch/Waveform.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ../HarvardArch/Waveform1.vwf
+set_global_assignment -name MIF_FILE fib_data.mif
+set_global_assignment -name MIF_FILE fib_prog.mif
+set_global_assignment -name MIF_FILE list_data.mif
+set_global_assignment -name MIF_FILE list_prog.mif
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

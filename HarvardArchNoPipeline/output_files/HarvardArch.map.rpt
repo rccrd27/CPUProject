@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HarvardArch
-Mon May 18 12:07:28 2020
+Tue May 19 22:51:11 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -17,8 +17,8 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   9. Analysis & Synthesis IP Cores Summary
  10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Source assignments for prog_mem:inst|altsyncram:altsyncram_component|altsyncram_16o1:auto_generated
- 13. Source assignments for data_mem:inst1|altsyncram:altsyncram_component|altsyncram_17q2:auto_generated
+ 12. Source assignments for prog_mem:inst|altsyncram:altsyncram_component|altsyncram_i1o1:auto_generated
+ 13. Source assignments for data_mem:inst1|altsyncram:altsyncram_component|altsyncram_i2q2:auto_generated
  14. Parameter Settings for User Entity Instance: prog_mem:inst|altsyncram:altsyncram_component
  15. Parameter Settings for User Entity Instance: LPM_COUNTER:inst3
  16. Parameter Settings for User Entity Instance: LPM_OR:inst18
@@ -35,10 +35,22 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
  27. Parameter Settings for User Entity Instance: BUSMUX:inst8
  28. Parameter Settings for User Entity Instance: BUSMUX:inst7
  29. Parameter Settings for User Entity Instance: StateMachine:inst9|LPM_FF:inst2
- 30. altsyncram Parameter Settings by Entity Instance
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
+ 30. Parameter Settings for User Entity Instance: BUSMUX:inst17
+ 31. Parameter Settings for User Entity Instance: stack:inst19|LPM_MUX:MUX4B
+ 32. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R7
+ 33. Parameter Settings for User Entity Instance: stack:inst19|LPM_DECODE:DEMUX4
+ 34. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:inst2
+ 35. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R6
+ 36. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R5
+ 37. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R4
+ 38. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R3
+ 39. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R2
+ 40. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R1
+ 41. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R0
+ 42. altsyncram Parameter Settings by Entity Instance
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
 
 
 
@@ -64,14 +76,14 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 18 12:07:28 2020           ;
+; Analysis & Synthesis Status     ; Successful - Tue May 19 22:51:11 2020           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; HarvardArch                                     ;
 ; Top-level Entity Name           ; HarvardArch                                     ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 78                                              ;
-; Total pins                      ; 143                                             ;
+; Total registers                 ; 169                                             ;
+; Total pins                      ; 154                                             ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 65,536                                          ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -184,8 +196,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-16        ;   0.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -203,8 +214,10 @@ refer to the applicable agreement for further details.
 ; regfile.bdf                      ; yes             ; User Block Diagram/Schematic File  ; /home/es1219/nfshome/HarvardArchNoPipeline/regfile.bdf                         ;         ;
 ; arm_alu.v                        ; yes             ; User Verilog HDL File              ; /home/es1219/nfshome/HarvardArchNoPipeline/arm_alu.v                           ;         ;
 ; increment.v                      ; yes             ; User Verilog HDL File              ; /home/es1219/nfshome/HarvardArchNoPipeline/increment.v                         ;         ;
-; prog_test.mif                    ; yes             ; User Memory Initialization File    ; /home/es1219/nfshome/HarvardArchNoPipeline/prog_test.mif                       ;         ;
-; data_test.mif                    ; yes             ; User Memory Initialization File    ; /home/es1219/nfshome/HarvardArchNoPipeline/data_test.mif                       ;         ;
+; stack.bdf                        ; yes             ; User Block Diagram/Schematic File  ; /home/es1219/nfshome/HarvardArchNoPipeline/stack.bdf                           ;         ;
+; stack_pointer.v                  ; yes             ; User Verilog HDL File              ; /home/es1219/nfshome/HarvardArchNoPipeline/stack_pointer.v                     ;         ;
+; fib_data.mif                     ; yes             ; User Memory Initialization File    ; /home/es1219/nfshome/HarvardArchNoPipeline/fib_data.mif                        ;         ;
+; fib_prog.mif                     ; yes             ; User Memory Initialization File    ; /home/es1219/nfshome/HarvardArchNoPipeline/fib_prog.mif                        ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
@@ -214,7 +227,7 @@ refer to the applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/altrom.inc              ;         ;
 ; altram.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/altram.inc              ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
-; db/altsyncram_16o1.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_16o1.tdf              ;         ;
+; db/altsyncram_i1o1.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i1o1.tdf              ;         ;
 ; lpm_counter.tdf                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
 ; lpm_constant.inc                 ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
 ; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
@@ -236,9 +249,11 @@ refer to the applicable agreement for further details.
 ; db/decode_2of.tdf                ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/decode_2of.tdf                   ;         ;
 ; busmux.tdf                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf              ;         ;
 ; db/mux_flc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_flc.tdf                      ;         ;
-; db/altsyncram_17q2.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_17q2.tdf              ;         ;
+; db/altsyncram_i2q2.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i2q2.tdf              ;         ;
 ; db/mux_alc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_alc.tdf                      ;         ;
 ; db/mux_qjc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_qjc.tdf                      ;         ;
+; db/mux_jlc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_jlc.tdf                      ;         ;
+; db/decode_7of.tdf                ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/decode_7of.tdf                   ;         ;
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
 
 
@@ -247,27 +262,27 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 119       ;
+; Estimate of Logic utilization (ALMs needed) ; 161       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 153       ;
+; Combinational ALUT usage for logic          ; 223       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 64        ;
-;     -- 5 input functions                    ; 38        ;
-;     -- 4 input functions                    ; 4         ;
-;     -- <=3 input functions                  ; 47        ;
+;     -- 6 input functions                    ; 70        ;
+;     -- 5 input functions                    ; 54        ;
+;     -- 4 input functions                    ; 14        ;
+;     -- <=3 input functions                  ; 85        ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 78        ;
+; Dedicated logic registers                   ; 169       ;
 ;                                             ;           ;
-; I/O pins                                    ; 143       ;
+; I/O pins                                    ; 154       ;
 ; Total MLAB memory bits                      ; 0         ;
 ; Total block memory bits                     ; 65536     ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 110       ;
-; Total fan-out                               ; 1911      ;
-; Average fan-out                             ; 3.48      ;
+; Maximum fan-out                             ; 201       ;
+; Total fan-out                               ; 2459      ;
+; Average fan-out                             ; 3.36      ;
 +---------------------------------------------+-----------+
 
 
@@ -276,15 +291,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+-----------------+--------------+
-; |HarvardArch                              ; 153 (1)             ; 78 (0)                    ; 65536             ; 0          ; 143  ; 0            ; |HarvardArch                                                                               ; HarvardArch     ; work         ;
-;    |Decoder:inst2|                        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|Decoder:inst2                                                                 ; Decoder         ; work         ;
+; |HarvardArch                              ; 223 (1)             ; 169 (0)                   ; 65536             ; 0          ; 154  ; 0            ; |HarvardArch                                                                               ; HarvardArch     ; work         ;
+;    |Decoder:inst2|                        ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|Decoder:inst2                                                                 ; Decoder         ; work         ;
 ;    |StateMachine:inst9|                   ; 4 (1)               ; 3 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9                                                            ; StateMachine    ; work         ;
 ;       |executor:inst|                     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|executor:inst                                              ; executor        ; work         ;
 ;       |lpm_ff:inst2|                      ; 1 (1)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|lpm_ff:inst2                                               ; lpm_ff          ; work         ;
-;    |arm_alu:inst12|                       ; 67 (67)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                ; arm_alu         ; work         ;
+;    |arm_alu:inst12|                       ; 52 (52)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                ; arm_alu         ; work         ;
 ;    |busmux:inst16|                        ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16                                                                 ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                    ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16|lpm_mux:$00000                                                  ; lpm_mux         ; work         ;
 ;          |mux_flc:auto_generated|         ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16|lpm_mux:$00000|mux_flc:auto_generated                           ; mux_flc         ; work         ;
+;    |busmux:inst17|                        ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst17                                                                 ; busmux          ; work         ;
+;       |lpm_mux:$00000|                    ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst17|lpm_mux:$00000                                                  ; lpm_mux         ; work         ;
+;          |mux_alc:auto_generated|         ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst17|lpm_mux:$00000|mux_alc:auto_generated                           ; mux_alc         ; work         ;
 ;    |busmux:inst7|                         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst7                                                                  ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst7|lpm_mux:$00000                                                   ; lpm_mux         ; work         ;
 ;          |mux_qjc:auto_generated|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst7|lpm_mux:$00000|mux_qjc:auto_generated                            ; mux_qjc         ; work         ;
@@ -293,14 +311,14 @@ refer to the applicable agreement for further details.
 ;          |mux_alc:auto_generated|         ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst8|lpm_mux:$00000|mux_alc:auto_generated                            ; mux_alc         ; work         ;
 ;    |data_mem:inst1|                       ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|data_mem:inst1                                                                ; data_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|data_mem:inst1|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
-;          |altsyncram_17q2:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|data_mem:inst1|altsyncram:altsyncram_component|altsyncram_17q2:auto_generated ; altsyncram_17q2 ; work         ;
+;          |altsyncram_i2q2:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|data_mem:inst1|altsyncram:altsyncram_component|altsyncram_i2q2:auto_generated ; altsyncram_i2q2 ; work         ;
 ;    |increment:inst15|                     ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|increment:inst15                                                              ; increment       ; work         ;
 ;    |lpm_counter:inst3|                    ; 12 (0)              ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|lpm_counter:inst3                                                             ; lpm_counter     ; work         ;
 ;       |cntr_vfh:auto_generated|           ; 12 (12)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|lpm_counter:inst3|cntr_vfh:auto_generated                                     ; cntr_vfh        ; work         ;
 ;    |prog_mem:inst|                        ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|prog_mem:inst                                                                 ; prog_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|prog_mem:inst|altsyncram:altsyncram_component                                 ; altsyncram      ; work         ;
-;          |altsyncram_16o1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|prog_mem:inst|altsyncram:altsyncram_component|altsyncram_16o1:auto_generated  ; altsyncram_16o1 ; work         ;
-;    |regfile:inst11|                       ; 21 (1)              ; 64 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11                                                                ; regfile         ; work         ;
+;          |altsyncram_i1o1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |HarvardArch|prog_mem:inst|altsyncram:altsyncram_component|altsyncram_i1o1:auto_generated  ; altsyncram_i1o1 ; work         ;
+;    |regfile:inst11|                       ; 37 (1)              ; 64 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11                                                                ; regfile         ; work         ;
 ;       |lpm_decode:DEMUX4|                 ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_decode:DEMUX4                                              ; lpm_decode      ; work         ;
 ;          |decode_2of:auto_generated|      ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_decode:DEMUX4|decode_2of:auto_generated                    ; decode_2of      ; work         ;
 ;       |lpm_ff:R0|                         ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_ff:R0                                                      ; lpm_ff          ; work         ;
@@ -309,18 +327,36 @@ refer to the applicable agreement for further details.
 ;       |lpm_ff:R3|                         ; 0 (0)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_ff:R3                                                      ; lpm_ff          ; work         ;
 ;       |lpm_mux:MUX4A|                     ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_mux:MUX4A                                                  ; lpm_mux         ; work         ;
 ;          |mux_ilc:auto_generated|         ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_mux:MUX4A|mux_ilc:auto_generated                           ; mux_ilc         ; work         ;
+;       |lpm_mux:MUX4B|                     ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_mux:MUX4B                                                  ; lpm_mux         ; work         ;
+;          |mux_ilc:auto_generated|         ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|regfile:inst11|lpm_mux:MUX4B|mux_ilc:auto_generated                           ; mux_ilc         ; work         ;
+;    |stack:inst19|                         ; 55 (0)              ; 91 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19                                                                  ; stack           ; work         ;
+;       |increment:inst|                    ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|increment:inst                                                   ; increment       ; work         ;
+;       |lpm_decode:DEMUX4|                 ; 8 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_decode:DEMUX4                                                ; lpm_decode      ; work         ;
+;          |decode_7of:auto_generated|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_decode:DEMUX4|decode_7of:auto_generated                      ; decode_7of      ; work         ;
+;       |lpm_ff:R0|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R0                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:R1|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R1                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:R2|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R2                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:R3|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R3                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:R4|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R4                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:R5|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R5                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:R6|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R6                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:R7|                         ; 0 (0)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:R7                                                        ; lpm_ff          ; work         ;
+;       |lpm_ff:inst2|                      ; 0 (0)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_ff:inst2                                                     ; lpm_ff          ; work         ;
+;       |lpm_mux:MUX4B|                     ; 33 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_mux:MUX4B                                                    ; lpm_mux         ; work         ;
+;          |mux_jlc:auto_generated|         ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|lpm_mux:MUX4B|mux_jlc:auto_generated                             ; mux_jlc         ; work         ;
+;       |stack_pointer:inst3|               ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|stack:inst19|stack_pointer:inst3                                              ; stack_pointer   ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                     ;
-+------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+---------------+
-; Name                                                                                     ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF           ;
-+------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+---------------+
-; data_mem:inst1|altsyncram:altsyncram_component|altsyncram_17q2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 2048         ; 16           ; 2048         ; 16           ; 32768 ; data_test.mif ;
-; prog_mem:inst|altsyncram:altsyncram_component|altsyncram_16o1:auto_generated|ALTSYNCRAM  ; AUTO ; Single Port    ; 2048         ; 16           ; --           ; --           ; 32768 ; prog_test.mif ;
-+------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+---------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                    ;
++------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+--------------+
+; Name                                                                                     ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF          ;
++------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+--------------+
+; data_mem:inst1|altsyncram:altsyncram_component|altsyncram_i2q2:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 2048         ; 16           ; 2048         ; 16           ; 32768 ; fib_data.mif ;
+; prog_mem:inst|altsyncram:altsyncram_component|altsyncram_i1o1:auto_generated|ALTSYNCRAM  ; AUTO ; Single Port    ; 2048         ; 16           ; --           ; --           ; 32768 ; fib_prog.mif ;
++------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+-------+--------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -338,29 +374,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 78    ;
+; Total registers                              ; 169   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 27    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 75    ;
+; Number of registers using Clock Enable       ; 163   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |HarvardArch|regfile:inst11|lpm_mux:MUX4A|mux_ilc:auto_generated|l2_w7_n0_mux_dataout ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                      ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |HarvardArch|regfile:inst11|lpm_mux:MUX4A|mux_ilc:auto_generated|l2_w4_n0_mux_dataout  ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |HarvardArch|regfile:inst11|lpm_mux:MUX4B|mux_ilc:auto_generated|l2_w10_n0_mux_dataout ;
+; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; No         ; |HarvardArch|arm_alu:inst12|Mux11                                                      ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                       ;
+; 8:1                ; 11 bits   ; 55 LEs        ; 55 LEs               ; 0 LEs                  ; No         ; |HarvardArch|stack:inst19|lpm_mux:MUX4B|mux_jlc:auto_generated|l3_w9_n0_mux_dataout    ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------+
-; Source assignments for prog_mem:inst|altsyncram:altsyncram_component|altsyncram_16o1:auto_generated ;
+; Source assignments for prog_mem:inst|altsyncram:altsyncram_component|altsyncram_i1o1:auto_generated ;
 +---------------------------------+--------------------+------+---------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                    ;
 +---------------------------------+--------------------+------+---------------------------------------+
@@ -369,7 +408,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 +------------------------------------------------------------------------------------------------------+
-; Source assignments for data_mem:inst1|altsyncram:altsyncram_component|altsyncram_17q2:auto_generated ;
+; Source assignments for data_mem:inst1|altsyncram:altsyncram_component|altsyncram_i2q2:auto_generated ;
 +---------------------------------+--------------------+------+----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                     ;
 +---------------------------------+--------------------+------+----------------------------------------+
@@ -420,7 +459,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                        ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                        ;
-; INIT_FILE                          ; prog_test.mif        ; Untyped                        ;
+; INIT_FILE                          ; fib_prog.mif         ; Untyped                        ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                        ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                        ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                        ;
@@ -433,7 +472,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                        ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                        ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                        ;
-; CBXI_PARAMETER                     ; altsyncram_16o1      ; Untyped                        ;
+; CBXI_PARAMETER                     ; altsyncram_i1o1      ; Untyped                        ;
 +------------------------------------+----------------------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -680,7 +719,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
-; INIT_FILE                          ; data_test.mif        ; Untyped                         ;
+; INIT_FILE                          ; fib_data.mif         ; Untyped                         ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                         ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                         ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                         ;
@@ -693,7 +732,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                         ;
 ; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                         ;
-; CBXI_PARAMETER                     ; altsyncram_17q2      ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_i2q2      ; Untyped                         ;
 +------------------------------------+----------------------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -737,6 +776,225 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst17 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 11    ; Untyped                           ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_MUX:MUX4B ;
++------------------------+-----------+------------------------------------+
+; Parameter Name         ; Value     ; Type                               ;
++------------------------+-----------+------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                     ;
+; LPM_WIDTH              ; 11        ; Untyped                            ;
+; LPM_SIZE               ; 8         ; Untyped                            ;
+; LPM_WIDTHS             ; 3         ; Untyped                            ;
+; LPM_PIPELINE           ; 0         ; Untyped                            ;
+; CBXI_PARAMETER         ; mux_jlc   ; Untyped                            ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                            ;
++------------------------+-----------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R7 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_DECODE:DEMUX4 ;
++------------------------+------------+---------------------------------------+
+; Parameter Name         ; Value      ; Type                                  ;
++------------------------+------------+---------------------------------------+
+; LPM_WIDTH              ; 3          ; Untyped                               ;
+; LPM_DECODES            ; 8          ; Untyped                               ;
+; LPM_PIPELINE           ; 0          ; Untyped                               ;
+; CASCADE_CHAIN          ; MANUAL     ; Untyped                               ;
+; DEVICE_FAMILY          ; Cyclone V  ; Untyped                               ;
+; CBXI_PARAMETER         ; decode_7of ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON         ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF        ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON         ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF        ; IGNORE_CASCADE                        ;
++------------------------+------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:inst2 ;
++------------------------+-----------+-----------------------------------+
+; Parameter Name         ; Value     ; Type                              ;
++------------------------+-----------+-----------------------------------+
+; LPM_WIDTH              ; 3         ; Signed Integer                    ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                           ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                           ;
+; LPM_FFTYPE             ; DFF       ; Untyped                           ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                           ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                           ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                        ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                      ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                      ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                    ;
++------------------------+-----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R6 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R5 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R4 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R3 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R2 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R1 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R0 ;
++------------------------+-----------+--------------------------------+
+; Parameter Name         ; Value     ; Type                           ;
++------------------------+-----------+--------------------------------+
+; LPM_WIDTH              ; 11        ; Untyped                        ;
+; LPM_AVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_SVALUE             ; UNUSED    ; Untyped                        ;
+; LPM_FFTYPE             ; DFF       ; Untyped                        ;
+; DEVICE_FAMILY          ; Cyclone V ; Untyped                        ;
+; CBXI_PARAMETER         ; NOTHING   ; Untyped                        ;
+; AUTO_CARRY_CHAINS      ; ON        ; AUTO_CARRY                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF       ; IGNORE_CARRY                   ;
+; AUTO_CASCADE_CHAINS    ; ON        ; AUTO_CASCADE                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF       ; IGNORE_CASCADE                 ;
++------------------------+-----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                           ;
 +-------------------------------------------+------------------------------------------------+
@@ -773,29 +1031,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 78                          ;
-;     ENA               ; 48                          ;
+; arriav_ff             ; 169                         ;
+;     ENA               ; 136                         ;
 ;     ENA SLD           ; 27                          ;
-;     plain             ; 3                           ;
-; arriav_lcell_comb     ; 154                         ;
-;     arith             ; 39                          ;
-;         1 data inputs ; 22                          ;
+;     plain             ; 6                           ;
+; arriav_lcell_comb     ; 224                         ;
+;     arith             ; 50                          ;
+;         1 data inputs ; 34                          ;
 ;         3 data inputs ; 1                           ;
-;         4 data inputs ; 1                           ;
 ;         5 data inputs ; 15                          ;
-;     normal            ; 115                         ;
+;     normal            ; 174                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 1                           ;
-;         3 data inputs ; 21                          ;
-;         4 data inputs ; 3                           ;
-;         5 data inputs ; 23                          ;
-;         6 data inputs ; 64                          ;
-; boundary_port         ; 143                         ;
+;         3 data inputs ; 47                          ;
+;         4 data inputs ; 14                          ;
+;         5 data inputs ; 39                          ;
+;         6 data inputs ; 70                          ;
+; boundary_port         ; 154                         ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.50                        ;
-; Average LUT depth     ; 3.43                        ;
+; Average LUT depth     ; 3.13                        ;
 +-----------------------+-----------------------------+
 
 
@@ -814,7 +1071,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Mon May 18 12:07:17 2020
+    Info: Processing started: Tue May 19 22:50:59 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HarvardArchNoPipeline -c HarvardArch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
@@ -824,7 +1081,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file prog_me
     Info (12023): Found entity 1: prog_mem File: /home/es1219/nfshome/HarvardArchNoPipeline/prog_mem.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file data_mem.v
     Info (12023): Found entity 1: data_mem File: /home/es1219/nfshome/HarvardArchNoPipeline/data_mem.v Line: 39
-Warning (12019): Can't analyze file -- file ../DECA4MU0/Decoder.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file executor.v
     Info (12023): Found entity 1: executor File: /home/es1219/nfshome/HarvardArchNoPipeline/executor.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file Decoder.v
@@ -841,15 +1097,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file regfile
     Info (12023): Found entity 1: regfile16
 Info (12021): Found 1 design units, including 1 entities, in source file increment.v
     Info (12023): Found entity 1: increment File: /home/es1219/nfshome/HarvardArchNoPipeline/increment.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file stack.bdf
+    Info (12023): Found entity 1: stack
+Info (12021): Found 1 design units, including 1 entities, in source file stack_pointer.v
+    Info (12023): Found entity 1: stack_pointer File: /home/es1219/nfshome/HarvardArchNoPipeline/stack_pointer.v Line: 1
+Warning (12019): Can't analyze file -- file increment16.v is missing
 Info (12127): Elaborating entity "HarvardArch" for the top level hierarchy
 Info (12128): Elaborating entity "arm_alu" for hierarchy "arm_alu:inst12"
+Warning (10230): Verilog HDL assignment warning at arm_alu.v(25): truncated value with size 32 to match size of target (16) File: /home/es1219/nfshome/HarvardArchNoPipeline/arm_alu.v Line: 25
 Info (12128): Elaborating entity "prog_mem" for hierarchy "prog_mem:inst"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "prog_mem:inst|altsyncram:altsyncram_component" File: /home/es1219/nfshome/HarvardArchNoPipeline/prog_mem.v Line: 85
 Info (12130): Elaborated megafunction instantiation "prog_mem:inst|altsyncram:altsyncram_component" File: /home/es1219/nfshome/HarvardArchNoPipeline/prog_mem.v Line: 85
 Info (12133): Instantiated megafunction "prog_mem:inst|altsyncram:altsyncram_component" with the following parameter: File: /home/es1219/nfshome/HarvardArchNoPipeline/prog_mem.v Line: 85
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "prog_test.mif"
+    Info (12134): Parameter "init_file" = "fib_prog.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
@@ -862,9 +1124,9 @@ Info (12133): Instantiated megafunction "prog_mem:inst|altsyncram:altsyncram_com
     Info (12134): Parameter "widthad_a" = "11"
     Info (12134): Parameter "width_a" = "16"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_16o1.tdf
-    Info (12023): Found entity 1: altsyncram_16o1 File: /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_16o1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_16o1" for hierarchy "prog_mem:inst|altsyncram:altsyncram_component|altsyncram_16o1:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i1o1.tdf
+    Info (12023): Found entity 1: altsyncram_i1o1 File: /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i1o1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_i1o1" for hierarchy "prog_mem:inst|altsyncram:altsyncram_component|altsyncram_i1o1:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:inst3"
 Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:inst3"
 Info (12133): Instantiated megafunction "LPM_COUNTER:inst3" with the following parameter:
@@ -873,9 +1135,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cntr
     Info (12023): Found entity 1: cntr_vfh File: /home/es1219/nfshome/HarvardArchNoPipeline/db/cntr_vfh.tdf Line: 25
 Info (12128): Elaborating entity "cntr_vfh" for hierarchy "LPM_COUNTER:inst3|cntr_vfh:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
 Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:inst2"
-Warning (10036): Verilog HDL or VHDL warning at Decoder.v(12): object "jms" assigned a value but never read File: /home/es1219/nfshome/HarvardArchNoPipeline/Decoder.v Line: 12
-Warning (10036): Verilog HDL or VHDL warning at Decoder.v(12): object "bbl" assigned a value but never read File: /home/es1219/nfshome/HarvardArchNoPipeline/Decoder.v Line: 12
-Warning (10036): Verilog HDL or VHDL warning at Decoder.v(13): object "fetch" assigned a value but never read File: /home/es1219/nfshome/HarvardArchNoPipeline/Decoder.v Line: 13
+Warning (10036): Verilog HDL or VHDL warning at Decoder.v(16): object "fetch" assigned a value but never read File: /home/es1219/nfshome/HarvardArchNoPipeline/Decoder.v Line: 16
 Info (12128): Elaborating entity "LPM_OR" for hierarchy "LPM_OR:inst18"
 Info (12130): Elaborated megafunction instantiation "LPM_OR:inst18"
 Info (12133): Instantiated megafunction "LPM_OR:inst18" with the following parameter:
@@ -922,7 +1182,7 @@ Info (12133): Instantiated megafunction "data_mem:inst1|altsyncram:altsyncram_co
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
     Info (12134): Parameter "indata_reg_b" = "CLOCK0"
-    Info (12134): Parameter "init_file" = "data_test.mif"
+    Info (12134): Parameter "init_file" = "fib_data.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_type" = "altsyncram"
     Info (12134): Parameter "numwords_a" = "2048"
@@ -943,9 +1203,9 @@ Info (12133): Instantiated megafunction "data_mem:inst1|altsyncram:altsyncram_co
     Info (12134): Parameter "width_byteena_a" = "1"
     Info (12134): Parameter "width_byteena_b" = "1"
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK0"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_17q2.tdf
-    Info (12023): Found entity 1: altsyncram_17q2 File: /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_17q2.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_17q2" for hierarchy "data_mem:inst1|altsyncram:altsyncram_component|altsyncram_17q2:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i2q2.tdf
+    Info (12023): Found entity 1: altsyncram_i2q2 File: /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i2q2.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_i2q2" for hierarchy "data_mem:inst1|altsyncram:altsyncram_component|altsyncram_i2q2:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
 Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:inst8"
 Info (12130): Elaborated megafunction instantiation "BUSMUX:inst8"
 Info (12133): Instantiated megafunction "BUSMUX:inst8" with the following parameter:
@@ -972,18 +1232,41 @@ Info (12130): Elaborated megafunction instantiation "StateMachine:inst9|LPM_FF:i
 Info (12133): Instantiated megafunction "StateMachine:inst9|LPM_FF:inst2" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "3"
 Info (12128): Elaborating entity "executor" for hierarchy "StateMachine:inst9|executor:inst"
+Info (12128): Elaborating entity "stack" for hierarchy "stack:inst19"
+Info (12128): Elaborating entity "LPM_MUX" for hierarchy "stack:inst19|LPM_MUX:MUX4B"
+Info (12130): Elaborated megafunction instantiation "stack:inst19|LPM_MUX:MUX4B"
+Info (12133): Instantiated megafunction "stack:inst19|LPM_MUX:MUX4B" with the following parameter:
+    Info (12134): Parameter "LPM_SIZE" = "8"
+    Info (12134): Parameter "LPM_WIDTH" = "11"
+    Info (12134): Parameter "LPM_WIDTHS" = "3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_jlc.tdf
+    Info (12023): Found entity 1: mux_jlc File: /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_jlc.tdf Line: 22
+Info (12128): Elaborating entity "mux_jlc" for hierarchy "stack:inst19|LPM_MUX:MUX4B|mux_jlc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "LPM_FF" for hierarchy "stack:inst19|LPM_FF:R7"
+Info (12130): Elaborated megafunction instantiation "stack:inst19|LPM_FF:R7"
+Info (12133): Instantiated megafunction "stack:inst19|LPM_FF:R7" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "11"
+Info (12128): Elaborating entity "LPM_DECODE" for hierarchy "stack:inst19|LPM_DECODE:DEMUX4"
+Info (12130): Elaborated megafunction instantiation "stack:inst19|LPM_DECODE:DEMUX4"
+Info (12133): Instantiated megafunction "stack:inst19|LPM_DECODE:DEMUX4" with the following parameter:
+    Info (12134): Parameter "LPM_DECODES" = "8"
+    Info (12134): Parameter "LPM_WIDTH" = "3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_7of.tdf
+    Info (12023): Found entity 1: decode_7of File: /home/es1219/nfshome/HarvardArchNoPipeline/db/decode_7of.tdf Line: 22
+Info (12128): Elaborating entity "decode_7of" for hierarchy "stack:inst19|LPM_DECODE:DEMUX4|decode_7of:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_decode.tdf Line: 76
+Info (12128): Elaborating entity "stack_pointer" for hierarchy "stack:inst19|stack_pointer:inst3"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 392 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 564 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 142 output pins
-    Info (21061): Implemented 217 logic cells
+    Info (21059): Implemented 153 output pins
+    Info (21061): Implemented 378 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1247 megabytes
-    Info: Processing ended: Mon May 18 12:07:28 2020
-    Info: Elapsed time: 00:00:11
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 1245 megabytes
+    Info: Processing ended: Tue May 19 22:51:11 2020
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:28
 
 
