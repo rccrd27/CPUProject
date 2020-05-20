@@ -1,5 +1,5 @@
 Flow report for HarvardArch
-Wed May 20 17:50:44 2020
+Wed May 20 22:55:18 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Wed May 20 17:50:44 2020           ;
+; Flow Status                     ; Successful - Wed May 20 22:55:18 2020           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; HarvardArch                                     ;
-; Top-level Entity Name           ; multiplier_min_gates                            ;
+; Top-level Entity Name           ; HarvardArch                                     ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CGXFC7C7F23C8                                  ;
 ; Timing Models                   ; Final                                           ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 0                                               ;
-; Total pins                      ; 48                                              ;
+; Total registers                 ; 168                                             ;
+; Total pins                      ; 154                                             ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
+; Total block memory bits         ; 65,536                                          ;
 ; Total DSP Blocks                ; 0                                               ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
@@ -67,35 +67,34 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/20/2020 17:46:12 ;
+; Start date & time ; 05/20/2020 22:54:52 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; HarvardArch         ;
 +-------------------+---------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                     ;
-+-------------------------------------+----------------------------------------+---------------+----------------------+----------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name          ; Section Id     ;
-+-------------------------------------+----------------------------------------+---------------+----------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 22095314620720.158999317225043         ; --            ; --                   ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --                   ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --                   ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --                   ; eda_simulation ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --                   ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --                   ; --             ;
-; MISC_FILE                           ; prog_mem.bsf                           ; --            ; --                   ; --             ;
-; MISC_FILE                           ; prog_mem_bb.v                          ; --            ; --                   ; --             ;
-; MISC_FILE                           ; data_mem.bsf                           ; --            ; --                   ; --             ;
-; MISC_FILE                           ; data_mem_bb.v                          ; --            ; --                   ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; multiplier_min_gates ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; multiplier_min_gates ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; multiplier_min_gates ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --                   ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                   ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                   ; --             ;
-; TOP_LEVEL_ENTITY                    ; multiplier_min_gates                   ; HarvardArch   ; --                   ; --             ;
-+-------------------------------------+----------------------------------------+---------------+----------------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 22095314620720.159001169211574         ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
+; MISC_FILE                           ; prog_mem.bsf                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; prog_mem_bb.v                          ; --            ; --          ; --             ;
+; MISC_FILE                           ; data_mem.bsf                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; data_mem_bb.v                          ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -103,12 +102,10 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 1125 MB             ; 00:00:28                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1232 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1240 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1232 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1240 MB             ; 00:00:01                           ;
-; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:32                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 1249 MB             ; 00:00:29                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 1233 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1241 MB             ; 00:00:01                           ;
+; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:31                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,8 +117,6 @@ refer to the applicable agreement for further details.
 ; Analysis & Synthesis ; ee-mill1.ee.ic.ac.uk ; CentOS release ; CentOS release ; x86_64         ;
 ; EDA Netlist Writer   ; ee-mill1.ee.ic.ac.uk ; CentOS release ; CentOS release ; x86_64         ;
 ; EDA Netlist Writer   ; ee-mill1.ee.ic.ac.uk ; CentOS release ; CentOS release ; x86_64         ;
-; EDA Netlist Writer   ; ee-mill1.ee.ic.ac.uk ; CentOS release ; CentOS release ; x86_64         ;
-; EDA Netlist Writer   ; ee-mill1.ee.ic.ac.uk ; CentOS release ; CentOS release ; x86_64         ;
 +----------------------+----------------------+----------------+----------------+----------------+
 
 
@@ -129,10 +124,8 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off HarvardArchNoPipeline -c HarvardArch
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off HarvardArchNoPipeline -c HarvardArch --vector_source=/home/bjs3118/nfshome/HarvardArchNoPipeline/Waveform3.vwf --testbench_file=/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim/Waveform3.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim/ HarvardArchNoPipeline -c HarvardArch
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off HarvardArchNoPipeline -c HarvardArch --vector_source=/home/bjs3118/nfshome/HarvardArchNoPipeline/Waveform3.vwf --testbench_file=/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim/Waveform3.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim/ HarvardArchNoPipeline -c HarvardArch
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off HarvardArchNoPipeline -c HarvardArch --vector_source=/home/es1219/nfshome/HarvardArchNoPipeline/Waveform1.vwf --testbench_file=/home/es1219/nfshome/HarvardArchNoPipeline/simulation/qsim/Waveform1.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/es1219/nfshome/HarvardArchNoPipeline/simulation/qsim/ HarvardArchNoPipeline -c HarvardArch
 
 
 

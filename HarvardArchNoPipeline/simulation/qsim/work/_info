@@ -9,26 +9,26 @@ z2
 cModel Technology
 Z0 d/home/es1219/nfshome/HarvardArchNoPipeline/simulation/qsim
 vHarvardArch
-Z1 !s110 1589987115
+Z1 !s110 1590011719
 !i10b 1
-!s100 =43e5J=i4j`jz1oK;?Ck:1
-IjIXlB9PinZ5Z7U:e8kHZe1
+!s100 o45IhBzgaGOL31?XJP]VC1
+IYVbbn>l6dB5FGQg:5PP7Y0
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1589987114
-Z3 8HarvardArch.vo
-Z4 FHarvardArch.vo
-Z5 L0 31
-Z6 OV;L;10.5b;63
+w1590011718
+8HarvardArch.vo
+FHarvardArch.vo
+L0 31
+Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1589987115.000000
-Z8 !s107 HarvardArch.vo|
-Z9 !s90 -work|work|HarvardArch.vo|
+Z4 !s108 1590011719.000000
+!s107 HarvardArch.vo|
+!s90 -work|work|HarvardArch.vo|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 n@harvard@arch
 vHarvardArch_vlg_vec_tst
 R1
@@ -37,104 +37,18 @@ R1
 I8OXHm[6C:7=>`d_P>LNXh3
 R2
 R0
-w1589987112
+w1590011717
 8Waveform1.vwf.vt
 FWaveform1.vwf.vt
-Z12 L0 29
-R6
+L0 29
+R3
 r1
 !s85 0
 31
-R7
+R4
 !s107 Waveform1.vwf.vt|
 !s90 -work|work|Waveform1.vwf.vt|
 !i113 1
-R10
-R11
+R5
+R6
 n@harvard@arch_vlg_vec_tst
-vmultiplier_min_gates
-Z13 !s110 1589993445
-!i10b 1
-!s100 OEm06Og4IzezQnk?G=Eca0
-IQ95NPkc6LPFO5K=A`_n]F3
-R2
-Z14 d/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim
-w1589993444
-R3
-R4
-R5
-R6
-r1
-!s85 0
-31
-!s108 1589993444.000000
-R8
-R9
-!i113 1
-R10
-R11
-vmultiplier_min_gates_vlg_vec_tst
-R13
-!i10b 1
-!s100 9e@WgN^CIHSGPWfkE4@@g0
-Im1RmGBZMG6;4J3RY??EE`3
-R2
-R14
-w1589993442
-8Waveform3.vwf.vt
-FWaveform3.vwf.vt
-R12
-R6
-r1
-!s85 0
-31
-!s108 1589993445.000000
-!s107 Waveform3.vwf.vt|
-!s90 -work|work|Waveform3.vwf.vt|
-!i113 1
-R10
-R11
-vMULTIPp2
-!s110 1589992392
-!i10b 1
-!s100 ;0TgWVBhIP;e`U0XmPTYn0
-ILSVOKYQL2YF10>ef_cDo:0
-R2
-R14
-w1589992391
-R3
-R4
-R5
-R6
-r1
-!s85 0
-31
-Z15 !s108 1589992392.000000
-R8
-R9
-!i113 1
-R10
-R11
-n@m@u@l@t@i@pp2
-vMULTIPp2_vlg_vec_tst
-!s110 1589992393
-!i10b 1
-!s100 c0TF3ajmcM4A0l:d67C_g3
-IPI@[F^[iW318GzJS7_YL23
-R2
-R14
-w1589992390
-8Waveform2.vwf.vt
-FWaveform2.vwf.vt
-R12
-R6
-r1
-!s85 0
-31
-R15
-!s107 Waveform2.vwf.vt|
-!s90 -work|work|Waveform2.vwf.vt|
-!i113 1
-R10
-R11
-n@m@u@l@t@i@pp2_vlg_vec_tst
