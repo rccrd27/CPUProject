@@ -52,14 +52,14 @@ R7
 R10
 R11
 n@harvard@arch_vlg_vec_tst
-vMULTIPp2
-Z13 !s110 1589988652
+vmultiplier_min_gates
+Z13 !s110 1589993445
 !i10b 1
-!s100 CI3aQN6J1ISg2_F8C9VAi1
-IL]mlaDWEXSVSB38^H1d200
+!s100 OEm06Og4IzezQnk?G=Eca0
+IQ95NPkc6LPFO5K=A`_n]F3
 R2
 Z14 d/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim
-w1589988651
+w1589993444
 R3
 R4
 R5
@@ -67,7 +67,49 @@ R6
 r1
 !s85 0
 31
-Z15 !s108 1589988652.000000
+!s108 1589993444.000000
+R8
+R9
+!i113 1
+R10
+R11
+vmultiplier_min_gates_vlg_vec_tst
+R13
+!i10b 1
+!s100 9e@WgN^CIHSGPWfkE4@@g0
+Im1RmGBZMG6;4J3RY??EE`3
+R2
+R14
+w1589993442
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+R12
+R6
+r1
+!s85 0
+31
+!s108 1589993445.000000
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R10
+R11
+vMULTIPp2
+!s110 1589992392
+!i10b 1
+!s100 ;0TgWVBhIP;e`U0XmPTYn0
+ILSVOKYQL2YF10>ef_cDo:0
+R2
+R14
+w1589992391
+R3
+R4
+R5
+R6
+r1
+!s85 0
+31
+Z15 !s108 1589992392.000000
 R8
 R9
 !i113 1
@@ -75,13 +117,13 @@ R10
 R11
 n@m@u@l@t@i@pp2
 vMULTIPp2_vlg_vec_tst
-R13
+!s110 1589992393
 !i10b 1
 !s100 c0TF3ajmcM4A0l:d67C_g3
 IPI@[F^[iW318GzJS7_YL23
 R2
 R14
-w1589988649
+w1589992390
 8Waveform2.vwf.vt
 FWaveform2.vwf.vt
 R12

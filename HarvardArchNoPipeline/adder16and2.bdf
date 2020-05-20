@@ -782,7 +782,7 @@ refer to the applicable agreement for further details.
 )
 (symbol
 	(rect 16 -360 168 -264)
-	(text "ADD16" (rect 5 0 47 15)(font "Intel Clear" (font_size 8)))
+	(text "AND16" (rect 5 0 47 15)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 79 29 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)

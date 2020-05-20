@@ -1,6 +1,6 @@
-|MULTIPp2
-P[0] <= MULTIPp1:inst.P[0]
-P[1] <= MULTIPp1:inst.P[1]
+|multiplier_min_gates
+P[0] <= Y[0].DB_MAX_OUTPUT_PORT_TYPE
+P[1] <= adder16and2:inst2.P
 P[2] <= adder16and2:inst1.P
 P[3] <= adder16and2:inst3.P
 P[4] <= adder16and2:inst4.P
@@ -14,24 +14,25 @@ P[11] <= adder16and2:inst11.P
 P[12] <= adder16and2:inst12.P
 P[13] <= adder16and2:inst13.P
 P[14] <= adder16and2:inst14.P
-P[15] <= adder16and2:inst15.P
-P[16] <= adder16and2:inst15.O[0]
-P[17] <= adder16and2:inst15.O[1]
-P[18] <= adder16and2:inst15.O[2]
-P[19] <= adder16and2:inst15.O[3]
-P[20] <= adder16and2:inst15.O[4]
-P[21] <= adder16and2:inst15.O[5]
-P[22] <= adder16and2:inst15.O[6]
-P[23] <= adder16and2:inst15.O[7]
-P[24] <= adder16and2:inst15.O[8]
-P[25] <= adder16and2:inst15.O[9]
-P[26] <= adder16and2:inst15.O[10]
-P[27] <= adder16and2:inst15.O[11]
-P[28] <= adder16and2:inst15.O[12]
-P[29] <= adder16and2:inst15.O[13]
-P[30] <= adder16and2:inst15.O[14]
-P[31] <= adder16and2:inst15.O[15]
-A[0] => MULTIPp1:inst.A[0]
+P[15] <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+B[0] => AND16:inst.B
+B[1] => adder16and2:inst2.bin
+B[2] => adder16and2:inst1.bin
+B[3] => adder16and2:inst3.bin
+B[4] => adder16and2:inst4.bin
+B[5] => adder16and2:inst5.bin
+B[6] => adder16and2:inst6.bin
+B[7] => adder16and2:inst7.bin
+B[8] => adder16and2:inst8.bin
+B[9] => adder16and2:inst9.bin
+B[10] => adder16and2:inst10.bin
+B[11] => adder16and2:inst11.bin
+B[12] => adder16and2:inst12.bin
+B[13] => adder16and2:inst13.bin
+B[14] => adder16and2:inst14.bin
+B[15] => inst18.IN1
+A[0] => AND16:inst.A[0]
+A[0] => adder16and2:inst2.A[0]
 A[0] => adder16and2:inst4.A[0]
 A[0] => adder16and2:inst3.A[0]
 A[0] => adder16and2:inst1.A[0]
@@ -45,8 +46,9 @@ A[0] => adder16and2:inst11.A[0]
 A[0] => adder16and2:inst12.A[0]
 A[0] => adder16and2:inst13.A[0]
 A[0] => adder16and2:inst14.A[0]
-A[0] => adder16and2:inst15.A[0]
-A[1] => MULTIPp1:inst.A[1]
+A[0] => inst18.IN0
+A[1] => AND16:inst.A[1]
+A[1] => adder16and2:inst2.A[1]
 A[1] => adder16and2:inst4.A[1]
 A[1] => adder16and2:inst3.A[1]
 A[1] => adder16and2:inst1.A[1]
@@ -60,8 +62,8 @@ A[1] => adder16and2:inst11.A[1]
 A[1] => adder16and2:inst12.A[1]
 A[1] => adder16and2:inst13.A[1]
 A[1] => adder16and2:inst14.A[1]
-A[1] => adder16and2:inst15.A[1]
-A[2] => MULTIPp1:inst.A[2]
+A[2] => AND16:inst.A[2]
+A[2] => adder16and2:inst2.A[2]
 A[2] => adder16and2:inst4.A[2]
 A[2] => adder16and2:inst3.A[2]
 A[2] => adder16and2:inst1.A[2]
@@ -75,8 +77,8 @@ A[2] => adder16and2:inst11.A[2]
 A[2] => adder16and2:inst12.A[2]
 A[2] => adder16and2:inst13.A[2]
 A[2] => adder16and2:inst14.A[2]
-A[2] => adder16and2:inst15.A[2]
-A[3] => MULTIPp1:inst.A[3]
+A[3] => AND16:inst.A[3]
+A[3] => adder16and2:inst2.A[3]
 A[3] => adder16and2:inst4.A[3]
 A[3] => adder16and2:inst3.A[3]
 A[3] => adder16and2:inst1.A[3]
@@ -90,8 +92,8 @@ A[3] => adder16and2:inst11.A[3]
 A[3] => adder16and2:inst12.A[3]
 A[3] => adder16and2:inst13.A[3]
 A[3] => adder16and2:inst14.A[3]
-A[3] => adder16and2:inst15.A[3]
-A[4] => MULTIPp1:inst.A[4]
+A[4] => AND16:inst.A[4]
+A[4] => adder16and2:inst2.A[4]
 A[4] => adder16and2:inst4.A[4]
 A[4] => adder16and2:inst3.A[4]
 A[4] => adder16and2:inst1.A[4]
@@ -105,8 +107,8 @@ A[4] => adder16and2:inst11.A[4]
 A[4] => adder16and2:inst12.A[4]
 A[4] => adder16and2:inst13.A[4]
 A[4] => adder16and2:inst14.A[4]
-A[4] => adder16and2:inst15.A[4]
-A[5] => MULTIPp1:inst.A[5]
+A[5] => AND16:inst.A[5]
+A[5] => adder16and2:inst2.A[5]
 A[5] => adder16and2:inst4.A[5]
 A[5] => adder16and2:inst3.A[5]
 A[5] => adder16and2:inst1.A[5]
@@ -120,8 +122,8 @@ A[5] => adder16and2:inst11.A[5]
 A[5] => adder16and2:inst12.A[5]
 A[5] => adder16and2:inst13.A[5]
 A[5] => adder16and2:inst14.A[5]
-A[5] => adder16and2:inst15.A[5]
-A[6] => MULTIPp1:inst.A[6]
+A[6] => AND16:inst.A[6]
+A[6] => adder16and2:inst2.A[6]
 A[6] => adder16and2:inst4.A[6]
 A[6] => adder16and2:inst3.A[6]
 A[6] => adder16and2:inst1.A[6]
@@ -135,8 +137,8 @@ A[6] => adder16and2:inst11.A[6]
 A[6] => adder16and2:inst12.A[6]
 A[6] => adder16and2:inst13.A[6]
 A[6] => adder16and2:inst14.A[6]
-A[6] => adder16and2:inst15.A[6]
-A[7] => MULTIPp1:inst.A[7]
+A[7] => AND16:inst.A[7]
+A[7] => adder16and2:inst2.A[7]
 A[7] => adder16and2:inst4.A[7]
 A[7] => adder16and2:inst3.A[7]
 A[7] => adder16and2:inst1.A[7]
@@ -150,8 +152,8 @@ A[7] => adder16and2:inst11.A[7]
 A[7] => adder16and2:inst12.A[7]
 A[7] => adder16and2:inst13.A[7]
 A[7] => adder16and2:inst14.A[7]
-A[7] => adder16and2:inst15.A[7]
-A[8] => MULTIPp1:inst.A[8]
+A[8] => AND16:inst.A[8]
+A[8] => adder16and2:inst2.A[8]
 A[8] => adder16and2:inst4.A[8]
 A[8] => adder16and2:inst3.A[8]
 A[8] => adder16and2:inst1.A[8]
@@ -165,8 +167,8 @@ A[8] => adder16and2:inst11.A[8]
 A[8] => adder16and2:inst12.A[8]
 A[8] => adder16and2:inst13.A[8]
 A[8] => adder16and2:inst14.A[8]
-A[8] => adder16and2:inst15.A[8]
-A[9] => MULTIPp1:inst.A[9]
+A[9] => AND16:inst.A[9]
+A[9] => adder16and2:inst2.A[9]
 A[9] => adder16and2:inst4.A[9]
 A[9] => adder16and2:inst3.A[9]
 A[9] => adder16and2:inst1.A[9]
@@ -180,8 +182,8 @@ A[9] => adder16and2:inst11.A[9]
 A[9] => adder16and2:inst12.A[9]
 A[9] => adder16and2:inst13.A[9]
 A[9] => adder16and2:inst14.A[9]
-A[9] => adder16and2:inst15.A[9]
-A[10] => MULTIPp1:inst.A[10]
+A[10] => AND16:inst.A[10]
+A[10] => adder16and2:inst2.A[10]
 A[10] => adder16and2:inst4.A[10]
 A[10] => adder16and2:inst3.A[10]
 A[10] => adder16and2:inst1.A[10]
@@ -195,8 +197,8 @@ A[10] => adder16and2:inst11.A[10]
 A[10] => adder16and2:inst12.A[10]
 A[10] => adder16and2:inst13.A[10]
 A[10] => adder16and2:inst14.A[10]
-A[10] => adder16and2:inst15.A[10]
-A[11] => MULTIPp1:inst.A[11]
+A[11] => AND16:inst.A[11]
+A[11] => adder16and2:inst2.A[11]
 A[11] => adder16and2:inst4.A[11]
 A[11] => adder16and2:inst3.A[11]
 A[11] => adder16and2:inst1.A[11]
@@ -210,8 +212,8 @@ A[11] => adder16and2:inst11.A[11]
 A[11] => adder16and2:inst12.A[11]
 A[11] => adder16and2:inst13.A[11]
 A[11] => adder16and2:inst14.A[11]
-A[11] => adder16and2:inst15.A[11]
-A[12] => MULTIPp1:inst.A[12]
+A[12] => AND16:inst.A[12]
+A[12] => adder16and2:inst2.A[12]
 A[12] => adder16and2:inst4.A[12]
 A[12] => adder16and2:inst3.A[12]
 A[12] => adder16and2:inst1.A[12]
@@ -225,8 +227,8 @@ A[12] => adder16and2:inst11.A[12]
 A[12] => adder16and2:inst12.A[12]
 A[12] => adder16and2:inst13.A[12]
 A[12] => adder16and2:inst14.A[12]
-A[12] => adder16and2:inst15.A[12]
-A[13] => MULTIPp1:inst.A[13]
+A[13] => AND16:inst.A[13]
+A[13] => adder16and2:inst2.A[13]
 A[13] => adder16and2:inst4.A[13]
 A[13] => adder16and2:inst3.A[13]
 A[13] => adder16and2:inst1.A[13]
@@ -240,8 +242,8 @@ A[13] => adder16and2:inst11.A[13]
 A[13] => adder16and2:inst12.A[13]
 A[13] => adder16and2:inst13.A[13]
 A[13] => adder16and2:inst14.A[13]
-A[13] => adder16and2:inst15.A[13]
-A[14] => MULTIPp1:inst.A[14]
+A[14] => AND16:inst.A[14]
+A[14] => adder16and2:inst2.A[14]
 A[14] => adder16and2:inst4.A[14]
 A[14] => adder16and2:inst3.A[14]
 A[14] => adder16and2:inst1.A[14]
@@ -255,8 +257,8 @@ A[14] => adder16and2:inst11.A[14]
 A[14] => adder16and2:inst12.A[14]
 A[14] => adder16and2:inst13.A[14]
 A[14] => adder16and2:inst14.A[14]
-A[14] => adder16and2:inst15.A[14]
-A[15] => MULTIPp1:inst.A[15]
+A[15] => AND16:inst.A[15]
+A[15] => adder16and2:inst2.A[15]
 A[15] => adder16and2:inst4.A[15]
 A[15] => adder16and2:inst3.A[15]
 A[15] => adder16and2:inst1.A[15]
@@ -270,176 +272,9 @@ A[15] => adder16and2:inst11.A[15]
 A[15] => adder16and2:inst12.A[15]
 A[15] => adder16and2:inst13.A[15]
 A[15] => adder16and2:inst14.A[15]
-A[15] => adder16and2:inst15.A[15]
-B[0] => MULTIPp1:inst.B[0]
-B[1] => MULTIPp1:inst.B[1]
-B[2] => MULTIPp1:inst.B[2]
-B[2] => adder16and2:inst1.bin
-B[3] => MULTIPp1:inst.B[3]
-B[3] => adder16and2:inst3.bin
-B[4] => MULTIPp1:inst.B[4]
-B[4] => adder16and2:inst4.bin
-B[5] => MULTIPp1:inst.B[5]
-B[5] => adder16and2:inst5.bin
-B[6] => MULTIPp1:inst.B[6]
-B[6] => adder16and2:inst6.bin
-B[7] => MULTIPp1:inst.B[7]
-B[7] => adder16and2:inst7.bin
-B[8] => MULTIPp1:inst.B[8]
-B[8] => adder16and2:inst8.bin
-B[9] => MULTIPp1:inst.B[9]
-B[9] => adder16and2:inst9.bin
-B[10] => MULTIPp1:inst.B[10]
-B[10] => adder16and2:inst10.bin
-B[11] => MULTIPp1:inst.B[11]
-B[11] => adder16and2:inst11.bin
-B[12] => MULTIPp1:inst.B[12]
-B[12] => adder16and2:inst12.bin
-B[13] => MULTIPp1:inst.B[13]
-B[13] => adder16and2:inst13.bin
-B[14] => MULTIPp1:inst.B[14]
-B[14] => adder16and2:inst14.bin
-B[15] => MULTIPp1:inst.B[15]
-B[15] => adder16and2:inst15.bin
 
 
-|MULTIPp2|MULTIPp1:inst
-O[0] <= S[1].DB_MAX_OUTPUT_PORT_TYPE
-O[1] <= S[2].DB_MAX_OUTPUT_PORT_TYPE
-O[2] <= S[3].DB_MAX_OUTPUT_PORT_TYPE
-O[3] <= S[4].DB_MAX_OUTPUT_PORT_TYPE
-O[4] <= S[5].DB_MAX_OUTPUT_PORT_TYPE
-O[5] <= S[6].DB_MAX_OUTPUT_PORT_TYPE
-O[6] <= S[7].DB_MAX_OUTPUT_PORT_TYPE
-O[7] <= S[8].DB_MAX_OUTPUT_PORT_TYPE
-O[8] <= S[9].DB_MAX_OUTPUT_PORT_TYPE
-O[9] <= S[10].DB_MAX_OUTPUT_PORT_TYPE
-O[10] <= S[11].DB_MAX_OUTPUT_PORT_TYPE
-O[11] <= S[12].DB_MAX_OUTPUT_PORT_TYPE
-O[12] <= S[13].DB_MAX_OUTPUT_PORT_TYPE
-O[13] <= S[14].DB_MAX_OUTPUT_PORT_TYPE
-O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
-O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-B[0] => ADD16COMB:inst2.B
-B[1] => adder16and:inst.bin
-B[2] => ~NO_FANOUT~
-B[3] => ~NO_FANOUT~
-B[4] => ~NO_FANOUT~
-B[5] => ~NO_FANOUT~
-B[6] => ~NO_FANOUT~
-B[7] => ~NO_FANOUT~
-B[8] => ~NO_FANOUT~
-B[9] => ~NO_FANOUT~
-B[10] => ~NO_FANOUT~
-B[11] => ~NO_FANOUT~
-B[12] => ~NO_FANOUT~
-B[13] => ~NO_FANOUT~
-B[14] => ~NO_FANOUT~
-B[15] => ~NO_FANOUT~
-A[0] => adder16and:inst.A[0]
-A[0] => ADD16COMB:inst2.A[0]
-A[1] => adder16and:inst.A[1]
-A[1] => ADD16COMB:inst2.A[1]
-A[2] => adder16and:inst.A[2]
-A[2] => ADD16COMB:inst2.A[2]
-A[3] => adder16and:inst.A[3]
-A[3] => ADD16COMB:inst2.A[3]
-A[4] => adder16and:inst.A[4]
-A[4] => ADD16COMB:inst2.A[4]
-A[5] => adder16and:inst.A[5]
-A[5] => ADD16COMB:inst2.A[5]
-A[6] => adder16and:inst.A[6]
-A[6] => ADD16COMB:inst2.A[6]
-A[7] => adder16and:inst.A[7]
-A[7] => ADD16COMB:inst2.A[7]
-A[8] => adder16and:inst.A[8]
-A[8] => ADD16COMB:inst2.A[8]
-A[9] => adder16and:inst.A[9]
-A[9] => ADD16COMB:inst2.A[9]
-A[10] => adder16and:inst.A[10]
-A[10] => ADD16COMB:inst2.A[10]
-A[11] => adder16and:inst.A[11]
-A[11] => ADD16COMB:inst2.A[11]
-A[12] => adder16and:inst.A[12]
-A[12] => ADD16COMB:inst2.A[12]
-A[13] => adder16and:inst.A[13]
-A[13] => ADD16COMB:inst2.A[13]
-A[14] => adder16and:inst.A[14]
-A[14] => ADD16COMB:inst2.A[14]
-A[15] => adder16and:inst.A[15]
-A[15] => ADD16COMB:inst2.A[15]
-P[0] <= ADD16COMB:inst2.Y[0]
-P[1] <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst
-Cout <= Full_adder:inst18.Cout
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
-B[0] => Half_adder:inst19.B
-B[1] => Full_adder:inst4.B
-B[2] => Full_adder:inst5.B
-B[3] => Full_adder:inst6.B
-B[4] => Full_adder:inst7.B
-B[5] => Full_adder:inst8.B
-B[6] => Full_adder:inst9.B
-B[7] => Full_adder:inst10.B
-B[8] => Full_adder:inst11.B
-B[9] => Full_adder:inst12.B
-B[10] => Full_adder:inst13.B
-B[11] => Full_adder:inst14.B
-B[12] => Full_adder:inst15.B
-B[13] => Full_adder:inst16.B
-B[14] => Full_adder:inst17.B
-B[15] => Full_adder:inst18.B
-S[0] <= Half_adder:inst19.S
-S[1] <= Full_adder:inst4.S
-S[2] <= Full_adder:inst5.S
-S[3] <= Full_adder:inst6.S
-S[4] <= Full_adder:inst7.S
-S[5] <= Full_adder:inst8.S
-S[6] <= Full_adder:inst9.S
-S[7] <= Full_adder:inst10.S
-S[8] <= Full_adder:inst11.S
-S[9] <= Full_adder:inst12.S
-S[10] <= Full_adder:inst13.S
-S[11] <= Full_adder:inst14.S
-S[12] <= Full_adder:inst15.S
-S[13] <= Full_adder:inst16.S
-S[14] <= Full_adder:inst17.S
-S[15] <= Full_adder:inst18.S
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst18
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|ADD16:inst
+|multiplier_min_gates|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -490,281 +325,25 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst17
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst16
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst15
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst14
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst13
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst12
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst11
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst10
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst9
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst8
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst7
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst6
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst5
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Full_adder:inst4
-S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-A => inst1.IN0
-A => inst3.IN0
-A => inst2.IN0
-B => inst.IN0
-B => inst3.IN1
-B => inst4.IN0
-Cin => inst.IN1
-Cin => inst4.IN1
-Cin => inst2.IN1
-Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|adder16and:inst|Half_adder:inst19
-S <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => inst.IN0
-A => inst2.IN1
-B => inst.IN1
-B => inst2.IN0
-Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|MULTIPp2|MULTIPp1:inst|ADD16COMB:inst2
-Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
-Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
-Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
-Y[3] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-Y[4] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
-Y[5] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-Y[6] <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-Y[7] <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-Y[8] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-Y[9] <= inst6.DB_MAX_OUTPUT_PORT_TYPE
-Y[10] <= inst7.DB_MAX_OUTPUT_PORT_TYPE
-Y[11] <= inst12.DB_MAX_OUTPUT_PORT_TYPE
-Y[12] <= inst13.DB_MAX_OUTPUT_PORT_TYPE
-Y[13] <= inst14.DB_MAX_OUTPUT_PORT_TYPE
-Y[14] <= inst15.DB_MAX_OUTPUT_PORT_TYPE
-Y[15] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-B => inst9.IN0
-B => inst10.IN0
-B => inst11.IN0
-B => inst.IN0
-B => inst1.IN0
-B => inst2.IN0
-B => inst3.IN0
-B => inst4.IN0
-B => inst5.IN0
-B => inst6.IN0
-B => inst7.IN0
-B => inst12.IN0
-B => inst13.IN0
-B => inst14.IN0
-B => inst15.IN0
-B => inst16.IN0
-A[0] => inst9.IN1
-A[1] => inst10.IN1
-A[2] => inst11.IN1
-A[3] => inst.IN1
-A[4] => inst1.IN1
-A[5] => inst2.IN1
-A[6] => inst3.IN1
-A[7] => inst4.IN1
-A[8] => inst5.IN1
-A[9] => inst6.IN1
-A[10] => inst7.IN1
-A[11] => inst12.IN1
-A[12] => inst13.IN1
-A[13] => inst14.IN1
-A[14] => inst15.IN1
-A[15] => inst16.IN1
-
-
-|MULTIPp2|adder16and2:inst4
+|multiplier_min_gates|adder16and2:inst2
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -799,7 +378,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst2|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -808,7 +387,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|ADD16:inst
+|multiplier_min_gates|adder16and2:inst2|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -859,7 +438,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -873,7 +452,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -887,7 +466,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -901,7 +480,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -915,7 +494,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -929,7 +508,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -943,7 +522,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -957,7 +536,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -971,7 +550,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -985,7 +564,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -999,7 +578,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1013,7 +592,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1027,7 +606,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1041,7 +620,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1055,7 +634,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst4|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst2|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1069,25 +648,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3
+|multiplier_min_gates|adder16and2:inst4
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -1122,7 +701,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst4|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -1131,7 +710,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|ADD16:inst
+|multiplier_min_gates|adder16and2:inst4|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -1182,7 +761,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1196,7 +775,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1210,7 +789,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1224,7 +803,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1238,7 +817,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1252,7 +831,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1266,7 +845,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1280,7 +859,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1294,7 +873,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1308,7 +887,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1322,7 +901,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1336,7 +915,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1350,7 +929,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1364,7 +943,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1378,7 +957,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst3|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst4|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1392,25 +971,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1
+|multiplier_min_gates|adder16and2:inst3
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -1445,7 +1024,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst3|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -1454,7 +1033,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|ADD16:inst
+|multiplier_min_gates|adder16and2:inst3|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -1505,7 +1084,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1519,7 +1098,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1533,7 +1112,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1547,7 +1126,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1561,7 +1140,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1575,7 +1154,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1589,7 +1168,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1603,7 +1182,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1617,7 +1196,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1631,7 +1210,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1645,7 +1224,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1659,7 +1238,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1673,7 +1252,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1687,7 +1266,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1701,7 +1280,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst1|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst3|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1715,25 +1294,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5
+|multiplier_min_gates|adder16and2:inst1
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -1768,7 +1347,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst1|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -1777,7 +1356,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|ADD16:inst
+|multiplier_min_gates|adder16and2:inst1|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -1828,7 +1407,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1842,7 +1421,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1856,7 +1435,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1870,7 +1449,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1884,7 +1463,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1898,7 +1477,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1912,7 +1491,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1926,7 +1505,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1940,7 +1519,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1954,7 +1533,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1968,7 +1547,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1982,7 +1561,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -1996,7 +1575,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2010,7 +1589,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2024,7 +1603,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst5|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst1|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2038,25 +1617,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6
+|multiplier_min_gates|adder16and2:inst5
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -2091,7 +1670,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst5|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -2100,7 +1679,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|ADD16:inst
+|multiplier_min_gates|adder16and2:inst5|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -2151,7 +1730,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2165,7 +1744,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2179,7 +1758,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2193,7 +1772,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2207,7 +1786,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2221,7 +1800,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2235,7 +1814,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2249,7 +1828,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2263,7 +1842,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2277,7 +1856,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2291,7 +1870,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2305,7 +1884,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2319,7 +1898,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2333,7 +1912,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2347,7 +1926,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst6|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst5|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2361,25 +1940,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7
+|multiplier_min_gates|adder16and2:inst6
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -2414,7 +1993,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst6|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -2423,7 +2002,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|ADD16:inst
+|multiplier_min_gates|adder16and2:inst6|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -2474,7 +2053,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2488,7 +2067,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2502,7 +2081,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2516,7 +2095,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2530,7 +2109,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2544,7 +2123,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2558,7 +2137,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2572,7 +2151,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2586,7 +2165,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2600,7 +2179,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2614,7 +2193,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2628,7 +2207,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2642,7 +2221,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2656,7 +2235,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2670,7 +2249,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst7|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst6|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2684,25 +2263,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8
+|multiplier_min_gates|adder16and2:inst7
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -2737,7 +2316,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst7|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -2746,7 +2325,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|ADD16:inst
+|multiplier_min_gates|adder16and2:inst7|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -2797,7 +2376,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2811,7 +2390,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2825,7 +2404,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2839,7 +2418,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2853,7 +2432,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2867,7 +2446,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2881,7 +2460,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2895,7 +2474,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2909,7 +2488,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2923,7 +2502,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2937,7 +2516,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2951,7 +2530,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2965,7 +2544,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2979,7 +2558,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -2993,7 +2572,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst8|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst7|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3007,25 +2586,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9
+|multiplier_min_gates|adder16and2:inst8
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -3060,7 +2639,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst8|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -3069,7 +2648,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|ADD16:inst
+|multiplier_min_gates|adder16and2:inst8|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -3120,7 +2699,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3134,7 +2713,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3148,7 +2727,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3162,7 +2741,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3176,7 +2755,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3190,7 +2769,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3204,7 +2783,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3218,7 +2797,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3232,7 +2811,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3246,7 +2825,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3260,7 +2839,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3274,7 +2853,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3288,7 +2867,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3302,7 +2881,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3316,7 +2895,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst9|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst8|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3330,25 +2909,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10
+|multiplier_min_gates|adder16and2:inst9
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -3383,7 +2962,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst9|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -3392,7 +2971,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|ADD16:inst
+|multiplier_min_gates|adder16and2:inst9|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -3443,7 +3022,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3457,7 +3036,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3471,7 +3050,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3485,7 +3064,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3499,7 +3078,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3513,7 +3092,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3527,7 +3106,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3541,7 +3120,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3555,7 +3134,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3569,7 +3148,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3583,7 +3162,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3597,7 +3176,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3611,7 +3190,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3625,7 +3204,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3639,7 +3218,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst10|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst9|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3653,25 +3232,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11
+|multiplier_min_gates|adder16and2:inst10
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -3706,7 +3285,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst10|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -3715,7 +3294,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|ADD16:inst
+|multiplier_min_gates|adder16and2:inst10|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -3766,7 +3345,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3780,7 +3359,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3794,7 +3373,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3808,7 +3387,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3822,7 +3401,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3836,7 +3415,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3850,7 +3429,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3864,7 +3443,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3878,7 +3457,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3892,7 +3471,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3906,7 +3485,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3920,7 +3499,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3934,7 +3513,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3948,7 +3527,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3962,7 +3541,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst11|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst10|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -3976,25 +3555,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12
+|multiplier_min_gates|adder16and2:inst11
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -4029,7 +3608,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst11|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -4038,7 +3617,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|ADD16:inst
+|multiplier_min_gates|adder16and2:inst11|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -4089,7 +3668,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4103,7 +3682,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4117,7 +3696,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4131,7 +3710,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4145,7 +3724,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4159,7 +3738,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4173,7 +3752,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4187,7 +3766,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4201,7 +3780,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4215,7 +3794,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4229,7 +3808,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4243,7 +3822,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4257,7 +3836,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4271,7 +3850,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4285,7 +3864,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst12|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst11|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4299,25 +3878,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13
+|multiplier_min_gates|adder16and2:inst12
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -4352,7 +3931,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst12|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -4361,7 +3940,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|ADD16:inst
+|multiplier_min_gates|adder16and2:inst12|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -4412,7 +3991,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4426,7 +4005,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4440,7 +4019,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4454,7 +4033,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4468,7 +4047,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4482,7 +4061,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4496,7 +4075,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4510,7 +4089,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4524,7 +4103,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4538,7 +4117,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4552,7 +4131,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4566,7 +4145,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4580,7 +4159,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4594,7 +4173,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4608,7 +4187,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst13|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst12|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4622,25 +4201,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14
+|multiplier_min_gates|adder16and2:inst13
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -4675,7 +4254,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst13|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -4684,7 +4263,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|ADD16:inst
+|multiplier_min_gates|adder16and2:inst13|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -4735,7 +4314,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4749,7 +4328,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4763,7 +4342,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4777,7 +4356,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4791,7 +4370,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4805,7 +4384,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4819,7 +4398,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4833,7 +4412,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4847,7 +4426,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4861,7 +4440,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4875,7 +4454,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4889,7 +4468,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4903,7 +4482,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4917,7 +4496,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4931,7 +4510,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst14|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst13|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -4945,25 +4524,25 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15
+|multiplier_min_gates|adder16and2:inst14
 P <= S[0].DB_MAX_OUTPUT_PORT_TYPE
-bin => ADD16:inst.B
-A[0] => ADD16:inst.A[0]
-A[1] => ADD16:inst.A[1]
-A[2] => ADD16:inst.A[2]
-A[3] => ADD16:inst.A[3]
-A[4] => ADD16:inst.A[4]
-A[5] => ADD16:inst.A[5]
-A[6] => ADD16:inst.A[6]
-A[7] => ADD16:inst.A[7]
-A[8] => ADD16:inst.A[8]
-A[9] => ADD16:inst.A[9]
-A[10] => ADD16:inst.A[10]
-A[11] => ADD16:inst.A[11]
-A[12] => ADD16:inst.A[12]
-A[13] => ADD16:inst.A[13]
-A[14] => ADD16:inst.A[14]
-A[15] => ADD16:inst.A[15]
+bin => AND16:inst.B
+A[0] => AND16:inst.A[0]
+A[1] => AND16:inst.A[1]
+A[2] => AND16:inst.A[2]
+A[3] => AND16:inst.A[3]
+A[4] => AND16:inst.A[4]
+A[5] => AND16:inst.A[5]
+A[6] => AND16:inst.A[6]
+A[7] => AND16:inst.A[7]
+A[8] => AND16:inst.A[8]
+A[9] => AND16:inst.A[9]
+A[10] => AND16:inst.A[10]
+A[11] => AND16:inst.A[11]
+A[12] => AND16:inst.A[12]
+A[13] => AND16:inst.A[13]
+A[14] => AND16:inst.A[14]
+A[15] => AND16:inst.A[15]
 B[0] => Half_adder:inst19.B
 B[1] => Full_adder:inst4.B
 B[2] => Full_adder:inst5.B
@@ -4998,7 +4577,7 @@ O[14] <= S[15].DB_MAX_OUTPUT_PORT_TYPE
 O[15] <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Half_adder:inst19
+|multiplier_min_gates|adder16and2:inst14|Half_adder:inst19
 S <= inst.DB_MAX_OUTPUT_PORT_TYPE
 A => inst.IN0
 A => inst2.IN1
@@ -5007,7 +4586,7 @@ B => inst2.IN0
 Cout <= inst2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|ADD16:inst
+|multiplier_min_gates|adder16and2:inst14|AND16:inst
 Y[0] <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst10.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst11.DB_MAX_OUTPUT_PORT_TYPE
@@ -5058,7 +4637,7 @@ A[14] => inst15.IN1
 A[15] => inst16.IN1
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst18
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst18
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5072,7 +4651,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst17
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst17
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5086,7 +4665,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst16
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst16
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5100,7 +4679,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst15
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst15
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5114,7 +4693,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst14
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst14
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5128,7 +4707,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst13
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst13
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5142,7 +4721,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst12
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst12
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5156,7 +4735,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst11
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst11
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5170,7 +4749,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst10
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst10
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5184,7 +4763,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst9
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst9
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5198,7 +4777,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst8
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst8
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5212,7 +4791,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst7
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst7
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5226,7 +4805,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst6
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst6
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5240,7 +4819,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst5
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst5
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
@@ -5254,7 +4833,7 @@ Cin => inst2.IN1
 Cout <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MULTIPp2|adder16and2:inst15|Full_adder:inst4
+|multiplier_min_gates|adder16and2:inst14|Full_adder:inst4
 S <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 A => inst1.IN0
 A => inst3.IN0
