@@ -9,9 +9,9 @@ module Decoder
 	output pc_load,
 	output pc_inc,
 	output e,
-	output f,
 	output push,
-	output pop
+	output pop,
+	output jump_mux
 );
 	wire lda, sta, jmp, stp, jms, bbl, ldr, jeq;
 	wire fetch, exec1, exec2;
@@ -30,14 +30,14 @@ module Decoder
 	assign exec2 = state[2];
 	
 	assign e = lda |ldr;
-	assign f = exec1 & (stp | jmp | jeq & ~eq | bbl | jms);
 	assign WrEn = exec1 & sta;
 	assign pc_load = exec1 & (stp | jmp | jeq & ~eq | bbl | jms);
-	assign pc_inc = (fetch | exec2) & ~(stp | (jmp | jeq & ~eq | bbl | jms));
+	assign pc_inc = (fetch | exec2);
 	assign acc_load = exec2 & (lda |ldr);
 	assign stack_mux = bbl;
 	assign push = jms & exec1;
 	assign pop = bbl & exec1;
+	assign jump_mux = exec1 & (stp | jmp | jeq & ~eq | bbl | jms);
 
 endmodule
 

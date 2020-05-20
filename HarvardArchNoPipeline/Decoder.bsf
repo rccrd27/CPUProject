@@ -89,22 +89,22 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 184 128)
 		(output)
-		(text "f" (rect 0 0 3 12)(font "Arial" ))
-		(text "f" (rect 160 123 163 135)(font "Arial" ))
+		(text "push" (rect 0 0 18 12)(font "Arial" ))
+		(text "push" (rect 145 123 163 135)(font "Arial" ))
 		(line (pt 184 128)(pt 168 128)(line_width 1))
 	)
 	(port
 		(pt 184 144)
 		(output)
-		(text "push" (rect 0 0 18 12)(font "Arial" ))
-		(text "push" (rect 145 139 163 151)(font "Arial" ))
+		(text "pop" (rect 0 0 14 12)(font "Arial" ))
+		(text "pop" (rect 149 139 163 151)(font "Arial" ))
 		(line (pt 184 144)(pt 168 144)(line_width 1))
 	)
 	(port
 		(pt 184 160)
 		(output)
-		(text "pop" (rect 0 0 14 12)(font "Arial" ))
-		(text "pop" (rect 149 155 163 167)(font "Arial" ))
+		(text "jump_mux" (rect 0 0 42 12)(font "Arial" ))
+		(text "jump_mux" (rect 121 155 163 167)(font "Arial" ))
 		(line (pt 184 160)(pt 168 160)(line_width 1))
 	)
 	(drawing

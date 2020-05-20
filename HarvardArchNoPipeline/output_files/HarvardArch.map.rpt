@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HarvardArch
-Wed May 20 12:50:47 2020
+Wed May 20 16:05:07 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -20,37 +20,38 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
  12. Source assignments for prog_mem:inst|altsyncram:altsyncram_component|altsyncram_i1o1:auto_generated
  13. Source assignments for data_mem:inst1|altsyncram:altsyncram_component|altsyncram_i2q2:auto_generated
  14. Parameter Settings for User Entity Instance: prog_mem:inst|altsyncram:altsyncram_component
- 15. Parameter Settings for User Entity Instance: LPM_COUNTER:inst3
+ 15. Parameter Settings for User Entity Instance: BUSMUX:inst4
  16. Parameter Settings for User Entity Instance: LPM_OR:inst18
- 17. Parameter Settings for User Entity Instance: regfile:inst11|LPM_MUX:MUX4A
+ 17. Parameter Settings for User Entity Instance: regfile:inst11|lpm_mux:MUX4A
  18. Parameter Settings for User Entity Instance: regfile:inst11|LPM_FF:R1
  19. Parameter Settings for User Entity Instance: regfile:inst11|LPM_DECODE:DEMUX4
  20. Parameter Settings for User Entity Instance: regfile:inst11|LPM_FF:R2
  21. Parameter Settings for User Entity Instance: regfile:inst11|LPM_FF:R3
  22. Parameter Settings for User Entity Instance: regfile:inst11|LPM_FF:R0
  23. Parameter Settings for User Entity Instance: regfile:inst11|BUSMUX:MUX2
- 24. Parameter Settings for User Entity Instance: regfile:inst11|LPM_MUX:MUX4B
+ 24. Parameter Settings for User Entity Instance: regfile:inst11|lpm_mux:MUX4B
  25. Parameter Settings for User Entity Instance: BUSMUX:inst16
  26. Parameter Settings for User Entity Instance: data_mem:inst1|altsyncram:altsyncram_component
  27. Parameter Settings for User Entity Instance: BUSMUX:inst8
  28. Parameter Settings for User Entity Instance: BUSMUX:inst7
  29. Parameter Settings for User Entity Instance: StateMachine:inst9|LPM_FF:inst2
- 30. Parameter Settings for User Entity Instance: BUSMUX:inst17
- 31. Parameter Settings for User Entity Instance: stack:inst19|LPM_MUX:MUX4B
- 32. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R7
- 33. Parameter Settings for User Entity Instance: stack:inst19|LPM_DECODE:DEMUX4
- 34. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:inst2
- 35. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R6
- 36. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R5
- 37. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R4
- 38. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R3
- 39. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R2
- 40. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R1
- 41. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R0
- 42. altsyncram Parameter Settings by Entity Instance
- 43. Post-Synthesis Netlist Statistics for Top Partition
- 44. Elapsed Time Per Partition
- 45. Analysis & Synthesis Messages
+ 30. Parameter Settings for User Entity Instance: LPM_COUNTER:inst3
+ 31. Parameter Settings for User Entity Instance: BUSMUX:inst17
+ 32. Parameter Settings for User Entity Instance: stack:inst19|lpm_mux:MUX4B
+ 33. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R7
+ 34. Parameter Settings for User Entity Instance: stack:inst19|LPM_DECODE:DEMUX4
+ 35. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:inst2
+ 36. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R6
+ 37. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R5
+ 38. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R4
+ 39. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R3
+ 40. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R2
+ 41. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R1
+ 42. Parameter Settings for User Entity Instance: stack:inst19|LPM_FF:R0
+ 43. altsyncram Parameter Settings by Entity Instance
+ 44. Post-Synthesis Netlist Statistics for Top Partition
+ 45. Elapsed Time Per Partition
+ 46. Analysis & Synthesis Messages
 
 
 
@@ -76,7 +77,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 20 12:50:47 2020           ;
+; Analysis & Synthesis Status     ; Successful - Wed May 20 16:05:07 2020           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; HarvardArch                                     ;
 ; Top-level Entity Name           ; HarvardArch                                     ;
@@ -196,7 +197,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -228,30 +230,30 @@ refer to the applicable agreement for further details.
 ; altram.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/altram.inc              ;         ;
 ; altdpram.inc                     ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/altdpram.inc            ;         ;
 ; db/altsyncram_i1o1.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i1o1.tdf              ;         ;
-; lpm_counter.tdf                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
-; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
-; cmpconst.inc                     ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/cmpconst.inc            ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_compare.inc         ;         ;
-; lpm_counter.inc                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
-; dffeea.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/dffeea.inc              ;         ;
-; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
-; db/cntr_vfh.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/cntr_vfh.tdf                     ;         ;
-; lpm_or.tdf                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_or.tdf              ;         ;
+; busmux.tdf                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf              ;         ;
 ; lpm_mux.tdf                      ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf             ;         ;
 ; muxlut.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/muxlut.inc              ;         ;
 ; bypassff.inc                     ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
 ; altshift.inc                     ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; db/mux_alc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_alc.tdf                      ;         ;
+; lpm_or.tdf                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_or.tdf              ;         ;
 ; db/mux_ilc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_ilc.tdf                      ;         ;
 ; lpm_ff.tdf                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_ff.tdf              ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_constant.inc        ;         ;
 ; lpm_decode.tdf                   ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_decode.tdf          ;         ;
 ; declut.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/declut.inc              ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_compare.inc         ;         ;
 ; db/decode_2of.tdf                ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/decode_2of.tdf                   ;         ;
-; busmux.tdf                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf              ;         ;
 ; db/mux_flc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_flc.tdf                      ;         ;
 ; db/altsyncram_i2q2.tdf           ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i2q2.tdf              ;         ;
-; db/mux_alc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_alc.tdf                      ;         ;
 ; db/mux_qjc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_qjc.tdf                      ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.tdf         ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/cmpconst.inc            ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.inc         ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/dffeea.inc              ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/alt_counter_stratix.inc ;         ;
+; db/cntr_vfh.tdf                  ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/cntr_vfh.tdf                     ;         ;
 ; db/mux_jlc.tdf                   ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_jlc.tdf                      ;         ;
 ; db/decode_7of.tdf                ; yes             ; Auto-Generated Megafunction        ; /home/es1219/nfshome/HarvardArchNoPipeline/db/decode_7of.tdf                   ;         ;
 +----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------+---------+
@@ -262,14 +264,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 162       ;
+; Estimate of Logic utilization (ALMs needed) ; 172       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 214       ;
+; Combinational ALUT usage for logic          ; 243       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 80        ;
-;     -- 5 input functions                    ; 49        ;
-;     -- 4 input functions                    ; 8         ;
-;     -- <=3 input functions                  ; 77        ;
+;     -- 6 input functions                    ; 67        ;
+;     -- 5 input functions                    ; 60        ;
+;     -- 4 input functions                    ; 11        ;
+;     -- <=3 input functions                  ; 105       ;
 ;                                             ;           ;
 ; Dedicated logic registers                   ; 168       ;
 ;                                             ;           ;
@@ -281,8 +283,8 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
 ; Maximum fan-out                             ; 200       ;
-; Total fan-out                               ; 2454      ;
-; Average fan-out                             ; 3.40      ;
+; Total fan-out                               ; 2508      ;
+; Average fan-out                             ; 3.34      ;
 +---------------------------------------------+-----------+
 
 
@@ -291,18 +293,21 @@ refer to the applicable agreement for further details.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------+-----------------+--------------+
-; |HarvardArch                              ; 214 (1)             ; 168 (0)                   ; 65536             ; 0          ; 154  ; 0            ; |HarvardArch                                                                               ; HarvardArch     ; work         ;
-;    |Decoder:inst2|                        ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|Decoder:inst2                                                                 ; Decoder         ; work         ;
+; |HarvardArch                              ; 243 (1)             ; 168 (0)                   ; 65536             ; 0          ; 154  ; 0            ; |HarvardArch                                                                               ; HarvardArch     ; work         ;
+;    |Decoder:inst2|                        ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|Decoder:inst2                                                                 ; Decoder         ; work         ;
 ;    |StateMachine:inst9|                   ; 5 (3)               ; 2 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9                                                            ; StateMachine    ; work         ;
-;       |executor:inst|                     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|executor:inst                                              ; executor        ; work         ;
-;       |lpm_ff:inst2|                      ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|lpm_ff:inst2                                               ; lpm_ff          ; work         ;
-;    |arm_alu:inst12|                       ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                ; arm_alu         ; work         ;
-;    |busmux:inst16|                        ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16                                                                 ; busmux          ; work         ;
-;       |lpm_mux:$00000|                    ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16|lpm_mux:$00000                                                  ; lpm_mux         ; work         ;
-;          |mux_flc:auto_generated|         ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16|lpm_mux:$00000|mux_flc:auto_generated                           ; mux_flc         ; work         ;
+;       |executor:inst|                     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|executor:inst                                              ; executor        ; work         ;
+;       |lpm_ff:inst2|                      ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|lpm_ff:inst2                                               ; lpm_ff          ; work         ;
+;    |arm_alu:inst12|                       ; 72 (72)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                ; arm_alu         ; work         ;
+;    |busmux:inst16|                        ; 17 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16                                                                 ; busmux          ; work         ;
+;       |lpm_mux:$00000|                    ; 17 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16|lpm_mux:$00000                                                  ; lpm_mux         ; work         ;
+;          |mux_flc:auto_generated|         ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst16|lpm_mux:$00000|mux_flc:auto_generated                           ; mux_flc         ; work         ;
 ;    |busmux:inst17|                        ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst17                                                                 ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                    ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst17|lpm_mux:$00000                                                  ; lpm_mux         ; work         ;
 ;          |mux_alc:auto_generated|         ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst17|lpm_mux:$00000|mux_alc:auto_generated                           ; mux_alc         ; work         ;
+;    |busmux:inst4|                         ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst4                                                                  ; busmux          ; work         ;
+;       |lpm_mux:$00000|                    ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst4|lpm_mux:$00000                                                   ; lpm_mux         ; work         ;
+;          |mux_alc:auto_generated|         ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst4|lpm_mux:$00000|mux_alc:auto_generated                            ; mux_alc         ; work         ;
 ;    |busmux:inst7|                         ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst7                                                                  ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                    ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst7|lpm_mux:$00000                                                   ; lpm_mux         ; work         ;
 ;          |mux_qjc:auto_generated|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |HarvardArch|busmux:inst7|lpm_mux:$00000|mux_qjc:auto_generated                            ; mux_qjc         ; work         ;
@@ -388,12 +393,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |HarvardArch|regfile:inst11|lpm_mux:MUX4A|mux_ilc:auto_generated|l2_w4_n0_mux_dataout  ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |HarvardArch|regfile:inst11|lpm_mux:MUX4B|mux_ilc:auto_generated|l2_w10_n0_mux_dataout ;
-; 5:1                ; 15 bits   ; 45 LEs        ; 30 LEs               ; 15 LEs                 ; No         ; |HarvardArch|arm_alu:inst12|Mux11                                                      ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                       ;
-; 8:1                ; 11 bits   ; 55 LEs        ; 55 LEs               ; 0 LEs                  ; No         ; |HarvardArch|stack:inst19|lpm_mux:MUX4B|mux_jlc:auto_generated|l3_w9_n0_mux_dataout    ;
-; 4:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |HarvardArch|regfile:inst11|lpm_mux:MUX4A|mux_ilc:auto_generated|l2_w5_n0_mux_dataout  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |HarvardArch|regfile:inst11|lpm_mux:MUX4B|mux_ilc:auto_generated|l2_w14_n0_mux_dataout ;
+; 6:1                ; 14 bits   ; 56 LEs        ; 28 LEs               ; 28 LEs                 ; No         ; |HarvardArch|arm_alu:inst12|Mux6                                                       ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                       ;
+; 8:1                ; 11 bits   ; 55 LEs        ; 55 LEs               ; 0 LEs                  ; No         ; |HarvardArch|stack:inst19|lpm_mux:MUX4B|mux_jlc:auto_generated|l3_w6_n0_mux_dataout    ;
+; 4:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; No         ; |HarvardArch|arm_alu:inst12|Add0                                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------+
 
 
@@ -476,30 +481,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: LPM_COUNTER:inst3  ;
-+------------------------+-------------------+--------------------+
-; Parameter Name         ; Value             ; Type               ;
-+------------------------+-------------------+--------------------+
-; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY         ;
-; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY       ;
-; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE       ;
-; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE     ;
-; LPM_WIDTH              ; 11                ; Untyped            ;
-; LPM_DIRECTION          ; DEFAULT           ; Untyped            ;
-; LPM_MODULUS            ; 0                 ; Untyped            ;
-; LPM_AVALUE             ; UNUSED            ; Untyped            ;
-; LPM_SVALUE             ; UNUSED            ; Untyped            ;
-; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped            ;
-; DEVICE_FAMILY          ; Cyclone V         ; Untyped            ;
-; CARRY_CHAIN            ; MANUAL            ; Untyped            ;
-; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH ;
-; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK ;
-; CARRY_CNT_EN           ; SMART             ; Untyped            ;
-; LABWIDE_SCLR           ; ON                ; Untyped            ;
-; USE_NEW_VERSION        ; TRUE              ; Untyped            ;
-; CBXI_PARAMETER         ; cntr_vfh          ; Untyped            ;
-+------------------------+-------------------+--------------------+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst4 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 11    ; Untyped                          ;
++----------------+-------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -523,7 +511,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: regfile:inst11|LPM_MUX:MUX4A ;
+; Parameter Settings for User Entity Instance: regfile:inst11|lpm_mux:MUX4A ;
 +------------------------+-----------+--------------------------------------+
 ; Parameter Name         ; Value     ; Type                                 ;
 +------------------------+-----------+--------------------------------------+
@@ -647,7 +635,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: regfile:inst11|LPM_MUX:MUX4B ;
+; Parameter Settings for User Entity Instance: regfile:inst11|lpm_mux:MUX4B ;
 +------------------------+-----------+--------------------------------------+
 ; Parameter Name         ; Value     ; Type                                 ;
 +------------------------+-----------+--------------------------------------+
@@ -775,6 +763,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_COUNTER:inst3  ;
++------------------------+-------------------+--------------------+
+; Parameter Name         ; Value             ; Type               ;
++------------------------+-------------------+--------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY         ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY       ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE       ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE     ;
+; LPM_WIDTH              ; 11                ; Untyped            ;
+; LPM_DIRECTION          ; DEFAULT           ; Untyped            ;
+; LPM_MODULUS            ; 0                 ; Untyped            ;
+; LPM_AVALUE             ; UNUSED            ; Untyped            ;
+; LPM_SVALUE             ; UNUSED            ; Untyped            ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped            ;
+; DEVICE_FAMILY          ; Cyclone V         ; Untyped            ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped            ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK ;
+; CARRY_CNT_EN           ; SMART             ; Untyped            ;
+; LABWIDE_SCLR           ; ON                ; Untyped            ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped            ;
+; CBXI_PARAMETER         ; cntr_vfh          ; Untyped            ;
++------------------------+-------------------+--------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: BUSMUX:inst17 ;
 +----------------+-------+-----------------------------------+
@@ -786,7 +801,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: stack:inst19|LPM_MUX:MUX4B ;
+; Parameter Settings for User Entity Instance: stack:inst19|lpm_mux:MUX4B ;
 +------------------------+-----------+------------------------------------+
 ; Parameter Name         ; Value     ; Type                               ;
 +------------------------+-----------+------------------------------------+
@@ -1034,24 +1049,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 136                         ;
 ;     ENA SLD           ; 27                          ;
 ;     plain             ; 5                           ;
-; arriav_lcell_comb     ; 216                         ;
-;     arith             ; 39                          ;
-;         1 data inputs ; 23                          ;
+; arriav_lcell_comb     ; 245                         ;
+;     arith             ; 55                          ;
+;         1 data inputs ; 38                          ;
+;         2 data inputs ; 1                           ;
 ;         3 data inputs ; 1                           ;
 ;         5 data inputs ; 15                          ;
-;     normal            ; 177                         ;
+;     normal            ; 190                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 47                          ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 34                          ;
-;         6 data inputs ; 80                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 57                          ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 45                          ;
+;         6 data inputs ; 67                          ;
 ; boundary_port         ; 154                         ;
 ; stratixv_ram_block    ; 32                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.50                        ;
-; Average LUT depth     ; 3.26                        ;
+; Max LUT depth         ; 7.50                        ;
+; Average LUT depth     ; 4.21                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1060,7 +1076,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1070,7 +1086,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Wed May 20 12:50:35 2020
+    Info: Processing started: Wed May 20 16:04:56 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HarvardArchNoPipeline -c HarvardArch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
@@ -1101,6 +1117,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file stack_p
     Info (12023): Found entity 1: stack_pointer File: /home/es1219/nfshome/HarvardArchNoPipeline/stack_pointer.v Line: 1
 Warning (12019): Can't analyze file -- file increment16.v is missing
 Warning (12019): Can't analyze file -- file sel_increment.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file multiplier.v
+    Info (12023): Found entity 1: multiplier File: /home/es1219/nfshome/HarvardArchNoPipeline/multiplier.v Line: 1
 Info (12127): Elaborating entity "HarvardArch" for the top level hierarchy
 Info (12128): Elaborating entity "arm_alu" for hierarchy "arm_alu:inst12"
 Warning (10230): Verilog HDL assignment warning at arm_alu.v(25): truncated value with size 32 to match size of target (16) File: /home/es1219/nfshome/HarvardArchNoPipeline/arm_alu.v Line: 25
@@ -1126,13 +1144,15 @@ Info (12133): Instantiated megafunction "prog_mem:inst|altsyncram:altsyncram_com
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i1o1.tdf
     Info (12023): Found entity 1: altsyncram_i1o1 File: /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i1o1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_i1o1" for hierarchy "prog_mem:inst|altsyncram:altsyncram_component|altsyncram_i1o1:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:inst3"
-Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:inst3"
-Info (12133): Instantiated megafunction "LPM_COUNTER:inst3" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "11"
-Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_vfh.tdf
-    Info (12023): Found entity 1: cntr_vfh File: /home/es1219/nfshome/HarvardArchNoPipeline/db/cntr_vfh.tdf Line: 25
-Info (12128): Elaborating entity "cntr_vfh" for hierarchy "LPM_COUNTER:inst3|cntr_vfh:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
+Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:inst4"
+Info (12130): Elaborated megafunction instantiation "BUSMUX:inst4"
+Info (12133): Instantiated megafunction "BUSMUX:inst4" with the following parameter:
+    Info (12134): Parameter "WIDTH" = "11"
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "BUSMUX:inst4|lpm_mux:$00000" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12131): Elaborated megafunction instantiation "BUSMUX:inst4|lpm_mux:$00000", which is child of megafunction instantiation "BUSMUX:inst4" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_alc.tdf
+    Info (12023): Found entity 1: mux_alc File: /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_alc.tdf Line: 22
+Info (12128): Elaborating entity "mux_alc" for hierarchy "BUSMUX:inst4|lpm_mux:$00000|mux_alc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:inst2"
 Info (12128): Elaborating entity "LPM_OR" for hierarchy "LPM_OR:inst18"
 Info (12130): Elaborated megafunction instantiation "LPM_OR:inst18"
@@ -1140,15 +1160,15 @@ Info (12133): Instantiated megafunction "LPM_OR:inst18" with the following param
     Info (12134): Parameter "LPM_SIZE" = "16"
     Info (12134): Parameter "LPM_WIDTH" = "1"
 Info (12128): Elaborating entity "regfile" for hierarchy "regfile:inst11"
-Info (12128): Elaborating entity "LPM_MUX" for hierarchy "regfile:inst11|LPM_MUX:MUX4A"
-Info (12130): Elaborated megafunction instantiation "regfile:inst11|LPM_MUX:MUX4A"
-Info (12133): Instantiated megafunction "regfile:inst11|LPM_MUX:MUX4A" with the following parameter:
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "regfile:inst11|lpm_mux:MUX4A"
+Info (12130): Elaborated megafunction instantiation "regfile:inst11|lpm_mux:MUX4A"
+Info (12133): Instantiated megafunction "regfile:inst11|lpm_mux:MUX4A" with the following parameter:
     Info (12134): Parameter "LPM_SIZE" = "4"
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHS" = "2"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_ilc.tdf
     Info (12023): Found entity 1: mux_ilc File: /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_ilc.tdf Line: 22
-Info (12128): Elaborating entity "mux_ilc" for hierarchy "regfile:inst11|LPM_MUX:MUX4A|mux_ilc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "mux_ilc" for hierarchy "regfile:inst11|lpm_mux:MUX4A|mux_ilc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "LPM_FF" for hierarchy "regfile:inst11|LPM_FF:R1"
 Info (12130): Elaborated megafunction instantiation "regfile:inst11|LPM_FF:R1"
 Info (12133): Instantiated megafunction "regfile:inst11|LPM_FF:R1" with the following parameter:
@@ -1165,11 +1185,11 @@ Info (12128): Elaborating entity "BUSMUX" for hierarchy "regfile:inst11|BUSMUX:M
 Info (12130): Elaborated megafunction instantiation "regfile:inst11|BUSMUX:MUX2"
 Info (12133): Instantiated megafunction "regfile:inst11|BUSMUX:MUX2" with the following parameter:
     Info (12134): Parameter "WIDTH" = "16"
-Info (12128): Elaborating entity "LPM_MUX" for hierarchy "regfile:inst11|BUSMUX:MUX2|LPM_MUX:$00000" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
-Info (12131): Elaborated megafunction instantiation "regfile:inst11|BUSMUX:MUX2|LPM_MUX:$00000", which is child of megafunction instantiation "regfile:inst11|BUSMUX:MUX2" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "regfile:inst11|BUSMUX:MUX2|lpm_mux:$00000" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12131): Elaborated megafunction instantiation "regfile:inst11|BUSMUX:MUX2|lpm_mux:$00000", which is child of megafunction instantiation "regfile:inst11|BUSMUX:MUX2" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_flc.tdf
     Info (12023): Found entity 1: mux_flc File: /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_flc.tdf Line: 22
-Info (12128): Elaborating entity "mux_flc" for hierarchy "regfile:inst11|BUSMUX:MUX2|LPM_MUX:$00000|mux_flc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "mux_flc" for hierarchy "regfile:inst11|BUSMUX:MUX2|lpm_mux:$00000|mux_flc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "data_mem" for hierarchy "data_mem:inst1"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "data_mem:inst1|altsyncram:altsyncram_component" File: /home/es1219/nfshome/HarvardArchNoPipeline/data_mem.v Line: 97
 Info (12130): Elaborated megafunction instantiation "data_mem:inst1|altsyncram:altsyncram_component" File: /home/es1219/nfshome/HarvardArchNoPipeline/data_mem.v Line: 97
@@ -1204,42 +1224,40 @@ Info (12133): Instantiated megafunction "data_mem:inst1|altsyncram:altsyncram_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_i2q2.tdf
     Info (12023): Found entity 1: altsyncram_i2q2 File: /home/es1219/nfshome/HarvardArchNoPipeline/db/altsyncram_i2q2.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_i2q2" for hierarchy "data_mem:inst1|altsyncram:altsyncram_component|altsyncram_i2q2:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:inst8"
-Info (12130): Elaborated megafunction instantiation "BUSMUX:inst8"
-Info (12133): Instantiated megafunction "BUSMUX:inst8" with the following parameter:
-    Info (12134): Parameter "WIDTH" = "11"
-Info (12128): Elaborating entity "LPM_MUX" for hierarchy "BUSMUX:inst8|LPM_MUX:$00000" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
-Info (12131): Elaborated megafunction instantiation "BUSMUX:inst8|LPM_MUX:$00000", which is child of megafunction instantiation "BUSMUX:inst8" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_alc.tdf
-    Info (12023): Found entity 1: mux_alc File: /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_alc.tdf Line: 22
-Info (12128): Elaborating entity "mux_alc" for hierarchy "BUSMUX:inst8|LPM_MUX:$00000|mux_alc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "increment" for hierarchy "increment:inst15"
 Warning (10230): Verilog HDL assignment warning at increment.v(7): truncated value with size 32 to match size of target (11) File: /home/es1219/nfshome/HarvardArchNoPipeline/increment.v Line: 7
 Info (12128): Elaborating entity "BUSMUX" for hierarchy "BUSMUX:inst7"
 Info (12130): Elaborated megafunction instantiation "BUSMUX:inst7"
 Info (12133): Instantiated megafunction "BUSMUX:inst7" with the following parameter:
     Info (12134): Parameter "WIDTH" = "2"
-Info (12128): Elaborating entity "LPM_MUX" for hierarchy "BUSMUX:inst7|LPM_MUX:$00000" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
-Info (12131): Elaborated megafunction instantiation "BUSMUX:inst7|LPM_MUX:$00000", which is child of megafunction instantiation "BUSMUX:inst7" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "BUSMUX:inst7|lpm_mux:$00000" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
+Info (12131): Elaborated megafunction instantiation "BUSMUX:inst7|lpm_mux:$00000", which is child of megafunction instantiation "BUSMUX:inst7" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/busmux.tdf Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_qjc.tdf
     Info (12023): Found entity 1: mux_qjc File: /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_qjc.tdf Line: 22
-Info (12128): Elaborating entity "mux_qjc" for hierarchy "BUSMUX:inst7|LPM_MUX:$00000|mux_qjc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "mux_qjc" for hierarchy "BUSMUX:inst7|lpm_mux:$00000|mux_qjc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:inst9"
 Info (12128): Elaborating entity "LPM_FF" for hierarchy "StateMachine:inst9|LPM_FF:inst2"
 Info (12130): Elaborated megafunction instantiation "StateMachine:inst9|LPM_FF:inst2"
 Info (12133): Instantiated megafunction "StateMachine:inst9|LPM_FF:inst2" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "2"
 Info (12128): Elaborating entity "executor" for hierarchy "StateMachine:inst9|executor:inst"
+Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:inst3"
+Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:inst3"
+Info (12133): Instantiated megafunction "LPM_COUNTER:inst3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "11"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_vfh.tdf
+    Info (12023): Found entity 1: cntr_vfh File: /home/es1219/nfshome/HarvardArchNoPipeline/db/cntr_vfh.tdf Line: 25
+Info (12128): Elaborating entity "cntr_vfh" for hierarchy "LPM_COUNTER:inst3|cntr_vfh:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
 Info (12128): Elaborating entity "stack" for hierarchy "stack:inst19"
-Info (12128): Elaborating entity "LPM_MUX" for hierarchy "stack:inst19|LPM_MUX:MUX4B"
-Info (12130): Elaborated megafunction instantiation "stack:inst19|LPM_MUX:MUX4B"
-Info (12133): Instantiated megafunction "stack:inst19|LPM_MUX:MUX4B" with the following parameter:
+Info (12128): Elaborating entity "lpm_mux" for hierarchy "stack:inst19|lpm_mux:MUX4B"
+Info (12130): Elaborated megafunction instantiation "stack:inst19|lpm_mux:MUX4B"
+Info (12133): Instantiated megafunction "stack:inst19|lpm_mux:MUX4B" with the following parameter:
     Info (12134): Parameter "LPM_SIZE" = "8"
     Info (12134): Parameter "LPM_WIDTH" = "11"
     Info (12134): Parameter "LPM_WIDTHS" = "3"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_jlc.tdf
     Info (12023): Found entity 1: mux_jlc File: /home/es1219/nfshome/HarvardArchNoPipeline/db/mux_jlc.tdf Line: 22
-Info (12128): Elaborating entity "mux_jlc" for hierarchy "stack:inst19|LPM_MUX:MUX4B|mux_jlc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "mux_jlc" for hierarchy "stack:inst19|lpm_mux:MUX4B|mux_jlc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "LPM_FF" for hierarchy "stack:inst19|LPM_FF:R7"
 Info (12130): Elaborated megafunction instantiation "stack:inst19|LPM_FF:R7"
 Info (12133): Instantiated megafunction "stack:inst19|LPM_FF:R7" with the following parameter:
@@ -1260,14 +1278,14 @@ Info (12128): Elaborating entity "stack_pointer" for hierarchy "stack:inst19|sta
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 555 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 584 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 153 output pins
-    Info (21061): Implemented 369 logic cells
+    Info (21061): Implemented 398 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1241 megabytes
-    Info: Processing ended: Wed May 20 12:50:47 2020
+    Info: Peak virtual memory: 1250 megabytes
+    Info: Processing ended: Wed May 20 16:05:08 2020
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:29
 

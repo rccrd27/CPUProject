@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -64 376 104 392)
+	(rect -40 376 128 392)
 	(text "INPUT" (rect 125 0 156 10)(font "Arial" (font_size 6)))
 	(text "push" (rect 5 0 29 11)(font "Arial" ))
 	(pt 168 8)
@@ -53,7 +53,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -40 336 128 352)
+	(rect -16 336 152 352)
 	(text "INPUT" (rect 125 0 156 10)(font "Arial" (font_size 6)))
 	(text "pop" (rect 5 0 25 13)(font "Intel Clear" ))
 	(pt 168 8)
@@ -175,7 +175,7 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 952 80 1149 156))
 )
 (symbol
-	(rect 168 480 344 624)
+	(rect 192 480 368 624)
 	(text "LPM_FF" (rect 98 0 157 16)(font "Arial" (font_size 10)))
 	(text "inst2" (rect 145 133 173 146)(font "Arial" (font_size 8)))
 	(port
@@ -286,10 +286,10 @@ refer to the applicable agreement for further details.
 		(line (pt 152 88)(pt 160 96))
 	)
 	(flipy)
-	(annotation_block (parameter)(rect -128 704 81 779))
+	(annotation_block (parameter)(rect -104 704 105 779))
 )
 (symbol
-	(rect 184 344 336 456)
+	(rect 208 344 360 456)
 	(text "stack_pointer" (rect 5 101 72 112)(font "Arial" ))
 	(text "inst3" (rect 8 3 35 16)(font "Intel Clear" ))
 	(port
@@ -1533,42 +1533,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 368 552)
-	(pt 344 552)
-	(bus)
-)
-(connector
-	(pt 168 568)
-	(pt 144 568)
-	(bus)
-)
-(connector
-	(pt 144 424)
-	(pt 184 424)
-	(bus)
-)
-(connector
-	(pt 368 424)
-	(pt 336 424)
-	(bus)
-)
-(connector
-	(pt 152 408)
-	(pt 184 408)
-)
-(connector
-	(pt 184 392)
-	(pt 168 392)
-)
-(connector
-	(pt 168 392)
-	(pt 168 344)
-)
-(connector
-	(pt 128 344)
-	(pt 168 344)
-)
-(connector
 	(pt 648 336)
 	(pt 648 360)
 )
@@ -1583,14 +1547,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 648 360)
 	(pt 440 360)
-)
-(connector
-	(pt 440 360)
-	(pt 440 568)
-)
-(connector
-	(pt 344 568)
-	(pt 440 568)
 )
 (connector
 	(text "write_addr[2..0]" (rect 616 536 693 549)(font "Intel Clear" ))
@@ -1610,45 +1566,9 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "write_addr[2..0]" (rect 72 504 149 517)(font "Intel Clear" ))
-	(pt 144 520)
-	(pt 72 520)
-	(bus)
-)
-(connector
-	(pt 144 424)
-	(pt 144 520)
-	(bus)
-)
-(connector
-	(pt 144 520)
-	(pt 144 568)
-	(bus)
-)
-(connector
-	(text "read_addr[2..0]" (rect 350 346 363 421)(font "Intel Clear" )(vertical))
-	(pt 368 352)
-	(pt 368 424)
-	(bus)
-)
-(connector
-	(pt 368 424)
-	(pt 368 552)
-	(bus)
-)
-(connector
 	(text "push" (rect 658 552 685 565)(font "Intel Clear" ))
 	(pt 648 568)
 	(pt 688 568)
-)
-(connector
-	(pt 152 408)
-	(pt 152 384)
-)
-(connector
-	(text "push" (rect 114 368 141 381)(font "Intel Clear" ))
-	(pt 104 384)
-	(pt 152 384)
 )
 (connector
 	(text "muxin[7..0][10..0]" (rect 394 672 478 685)(font "Intel Clear" ))
@@ -1719,6 +1639,86 @@ refer to the applicable agreement for further details.
 	(pt 928 408)
 	(bus)
 )
+(connector
+	(pt 392 552)
+	(pt 368 552)
+	(bus)
+)
+(connector
+	(pt 392 424)
+	(pt 360 424)
+	(bus)
+)
+(connector
+	(pt 192 392)
+	(pt 192 344)
+)
+(connector
+	(pt 152 344)
+	(pt 192 344)
+)
+(connector
+	(pt 440 360)
+	(pt 440 568)
+)
+(connector
+	(pt 440 568)
+	(pt 368 568)
+)
+(connector
+	(text "write_addr[2..0]" (rect 96 504 173 517)(font "Intel Clear" ))
+	(pt 168 520)
+	(pt 96 520)
+	(bus)
+)
+(connector
+	(pt 176 408)
+	(pt 176 384)
+)
+(connector
+	(text "push" (rect 138 368 165 381)(font "Intel Clear" ))
+	(pt 128 384)
+	(pt 176 384)
+)
+(connector
+	(pt 168 424)
+	(pt 168 520)
+	(bus)
+)
+(connector
+	(pt 168 520)
+	(pt 168 568)
+	(bus)
+)
+(connector
+	(text "read_addr[2..0]" (rect 374 346 387 421)(font "Intel Clear" )(vertical))
+	(pt 392 352)
+	(pt 392 424)
+	(bus)
+)
+(connector
+	(pt 392 424)
+	(pt 392 552)
+	(bus)
+)
+(connector
+	(pt 168 568)
+	(pt 192 568)
+	(bus)
+)
+(connector
+	(pt 168 424)
+	(pt 208 424)
+	(bus)
+)
+(connector
+	(pt 176 408)
+	(pt 208 408)
+)
+(connector
+	(pt 192 392)
+	(pt 208 392)
+)
 (junction (pt 848 488))
 (junction (pt 848 640))
 (junction (pt 880 504))
@@ -1740,6 +1740,6 @@ refer to the applicable agreement for further details.
 (junction (pt 880 1152))
 (junction (pt 880 1304))
 (junction (pt 648 336))
-(junction (pt 144 520))
-(junction (pt 368 424))
 (junction (pt 928 408))
+(junction (pt 168 520))
+(junction (pt 392 424))
