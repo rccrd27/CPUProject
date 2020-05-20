@@ -22,6 +22,7 @@ run -all
 quit -f
 
 
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,6 +41,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 </modelsim_script_timing>
@@ -1880,9 +1882,9 @@ TRANSITION_LIST("CLK")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 500;
-			LEVEL 0 FOR 1.0;
-			LEVEL 1 FOR 1.0;
+			REPEAT = 250;
+			LEVEL 0 FOR 2.0;
+			LEVEL 1 FOR 2.0;
 		}
 	}
 }
@@ -3171,7 +3173,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out";
+	CHANNEL = "pc_out";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 5;
@@ -3181,7 +3183,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[10]";
+	CHANNEL = "pc_out[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 6;
@@ -3191,7 +3193,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[9]";
+	CHANNEL = "pc_out[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 7;
@@ -3201,7 +3203,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[8]";
+	CHANNEL = "pc_out[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 8;
@@ -3211,7 +3213,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[7]";
+	CHANNEL = "pc_out[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 9;
@@ -3221,7 +3223,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[6]";
+	CHANNEL = "pc_out[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 10;
@@ -3231,7 +3233,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[5]";
+	CHANNEL = "pc_out[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 11;
@@ -3241,7 +3243,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[4]";
+	CHANNEL = "pc_out[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 12;
@@ -3251,7 +3253,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[3]";
+	CHANNEL = "pc_out[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 13;
@@ -3261,7 +3263,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[2]";
+	CHANNEL = "pc_out[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 14;
@@ -3271,7 +3273,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[1]";
+	CHANNEL = "pc_out[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 15;
@@ -3281,7 +3283,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "stack_out[0]";
+	CHANNEL = "pc_out[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 16;
@@ -3291,7 +3293,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out";
+	CHANNEL = "stack_out";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 17;
@@ -3301,7 +3303,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[10]";
+	CHANNEL = "stack_out[10]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 18;
@@ -3311,7 +3313,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[9]";
+	CHANNEL = "stack_out[9]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 19;
@@ -3321,7 +3323,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[8]";
+	CHANNEL = "stack_out[8]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 20;
@@ -3331,7 +3333,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[7]";
+	CHANNEL = "stack_out[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 21;
@@ -3341,7 +3343,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[6]";
+	CHANNEL = "stack_out[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 22;
@@ -3351,7 +3353,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[5]";
+	CHANNEL = "stack_out[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 23;
@@ -3361,7 +3363,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[4]";
+	CHANNEL = "stack_out[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 24;
@@ -3371,7 +3373,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[3]";
+	CHANNEL = "stack_out[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 25;
@@ -3381,7 +3383,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[2]";
+	CHANNEL = "stack_out[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 26;
@@ -3391,7 +3393,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[1]";
+	CHANNEL = "stack_out[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 27;
@@ -3401,7 +3403,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pc_out[0]";
+	CHANNEL = "stack_out[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Hexadecimal;
 	TREE_INDEX = 28;

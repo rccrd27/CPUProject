@@ -69,9 +69,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 456 400 624 416)
+	(rect 512 400 680 416)
 	(text "INPUT" (rect 125 0 156 10)(font "Arial" (font_size 6)))
-	(text "din[10..0]" (rect 5 0 54 11)(font "Arial" ))
+	(text "din[10..0]" (rect 5 0 53 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -324,28 +324,6 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 136 96))
 	)
 	(flipx)
-)
-(symbol
-	(rect 648 376 808 456)
-	(text "increment" (rect 5 0 58 11)(font "Arial" ))
-	(text "inst" (rect 8 64 26 75)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "x[10..0]" (rect 0 0 37 11)(font "Arial" ))
-		(text "x[10..0]" (rect 21 27 58 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 160 32)
-		(output)
-		(text "y[10..0]" (rect 0 0 37 11)(font "Arial" ))
-		(text "y[10..0]" (rect 108 27 145 38)(font "Arial" ))
-		(line (pt 160 32)(pt 144 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 144 64))
-	)
 )
 (symbol
 	(rect 472 648 584 744)
@@ -1673,26 +1651,6 @@ refer to the applicable agreement for further details.
 	(pt 152 384)
 )
 (connector
-	(pt 624 408)
-	(pt 648 408)
-	(bus)
-)
-(connector
-	(pt 808 408)
-	(pt 928 408)
-	(bus)
-)
-(connector
-	(pt 928 320)
-	(pt 928 408)
-	(bus)
-)
-(connector
-	(pt 928 408)
-	(pt 928 472)
-	(bus)
-)
-(connector
 	(text "muxin[7..0][10..0]" (rect 394 672 478 685)(font "Intel Clear" ))
 	(pt 392 696)
 	(pt 472 696)
@@ -1744,6 +1702,21 @@ refer to the applicable agreement for further details.
 	(text "muxin[0][10..0]" (rect 1186 320 1261 333)(font "Intel Clear" ))
 	(pt 1184 336)
 	(pt 1224 336)
+	(bus)
+)
+(connector
+	(pt 928 320)
+	(pt 928 408)
+	(bus)
+)
+(connector
+	(pt 928 408)
+	(pt 928 472)
+	(bus)
+)
+(connector
+	(pt 680 408)
+	(pt 928 408)
 	(bus)
 )
 (junction (pt 848 488))
