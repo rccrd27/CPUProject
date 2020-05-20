@@ -1,5 +1,5 @@
 Flow report for HarvardArch
-Wed May 20 16:05:14 2020
+Wed May 20 16:30:51 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Wed May 20 16:05:14 2020           ;
+; Flow Status                     ; Successful - Wed May 20 16:30:51 2020           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; HarvardArch                                     ;
-; Top-level Entity Name           ; HarvardArch                                     ;
+; Top-level Entity Name           ; MULTIPp2                                        ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CGXFC7C7F23C8                                  ;
 ; Timing Models                   ; Final                                           ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 168                                             ;
-; Total pins                      ; 154                                             ;
+; Total registers                 ; 0                                               ;
+; Total pins                      ; 64                                              ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 65,536                                          ;
+; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/20/2020 16:04:56 ;
+; Start date & time ; 05/20/2020 16:29:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; HarvardArch         ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 22095314620720.158998709647990         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 22095314620720.158998854657964         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -88,12 +88,13 @@ refer to the applicable agreement for further details.
 ; MISC_FILE                           ; prog_mem_bb.v                          ; --            ; --          ; --             ;
 ; MISC_FILE                           ; data_mem.bsf                           ; --            ; --          ; --             ;
 ; MISC_FILE                           ; data_mem_bb.v                          ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; MULTIPp2    ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; MULTIPp2    ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; MULTIPp2    ; Top            ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; MULTIPp2                               ; HarvardArch   ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
@@ -102,10 +103,10 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 1237 MB             ; 00:00:29                           ;
+; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 1126 MB             ; 00:00:30                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1232 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 1239 MB             ; 00:00:01                           ;
-; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:31                           ;
+; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:32                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -124,8 +125,8 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off HarvardArchNoPipeline -c HarvardArch
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off HarvardArchNoPipeline -c HarvardArch --vector_source=/home/es1219/nfshome/HarvardArchNoPipeline/Waveform1.vwf --testbench_file=/home/es1219/nfshome/HarvardArchNoPipeline/simulation/qsim/Waveform1.vwf.vt
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/es1219/nfshome/HarvardArchNoPipeline/simulation/qsim/ HarvardArchNoPipeline -c HarvardArch
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off HarvardArchNoPipeline -c HarvardArch --vector_source=/home/bjs3118/nfshome/HarvardArchNoPipeline/Waveform2.vwf --testbench_file=/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim/Waveform2.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/bjs3118/nfshome/HarvardArchNoPipeline/simulation/qsim/ HarvardArchNoPipeline -c HarvardArch
 
 
 
