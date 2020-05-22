@@ -33,8 +33,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "inst[3..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "inst[3..0]" (rect 21 43 54 55)(font "Arial" ))
+		(text "inst[4..0]" (rect 0 0 34 12)(font "Arial" ))
+		(text "inst[4..0]" (rect 21 43 55 55)(font "Arial" ))
 		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
@@ -106,6 +106,13 @@ refer to the applicable agreement for further details.
 		(text "jump_mux" (rect 0 0 42 12)(font "Arial" ))
 		(text "jump_mux" (rect 121 155 163 167)(font "Arial" ))
 		(line (pt 184 160)(pt 168 160)(line_width 1))
+	)
+	(port
+		(pt 184 176)
+		(output)
+		(text "add_mux" (rect 0 0 37 12)(font "Arial" ))
+		(text "add_mux" (rect 126 171 163 183)(font "Arial" ))
+		(line (pt 184 176)(pt 168 176)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 168 192)(line_width 1))

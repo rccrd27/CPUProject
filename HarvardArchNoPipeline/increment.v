@@ -4,6 +4,6 @@ module increment
   output [10:0] y
 );
 
-  assign y = x + 1;
+  assign y = x + {11'b00000000001};
 
 endmodule 
