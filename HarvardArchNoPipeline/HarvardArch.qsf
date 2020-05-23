@@ -62,8 +62,6 @@ set_global_assignment -name VERILOG_FILE Decoder.v
 set_global_assignment -name BDF_FILE StateMachine.bdf
 set_global_assignment -name BDF_FILE regfile.bdf
 set_global_assignment -name VERILOG_FILE arm_alu.v
-set_global_assignment -name BDF_FILE regfile8.bdf
-set_global_assignment -name BDF_FILE regfile16.bdf
 set_global_assignment -name VERILOG_FILE increment.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name MIF_FILE prog_test.mif
@@ -71,13 +69,10 @@ set_global_assignment -name MIF_FILE data_test.mif
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
 set_global_assignment -name BDF_FILE stack.bdf
 set_global_assignment -name VERILOG_FILE stack_pointer.v
-set_global_assignment -name VERILOG_FILE increment16.v
 set_global_assignment -name MIF_FILE fib_data.mif
 set_global_assignment -name MIF_FILE fib_prog.mif
 set_global_assignment -name MIF_FILE list_data.mif
 set_global_assignment -name MIF_FILE list_prog.mif
-set_global_assignment -name VERILOG_FILE sel_increment.v
-set_global_assignment -name VERILOG_FILE multiplier.v
 set_global_assignment -name MIF_FILE lcong_prog.mif
 set_global_assignment -name MIF_FILE lcong_data.mif
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

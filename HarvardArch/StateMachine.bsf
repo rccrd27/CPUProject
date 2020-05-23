@@ -33,16 +33,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 48)
 		(input)
-		(text "p" (rect 0 0 8 15)(font "Intel Clear" (font_size 8)))
-		(text "p" (rect 21 43 29 58)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
 		(text "CLK" (rect 0 0 23 15)(font "Intel Clear" (font_size 8)))
-		(text "CLK" (rect 21 59 44 74)(font "Intel Clear" (font_size 8)))
-		(line (pt 0 64)(pt 16 64))
+		(text "CLK" (rect 21 43 44 58)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
 	)
 	(port
 		(pt 112 32)

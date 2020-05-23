@@ -14,7 +14,7 @@ module Decoder
 	output jump_mux,
 	output add_mux
 );
-	wire lda, sta, jmp, stp, jms, bbl, ldr, jeq;
+	wire lda, sta, jmp, stp, jms, bbl, ldr, jeq, add;
 	wire fetch, exec1, exec2;
 	
 	assign sta = ~inst[4] & ~inst[3] & ~inst[2] & ~inst[1];

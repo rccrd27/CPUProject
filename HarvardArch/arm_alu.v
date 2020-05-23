@@ -22,7 +22,7 @@ module arm_alu
 		begin
 			case (inst[14:12])
 				3'b000 : sum = rd_data + rs_data; // add
-				3'b001 : sum = rd_data + ~rs_data + 1; // sub
+				3'b001 : sum = rd_data + ~rs_data + {16'h0001}; // sub
 				3'b010 : sum = rs_data + cin; // mov
 				3'b011 : sum = {1'b0,rs_data[15:1]}; // lsr
 				3'b100 : sum = rs_data + 16'hFFFF; // dec
@@ -36,4 +36,4 @@ module arm_alu
 	assign d_out = sum[15:0];
 	assign reg_mux = ~inst[15] & ~inst[14] & inst[13];
 
-endmodule
+endmodule 
