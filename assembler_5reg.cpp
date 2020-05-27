@@ -20,67 +20,73 @@ string code(string x, string fi, int cycle) // x=opcode, fi=full input
   }
   else if(x == "JMP")
   {
-    string c = "1";
+    string bit3 = addbit(fi[6]);
     string operand;
-    operand = fi.substr(6, (fi.length() - 1));
-    return c + operand;
+    operand = fi.substr(7, (fi.length() - 1));
+    return "0" + bit3 + operand;
 }
-  else if(x == "JEQ")
-  {
-    string operand1 = fi.substr(10, (fi.length() - 1));
-    string operand2 = fi.substr(11, (fi.length() - 1));
-    string bit3 = addbit(fi[10]);
-    if(fi[5] == '0')
-    {
-      return "2" + operand1;
-    }
-    else if(fi[5] == '1')
-    {
-      return "2" + bit3 + operand2;
-    }
-    else if(fi[5] == '2')
-    {
-      return "3" + operand1;
-    }
-    else if(fi[5] == '3')
-    {
-      return "3" + bit3 + operand2;
-    }
-    else{return "not valid input";}
-  }
   else if(x == "STP")
   {
     string a = dec_to_hex(cycle);
     int size = a.size();
-    if(size == 1) {return "400" + a;}
-    else if(size == 2) {return "40" + a;}
-    else if(size == 3) {return "4" + a;}
-    else{return "4000";}
+    if(size == 1) {return "100" + a;}
+    else if(size == 2) {return "10" + a;}
+    else if(size == 3) {return "1" + a;}
+    else{return "1000";}
   }
   else if(x == "LDA")
   {
-    string c = "5";
+    string bit3 = addbit(fi[6]);
     string operand;
-    operand = fi.substr(6, (fi.length() - 1));
-    return c + operand;
+    operand = fi.substr(7, (fi.length() - 1));
+    return "1" + bit3 + operand;
   }
-  else if(x == "ADD" && fi[5] == 'x')
+/*  else if(x == "ADD" && fi[5] == 'x')
   {
     string c = "5";
     string operand;
     operand = fi.substr(7, (fi.length() - 1));
     string bit3 = addbit(fi[6]);
     return c + bit3 + operand;
-}
+} */
   else if(x == "JMS")
   {
-    string c = "6";
+    string c = "2";
     string operand;
     operand = fi.substr(6, (fi.length() - 1));
     return c + operand;
   }
-  else if(x == "BBL") {return "7000";}
-
+  else if(x == "BBL")
+  {
+    return "2800";
+  }
+  else if(x == "JEQ") // JEQ r1, 0x010
+  {
+    string operand1 = fi.substr(10, (fi.length() - 1));
+    string operand2 = fi.substr(11, (fi.length() - 1));
+    string bit3 = addbit(fi[10]);
+    if(fi[5] == '0')
+    {
+      return "4" + operand1;
+    }
+    else if(fi[5] == '1')
+    {
+      return "4" + bit3 + operand2;
+    }
+    else if(fi[5] == '2')
+    {
+      return "5" + operand1;
+    }
+    else if(fi[5] == '3')
+    {
+      return "5" + bit3 + operand2;
+    }
+    else if(fi[5] == '4')
+    {
+      return "6" + operand1;
+    }
+    else{return "not valid input";}
+  }
       // ARMish instructions //
 
   else if(x == "ADD" && fi[5] != 'x')
