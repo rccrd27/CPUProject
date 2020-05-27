@@ -86,7 +86,7 @@ string code(string x, string fi, int cycle) // x=opcode, fi=full input
   else if(x == "ADD" && fi[5] != 'x')
   {
     string reg = hex_the_reg(fi[5], fi[9]);
-    return "800" + reg;
+    return "80" + reg;
   }
   else if(x == "SUB")
   {
@@ -96,7 +96,10 @@ string code(string x, string fi, int cycle) // x=opcode, fi=full input
   else if(x == "MOV")     // Need to check !!!!
   {
     string reg = hex_the_reg(fi[5], fi[9]);
-    return "A00" + reg;
+    string cin;
+    if(fi[15] == '0') { return "A0" + reg;}
+    else if(fi[15] == '1') { return "A8" + reg;}
+    else{return "not valid input";}
   }
   else if(x == "LSR")
   {
@@ -116,9 +119,10 @@ string code(string x, string fi, int cycle) // x=opcode, fi=full input
   else if(x == "LDR")         //Need to check !!!!
   {
     if(fi[5] == '0') {return "E000";}
-    else if(fi[5] == '1') {return "E004";}
-    else if(fi[5] == '2') {return "E008";}
-    else if(fi[5] == '3') {return "E00C";}
+    else if(fi[5] == '1') {return "E008";}
+    else if(fi[5] == '2') {return "E010";}
+    else if(fi[5] == '3') {return "E018";}
+    else if(fi[5] == '4') {return "E020";}
     else{return "not valid input";}
   }
   else  {return "not valid input";}
@@ -190,18 +194,26 @@ while(dec_num>0)
 
 string hex_the_reg(char rd, char rs)
 {
-  if(rd=='0'){return string(1, rs);}
-  else if(rd=='1' && rs=='0'){return "4";}
-  else if(rd=='1' && rs=='1'){return "5";}
-  else if(rd=='1' && rs=='2'){return "6";}
-  else if(rd=='1' && rs=='3'){return "7";}
-  else if(rd=='2' && rs=='0'){return "8";}
-  else if(rd=='2' && rs=='1'){return "9";}
-  else if(rd=='2' && rs=='2'){return "A";}
-  else if(rd=='2' && rs=='3'){return "B";}
-  else if(rd=='3' && rs=='0'){return "C";}
-  else if(rd=='3' && rs=='1'){return "D";}
-  else if(rd=='3' && rs=='2'){return "E";}
-  else if(rd=='3' && rs=='3'){return "F";}
+  if(rd=='0'){return "0" + string(1, rs);}
+  else if(rd=='1' && rs=='0'){return "08";}
+  else if(rd=='1' && rs=='1'){return "09";}
+  else if(rd=='1' && rs=='2'){return "0A";}
+  else if(rd=='1' && rs=='3'){return "0B";}
+  else if(rd=='1' && rs=='4'){return "0C";}
+  else if(rd=='2' && rs=='0'){return "10";}
+  else if(rd=='2' && rs=='1'){return "11";}
+  else if(rd=='2' && rs=='2'){return "12";}
+  else if(rd=='2' && rs=='3'){return "13";}
+  else if(rd=='2' && rs=='4'){return "14";}
+  else if(rd=='3' && rs=='0'){return "18";}
+  else if(rd=='3' && rs=='1'){return "19";}
+  else if(rd=='3' && rs=='2'){return "1A";}
+  else if(rd=='3' && rs=='3'){return "1B";}
+  else if(rd=='3' && rs=='4'){return "1C";}
+  else if(rd=='4' && rs=='0'){return "20";}
+  else if(rd=='4' && rs=='1'){return "21";}
+  else if(rd=='4' && rs=='2'){return "22";}
+  else if(rd=='4' && rs=='3'){return "23";}
+  else if(rd=='4' && rs=='4'){return "24";}
   else{return "not valid input";}
 }
