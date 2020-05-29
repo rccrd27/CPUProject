@@ -102,10 +102,12 @@ string code(string x, string fi, int cycle) // x=opcode, fi=full input
   else if(x == "MOV")     // Need to check !!!!
   {
     string reg = hex_the_reg(fi[5], fi[9]);
-    string cin;
-    if(fi[15] == '0') { return "A0" + reg;}
-    else if(fi[15] == '1') { return "A8" + reg;}
-    else{return "not valid input";}
+    return "A0" + reg;
+  }
+  else if(x == "INC")
+  {
+    string reg = hex_the_reg(fi[5], fi[9]);
+    return "A8" + reg;
   }
   else if(x == "LSR")
   {

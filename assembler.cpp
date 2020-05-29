@@ -98,6 +98,11 @@ string code(string x, string fi, int cycle) // x=opcode, fi=full input
     string reg = hex_the_reg(fi[5], fi[9]);
     return "A00" + reg;
   }
+  else if(x == "INC")
+  {
+    string reg = hex_the_reg(fi[5], fi[9]);
+    return "A80" + reg;
+  }
   else if(x == "LSR")
   {
     string reg = hex_the_reg(fi[5], fi[9]);
