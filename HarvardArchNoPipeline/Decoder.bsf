@@ -107,13 +107,6 @@ refer to the applicable agreement for further details.
 		(text "jump_mux" (rect 121 155 163 167)(font "Arial" ))
 		(line (pt 184 160)(pt 168 160)(line_width 1))
 	)
-	(port
-		(pt 184 176)
-		(output)
-		(text "add_mux" (rect 0 0 37 12)(font "Arial" ))
-		(text "add_mux" (rect 126 171 163 183)(font "Arial" ))
-		(line (pt 184 176)(pt 168 176)(line_width 1))
-	)
 	(drawing
 		(rectangle (rect 16 16 168 192)(line_width 1))
 	)

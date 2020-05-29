@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "05/21/2020 16:05:53"
+// Generated on "05/29/2020 10:30:08"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          HarvardArch
 // 
@@ -40,6 +40,7 @@ wire [15:0] r0;
 wire [15:0] r1;
 wire [15:0] r2;
 wire [15:0] r3;
+wire [15:0] r4;
 wire [10:0] stack_out;
 wire [2:0] state;
 
@@ -56,6 +57,7 @@ HarvardArch i1 (
 	.r1(r1),
 	.r2(r2),
 	.r3(r3),
+	.r4(r4),
 	.stack_out(stack_out),
 	.state(state)
 );
