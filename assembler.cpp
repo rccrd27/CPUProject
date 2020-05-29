@@ -156,7 +156,7 @@ while(getline(cin, x))
 
 for(int i=0; i<y.size(); i++)
 {
-  cout << i << ": " << y[i] << endl;
+  cout << dec_to_hex(i) << ": " << y[i] << endl;
 }
 }
 
@@ -184,12 +184,18 @@ string dec_to_hex(int dec_num)
 string hexdec_num="";
 char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 
-while(dec_num>0)
+
+if(dec_num == 0){
+  return hexdec_num = hex[0];
+}
+
+else while(dec_num>0)
 {
   r = dec_num % 16;
   hexdec_num = hex[r] + hexdec_num;
   dec_num = dec_num/16;
 }
+
   return hexdec_num;
 }
 
