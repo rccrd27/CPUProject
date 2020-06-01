@@ -16,7 +16,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition"
 
-// DATE "05/29/2020 10:30:10"
+// DATE "05/29/2020 11:37:47"
 
 // 
 // Device: Altera 5CGXFC7C7F23C8 Package FBGA484
@@ -136,7 +136,7 @@ wire \inst21|MUX4B|auto_generated|l3_w10_n0_mux_dataout~0_combout ;
 wire \inst21|MUX4B|auto_generated|l3_w10_n0_mux_dataout~1_combout ;
 wire \inst21|MUX4B|auto_generated|l3_w10_n0_mux_dataout~2_combout ;
 wire \inst12|Mux0~0_combout ;
-wire \inst12|Mux3~0_combout ;
+wire \inst12|Mux7~0_combout ;
 wire \inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~0_combout ;
 wire \inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~0_combout ;
 wire \inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout ;
@@ -343,8 +343,8 @@ wire \inst12|Add1~34 ;
 wire \inst12|Add1~29_sumout ;
 wire \inst12|Add3~34 ;
 wire \inst12|Add3~29_sumout ;
-wire \inst12|Mux7~0_combout ;
 wire \inst12|Mux7~1_combout ;
+wire \inst12|Mux7~2_combout ;
 wire \inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout ;
 wire \inst21|MUX4B|auto_generated|l3_w8_n0_mux_dataout~0_combout ;
 wire \inst21|MUX4B|auto_generated|l3_w8_n0_mux_dataout~1_combout ;
@@ -555,7 +555,7 @@ wire \inst12|Mux2~0_combout ;
 wire \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~1_combout ;
 wire \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout ;
 wire \inst21|MUX4B|auto_generated|l3_w13_n0_mux_dataout~1_combout ;
-wire \inst12|Mux3~1_combout ;
+wire \inst12|Mux3~0_combout ;
 wire \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~1_combout ;
 wire \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout ;
 wire \inst21|MUX4B|auto_generated|l3_w12_n0_mux_dataout~0_combout ;
@@ -686,7 +686,7 @@ wire \inst12|Mux0~4_combout ;
 wire \inst12|Mux0~5_combout ;
 wire \inst12|Mux1~1_combout ;
 wire \inst12|Mux2~1_combout ;
-wire \inst12|Mux3~2_combout ;
+wire \inst12|Mux3~1_combout ;
 wire \inst12|Mux4~1_combout ;
 wire \inst12|Mux5~1_combout ;
 wire \inst9|inst5~combout ;
@@ -925,7 +925,7 @@ defparam \alu_out[13]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \alu_out[12]~output (
-	.i(\inst12|Mux3~2_combout ),
+	.i(\inst12|Mux3~1_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -985,7 +985,7 @@ defparam \alu_out[9]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \alu_out[8]~output (
-	.i(\inst12|Mux7~1_combout ),
+	.i(\inst12|Mux7~2_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -5580,9 +5580,9 @@ defparam \inst12|Mux0~0 .lut_mask = 64'h2222222222222222;
 defparam \inst12|Mux0~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst12|Mux3~0 (
+cyclonev_lcell_comb \inst12|Mux7~0 (
 // Equation(s):
-// \inst12|Mux3~0_combout  = (\inst|altsyncram_component|auto_generated|q_a [14] & ((\inst|altsyncram_component|auto_generated|q_a [12]) # (\inst|altsyncram_component|auto_generated|q_a [13])))
+// \inst12|Mux7~0_combout  = (\inst|altsyncram_component|auto_generated|q_a [14] & ((\inst|altsyncram_component|auto_generated|q_a [12]) # (\inst|altsyncram_component|auto_generated|q_a [13])))
 
 	.dataa(!\inst|altsyncram_component|auto_generated|q_a [13]),
 	.datab(!\inst|altsyncram_component|auto_generated|q_a [14]),
@@ -5593,14 +5593,14 @@ cyclonev_lcell_comb \inst12|Mux3~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst12|Mux3~0_combout ),
+	.combout(\inst12|Mux7~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \inst12|Mux3~0 .extended_lut = "off";
-defparam \inst12|Mux3~0 .lut_mask = 64'h1313131313131313;
-defparam \inst12|Mux3~0 .shared_arith = "off";
+defparam \inst12|Mux7~0 .extended_lut = "off";
+defparam \inst12|Mux7~0 .lut_mask = 64'h1313131313131313;
+defparam \inst12|Mux7~0 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~0 (
@@ -5880,15 +5880,15 @@ defparam \inst12|Add4~61 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux15~1 (
 // Equation(s):
-// \inst12|Mux15~1_combout  = ( \inst12|Mux15~0_combout  & ( \inst12|Add4~61_sumout  & ( (!\inst12|Mux3~0_combout ) # ((\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # 
-// (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) ) # ( !\inst12|Mux15~0_combout  & ( \inst12|Add4~61_sumout  & ( (!\inst12|Mux3~0_combout  & (((\inst12|Mux0~0_combout )))) # (\inst12|Mux3~0_combout  & 
-// (\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) ) # ( \inst12|Mux15~0_combout  & ( !\inst12|Add4~61_sumout  & ( (!\inst12|Mux3~0_combout  & 
-// (((!\inst12|Mux0~0_combout )))) # (\inst12|Mux3~0_combout  & (\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) ) # ( !\inst12|Mux15~0_combout 
-//  & ( !\inst12|Add4~61_sumout  & ( (\inst12|Mux3~0_combout  & (\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) )
+// \inst12|Mux15~1_combout  = ( \inst12|Mux15~0_combout  & ( \inst12|Add4~61_sumout  & ( (!\inst12|Mux7~0_combout ) # ((\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # 
+// (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) ) # ( !\inst12|Mux15~0_combout  & ( \inst12|Add4~61_sumout  & ( (!\inst12|Mux7~0_combout  & (((\inst12|Mux0~0_combout )))) # (\inst12|Mux7~0_combout  & 
+// (\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) ) # ( \inst12|Mux15~0_combout  & ( !\inst12|Add4~61_sumout  & ( (!\inst12|Mux7~0_combout  & 
+// (((!\inst12|Mux0~0_combout )))) # (\inst12|Mux7~0_combout  & (\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) ) # ( !\inst12|Mux15~0_combout 
+//  & ( !\inst12|Add4~61_sumout  & ( (\inst12|Mux7~0_combout  & (\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout  & ((!\inst12|Mux0~0_combout ) # (\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout )))) ) ) )
 
 	.dataa(!\inst21|MUX4B|auto_generated|l3_w0_n0_mux_dataout~1_combout ),
 	.datab(!\inst12|Mux0~0_combout ),
-	.datac(!\inst12|Mux3~0_combout ),
+	.datac(!\inst12|Mux7~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout ),
 	.datae(!\inst12|Mux15~0_combout ),
 	.dataf(!\inst12|Add4~61_sumout ),
@@ -6372,14 +6372,14 @@ defparam \inst12|Mux14~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux14~1 (
 // Equation(s):
-// \inst12|Mux14~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~57_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~57_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w1_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux14~0_combout  ) ) )
+// \inst12|Mux14~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~57_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~57_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w1_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux14~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~57_sumout ),
 	.datab(!\inst12|Add5~57_sumout ),
 	.datac(!\inst12|Mux14~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w1_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -6835,14 +6835,14 @@ defparam \inst12|Mux13~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux13~1 (
 // Equation(s):
-// \inst12|Mux13~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~53_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~53_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w2_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux13~0_combout  ) ) )
+// \inst12|Mux13~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~53_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~53_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w2_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux13~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~53_sumout ),
 	.datab(!\inst12|Add5~53_sumout ),
 	.datac(!\inst12|Mux13~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w2_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -7323,14 +7323,14 @@ defparam \inst12|Mux12~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux12~1 (
 // Equation(s):
-// \inst12|Mux12~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~49_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~49_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w3_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux12~0_combout  ) ) )
+// \inst12|Mux12~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~49_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~49_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w3_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux12~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~49_sumout ),
 	.datab(!\inst12|Add5~49_sumout ),
 	.datac(!\inst12|Mux12~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w3_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -7837,14 +7837,14 @@ defparam \inst12|Mux11~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux11~1 (
 // Equation(s):
-// \inst12|Mux11~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~45_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~45_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w4_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux11~0_combout  ) ) )
+// \inst12|Mux11~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~45_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~45_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w4_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux11~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~45_sumout ),
 	.datab(!\inst12|Add5~45_sumout ),
 	.datac(!\inst12|Mux11~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w4_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -8457,14 +8457,14 @@ defparam \inst12|Mux10~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux10~1 (
 // Equation(s):
-// \inst12|Mux10~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~41_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~41_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w5_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux10~0_combout  ) ) )
+// \inst12|Mux10~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~41_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~41_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w5_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux10~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~41_sumout ),
 	.datab(!\inst12|Add5~41_sumout ),
 	.datac(!\inst12|Mux10~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w5_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -9001,14 +9001,14 @@ defparam \inst12|Mux9~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux9~1 (
 // Equation(s):
-// \inst12|Mux9~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~37_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~37_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w6_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux9~0_combout  ) ) )
+// \inst12|Mux9~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~37_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~37_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w6_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux9~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~37_sumout ),
 	.datab(!\inst12|Add5~37_sumout ),
 	.datac(!\inst12|Mux9~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w6_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -9640,14 +9640,14 @@ defparam \inst12|Mux8~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux8~1 (
 // Equation(s):
-// \inst12|Mux8~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~33_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~33_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w7_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux8~0_combout  ) ) )
+// \inst12|Mux8~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~33_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~33_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w7_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux8~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~33_sumout ),
 	.datab(!\inst12|Add5~33_sumout ),
 	.datac(!\inst12|Mux8~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w7_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -10229,9 +10229,9 @@ defparam \inst12|Add3~29 .lut_mask = 64'h0000FFFF000000FF;
 defparam \inst12|Add3~29 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst12|Mux7~0 (
+cyclonev_lcell_comb \inst12|Mux7~1 (
 // Equation(s):
-// \inst12|Mux7~0_combout  = ( \inst|altsyncram_component|auto_generated|q_a [12] & ( \inst|altsyncram_component|auto_generated|q_a [13] & ( \inst21|MUX4B|auto_generated|l3_w9_n0_mux_dataout~2_combout  ) ) ) # ( !\inst|altsyncram_component|auto_generated|q_a 
+// \inst12|Mux7~1_combout  = ( \inst|altsyncram_component|auto_generated|q_a [12] & ( \inst|altsyncram_component|auto_generated|q_a [13] & ( \inst21|MUX4B|auto_generated|l3_w9_n0_mux_dataout~2_combout  ) ) ) # ( !\inst|altsyncram_component|auto_generated|q_a 
 // [12] & ( \inst|altsyncram_component|auto_generated|q_a [13] & ( \inst12|Add3~29_sumout  ) ) ) # ( \inst|altsyncram_component|auto_generated|q_a [12] & ( !\inst|altsyncram_component|auto_generated|q_a [13] & ( \inst12|Add1~29_sumout  ) ) ) # ( 
 // !\inst|altsyncram_component|auto_generated|q_a [12] & ( !\inst|altsyncram_component|auto_generated|q_a [13] & ( \inst12|Add0~29_sumout  ) ) )
 
@@ -10244,38 +10244,38 @@ cyclonev_lcell_comb \inst12|Mux7~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst12|Mux7~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \inst12|Mux7~0 .extended_lut = "off";
-defparam \inst12|Mux7~0 .lut_mask = 64'h555533330F0F00FF;
-defparam \inst12|Mux7~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \inst12|Mux7~1 (
-// Equation(s):
-// \inst12|Mux7~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~29_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~29_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w8_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux7~0_combout  ) ) )
-
-	.dataa(!\inst12|Add4~29_sumout ),
-	.datab(!\inst12|Add5~29_sumout ),
-	.datac(!\inst12|Mux7~0_combout ),
-	.datad(!\inst21|MUX4A|auto_generated|l3_w8_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
-	.dataf(!\inst12|Mux0~0_combout ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
 	.combout(\inst12|Mux7~1_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
 defparam \inst12|Mux7~1 .extended_lut = "off";
-defparam \inst12|Mux7~1 .lut_mask = 64'h0F0F00FF55553333;
+defparam \inst12|Mux7~1 .lut_mask = 64'h555533330F0F00FF;
 defparam \inst12|Mux7~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \inst12|Mux7~2 (
+// Equation(s):
+// \inst12|Mux7~2_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~29_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~29_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w8_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux7~1_combout  ) ) )
+
+	.dataa(!\inst12|Add4~29_sumout ),
+	.datab(!\inst12|Add5~29_sumout ),
+	.datac(!\inst12|Mux7~1_combout ),
+	.datad(!\inst21|MUX4A|auto_generated|l3_w8_n0_mux_dataout~1_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
+	.dataf(!\inst12|Mux0~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\inst12|Mux7~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \inst12|Mux7~2 .extended_lut = "off";
+defparam \inst12|Mux7~2 .lut_mask = 64'h0F0F00FF55553333;
+defparam \inst12|Mux7~2 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_ram_block \inst1|altsyncram_component|auto_generated|ram_block1a8 (
@@ -10349,9 +10349,9 @@ defparam \inst1|altsyncram_component|auto_generated|ram_block1a8 .mem_init0 = "0
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0 (
 // Equation(s):
-// \inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  = (!\inst12|ldr~combout  & (\inst12|Mux7~1_combout )) # (\inst12|ldr~combout  & ((\inst1|altsyncram_component|auto_generated|q_b [8])))
+// \inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout  = (!\inst12|ldr~combout  & (\inst12|Mux7~2_combout )) # (\inst12|ldr~combout  & ((\inst1|altsyncram_component|auto_generated|q_b [8])))
 
-	.dataa(!\inst12|Mux7~1_combout ),
+	.dataa(!\inst12|Mux7~2_combout ),
 	.datab(!\inst1|altsyncram_component|auto_generated|q_b [8]),
 	.datac(!\inst12|ldr~combout ),
 	.datad(gnd),
@@ -10897,14 +10897,14 @@ defparam \inst12|Mux6~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux6~1 (
 // Equation(s):
-// \inst12|Mux6~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~25_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~25_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w9_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux6~0_combout  ) ) )
+// \inst12|Mux6~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~25_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~25_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w9_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux6~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~25_sumout ),
 	.datab(!\inst12|Add5~25_sumout ),
 	.datac(!\inst12|Mux6~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w9_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -13842,12 +13842,12 @@ defparam \inst12|Mux1~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~1 (
 // Equation(s):
-// \inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~1_combout  = (!\inst12|Mux3~0_combout  & (\inst12|Mux1~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux3~0_combout  & (((\inst12|Mux0~0_combout ) # 
+// \inst16|$00000|auto_generated|l1_w14_n0_mux_dataout~1_combout  = (!\inst12|Mux7~0_combout  & (\inst12|Mux1~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux7~0_combout  & (((\inst12|Mux0~0_combout ) # 
 // (\inst21|MUX4A|auto_generated|l3_w14_n0_mux_dataout~1_combout ))))
 
 	.dataa(!\inst12|Mux1~0_combout ),
 	.datab(!\inst21|MUX4A|auto_generated|l3_w14_n0_mux_dataout~1_combout ),
-	.datac(!\inst12|Mux3~0_combout ),
+	.datac(!\inst12|Mux7~0_combout ),
 	.datad(!\inst12|Mux0~0_combout ),
 	.datae(gnd),
 	.dataf(gnd),
@@ -14055,12 +14055,12 @@ defparam \inst12|Mux2~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~1 (
 // Equation(s):
-// \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~1_combout  = (!\inst12|Mux3~0_combout  & (\inst12|Mux2~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux3~0_combout  & (((\inst12|Mux0~0_combout ) # 
+// \inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~1_combout  = (!\inst12|Mux7~0_combout  & (\inst12|Mux2~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux7~0_combout  & (((\inst12|Mux0~0_combout ) # 
 // (\inst21|MUX4A|auto_generated|l3_w13_n0_mux_dataout~2_combout ))))
 
 	.dataa(!\inst12|Mux2~0_combout ),
 	.datab(!\inst21|MUX4A|auto_generated|l3_w13_n0_mux_dataout~2_combout ),
-	.datac(!\inst12|Mux3~0_combout ),
+	.datac(!\inst12|Mux7~0_combout ),
 	.datad(!\inst12|Mux0~0_combout ),
 	.datae(gnd),
 	.dataf(gnd),
@@ -14146,9 +14146,9 @@ defparam \inst21|MUX4B|auto_generated|l3_w13_n0_mux_dataout~1 .lut_mask = 64'h02
 defparam \inst21|MUX4B|auto_generated|l3_w13_n0_mux_dataout~1 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst12|Mux3~1 (
+cyclonev_lcell_comb \inst12|Mux3~0 (
 // Equation(s):
-// \inst12|Mux3~1_combout  = ( \inst|altsyncram_component|auto_generated|q_a [12] & ( \inst|altsyncram_component|auto_generated|q_a [13] & ( \inst21|MUX4B|auto_generated|l3_w13_n0_mux_dataout~1_combout  ) ) ) # ( 
+// \inst12|Mux3~0_combout  = ( \inst|altsyncram_component|auto_generated|q_a [12] & ( \inst|altsyncram_component|auto_generated|q_a [13] & ( \inst21|MUX4B|auto_generated|l3_w13_n0_mux_dataout~1_combout  ) ) ) # ( 
 // !\inst|altsyncram_component|auto_generated|q_a [12] & ( \inst|altsyncram_component|auto_generated|q_a [13] & ( \inst12|Add3~13_sumout  ) ) ) # ( \inst|altsyncram_component|auto_generated|q_a [12] & ( !\inst|altsyncram_component|auto_generated|q_a [13] & ( 
 // \inst12|Add1~13_sumout  ) ) ) # ( !\inst|altsyncram_component|auto_generated|q_a [12] & ( !\inst|altsyncram_component|auto_generated|q_a [13] & ( \inst12|Add0~13_sumout  ) ) )
 
@@ -14161,24 +14161,24 @@ cyclonev_lcell_comb \inst12|Mux3~1 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst12|Mux3~1_combout ),
+	.combout(\inst12|Mux3~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \inst12|Mux3~1 .extended_lut = "off";
-defparam \inst12|Mux3~1 .lut_mask = 64'h555533330F0F00FF;
-defparam \inst12|Mux3~1 .shared_arith = "off";
+defparam \inst12|Mux3~0 .extended_lut = "off";
+defparam \inst12|Mux3~0 .lut_mask = 64'h555533330F0F00FF;
+defparam \inst12|Mux3~0 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~1 (
 // Equation(s):
-// \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~1_combout  = (!\inst12|Mux3~0_combout  & (\inst12|Mux3~1_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux3~0_combout  & (((\inst12|Mux0~0_combout ) # 
+// \inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~1_combout  = (!\inst12|Mux7~0_combout  & (\inst12|Mux3~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux7~0_combout  & (((\inst12|Mux0~0_combout ) # 
 // (\inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~2_combout ))))
 
-	.dataa(!\inst12|Mux3~1_combout ),
+	.dataa(!\inst12|Mux3~0_combout ),
 	.datab(!\inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~2_combout ),
-	.datac(!\inst12|Mux3~0_combout ),
+	.datac(!\inst12|Mux7~0_combout ),
 	.datad(!\inst12|Mux0~0_combout ),
 	.datae(gnd),
 	.dataf(gnd),
@@ -14316,12 +14316,12 @@ defparam \inst12|Mux4~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~1 (
 // Equation(s):
-// \inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~1_combout  = (!\inst12|Mux3~0_combout  & (\inst12|Mux4~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux3~0_combout  & (((\inst12|Mux0~0_combout ) # 
+// \inst16|$00000|auto_generated|l1_w11_n0_mux_dataout~1_combout  = (!\inst12|Mux7~0_combout  & (\inst12|Mux4~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux7~0_combout  & (((\inst12|Mux0~0_combout ) # 
 // (\inst21|MUX4A|auto_generated|l3_w11_n0_mux_dataout~1_combout ))))
 
 	.dataa(!\inst12|Mux4~0_combout ),
 	.datab(!\inst21|MUX4A|auto_generated|l3_w11_n0_mux_dataout~1_combout ),
-	.datac(!\inst12|Mux3~0_combout ),
+	.datac(!\inst12|Mux7~0_combout ),
 	.datad(!\inst12|Mux0~0_combout ),
 	.datae(gnd),
 	.dataf(gnd),
@@ -14459,12 +14459,12 @@ defparam \inst12|Mux5~0 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~1 (
 // Equation(s):
-// \inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~1_combout  = (!\inst12|Mux3~0_combout  & (\inst12|Mux5~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux3~0_combout  & (((\inst12|Mux0~0_combout ) # 
+// \inst16|$00000|auto_generated|l1_w10_n0_mux_dataout~1_combout  = (!\inst12|Mux7~0_combout  & (\inst12|Mux5~0_combout  & ((!\inst12|Mux0~0_combout )))) # (\inst12|Mux7~0_combout  & (((\inst12|Mux0~0_combout ) # 
 // (\inst21|MUX4A|auto_generated|l3_w10_n0_mux_dataout~1_combout ))))
 
 	.dataa(!\inst12|Mux5~0_combout ),
 	.datab(!\inst21|MUX4A|auto_generated|l3_w10_n0_mux_dataout~1_combout ),
-	.datac(!\inst12|Mux3~0_combout ),
+	.datac(!\inst12|Mux7~0_combout ),
 	.datad(!\inst12|Mux0~0_combout ),
 	.datae(gnd),
 	.dataf(gnd),
@@ -19469,14 +19469,14 @@ defparam \inst12|Mux0~5 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux1~1 (
 // Equation(s):
-// \inst12|Mux1~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~5_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~5_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w14_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux1~0_combout  ) ) )
+// \inst12|Mux1~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~5_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~5_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w14_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux1~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~5_sumout ),
 	.datab(!\inst12|Add5~5_sumout ),
 	.datac(!\inst12|Mux1~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w14_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -19493,14 +19493,14 @@ defparam \inst12|Mux1~1 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux2~1 (
 // Equation(s):
-// \inst12|Mux2~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~9_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~9_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w13_n0_mux_dataout~2_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux2~0_combout  ) ) )
+// \inst12|Mux2~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~9_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~9_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w13_n0_mux_dataout~2_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux2~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~9_sumout ),
 	.datab(!\inst12|Add5~9_sumout ),
 	.datac(!\inst12|Mux2~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w13_n0_mux_dataout~2_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -19515,40 +19515,40 @@ defparam \inst12|Mux2~1 .lut_mask = 64'h0F0F00FF55553333;
 defparam \inst12|Mux2~1 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \inst12|Mux3~2 (
+cyclonev_lcell_comb \inst12|Mux3~1 (
 // Equation(s):
-// \inst12|Mux3~2_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~13_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~13_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~2_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux3~1_combout  ) ) )
+// \inst12|Mux3~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~13_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~13_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~2_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux3~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~13_sumout ),
 	.datab(!\inst12|Add5~13_sumout ),
-	.datac(!\inst12|Mux3~1_combout ),
+	.datac(!\inst12|Mux3~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~2_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\inst12|Mux3~2_combout ),
+	.combout(\inst12|Mux3~1_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \inst12|Mux3~2 .extended_lut = "off";
-defparam \inst12|Mux3~2 .lut_mask = 64'h0F0F00FF55553333;
-defparam \inst12|Mux3~2 .shared_arith = "off";
+defparam \inst12|Mux3~1 .extended_lut = "off";
+defparam \inst12|Mux3~1 .lut_mask = 64'h0F0F00FF55553333;
+defparam \inst12|Mux3~1 .shared_arith = "off";
 // synopsys translate_on
 
 cyclonev_lcell_comb \inst12|Mux4~1 (
 // Equation(s):
-// \inst12|Mux4~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~17_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~17_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w11_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux4~0_combout  ) ) )
+// \inst12|Mux4~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~17_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~17_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w11_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux4~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~17_sumout ),
 	.datab(!\inst12|Add5~17_sumout ),
 	.datac(!\inst12|Mux4~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w11_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),
@@ -19565,14 +19565,14 @@ defparam \inst12|Mux4~1 .shared_arith = "off";
 
 cyclonev_lcell_comb \inst12|Mux5~1 (
 // Equation(s):
-// \inst12|Mux5~1_combout  = ( \inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~21_sumout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~21_sumout  ) ) ) # ( \inst12|Mux3~0_combout  & ( 
-// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w10_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux3~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux5~0_combout  ) ) )
+// \inst12|Mux5~1_combout  = ( \inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add5~21_sumout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( \inst12|Mux0~0_combout  & ( \inst12|Add4~21_sumout  ) ) ) # ( \inst12|Mux7~0_combout  & ( 
+// !\inst12|Mux0~0_combout  & ( \inst21|MUX4A|auto_generated|l3_w10_n0_mux_dataout~1_combout  ) ) ) # ( !\inst12|Mux7~0_combout  & ( !\inst12|Mux0~0_combout  & ( \inst12|Mux5~0_combout  ) ) )
 
 	.dataa(!\inst12|Add4~21_sumout ),
 	.datab(!\inst12|Add5~21_sumout ),
 	.datac(!\inst12|Mux5~0_combout ),
 	.datad(!\inst21|MUX4A|auto_generated|l3_w10_n0_mux_dataout~1_combout ),
-	.datae(!\inst12|Mux3~0_combout ),
+	.datae(!\inst12|Mux7~0_combout ),
 	.dataf(!\inst12|Mux0~0_combout ),
 	.datag(gnd),
 	.cin(gnd),

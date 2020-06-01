@@ -1,7 +1,7 @@
 Quartus Prime Archive log --	/home/es1219/nfshome/HarvardArch/HarvardArch_tmp_archive.qarlog
 
 Archive:	/home/es1219/nfshome/HarvardArch/HarvardArch_tmp_archive.qar
-Date:		Mon May 18 10:44:26 2020
+Date:		Fri May 29 11:06:34 2020
 Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 	=========== Files Selected: ===========
@@ -16,25 +16,28 @@ Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Standard Edition
 /home/es1219/nfshome/HarvardArch/data_mem.qip
 /home/es1219/nfshome/HarvardArch/data_mem.v
 /home/es1219/nfshome/HarvardArch/data_mem_bb.v
-/home/es1219/nfshome/HarvardArch/data_test.mif
 /home/es1219/nfshome/HarvardArch/executor.v
 /home/es1219/nfshome/HarvardArch/increment.v
+/home/es1219/nfshome/HarvardArch/lcong_data.mif
+/home/es1219/nfshome/HarvardArch/lcong_prog.mif
+/home/es1219/nfshome/HarvardArch/multiplier.v
 /home/es1219/nfshome/HarvardArch/prog_mem.bsf
 /home/es1219/nfshome/HarvardArch/prog_mem.qip
 /home/es1219/nfshome/HarvardArch/prog_mem.v
 /home/es1219/nfshome/HarvardArch/prog_mem_bb.v
-/home/es1219/nfshome/HarvardArch/prog_test.mif
 /home/es1219/nfshome/HarvardArch/regfile.bdf
-/home/es1219/nfshome/HarvardArch/regfile16.bdf
+/home/es1219/nfshome/HarvardArch/regfile5.bdf
 /home/es1219/nfshome/HarvardArch/regfile8.bdf
+/home/es1219/nfshome/HarvardArch/stack.bdf
+/home/es1219/nfshome/HarvardArch/stack_pointer.v
 /usr/local/altera/18.1/quartus/linux64/assignment_defaults.qdf
-	======= Total: 23 files to archive =======
+	======= Total: 26 files to archive =======
 
 	================ Status: ===============
 All files archived successfully.
 
 
-******* Archived project restoration attempt on Mon May 18 10:44:28 2020
+******* Archived project restoration attempt on Fri May 29 11:06:36 2020
 Source archive file:	/home/es1219/nfshome/HarvardArch/HarvardArch_tmp_archive.qar
-Archive was extracted into	/home/es1219/nfshome/HarvardArchNoPipeline/
+Archive was extracted into	/home/es1219/nfshome/HarvardArchSlow/
 		 - successfully.

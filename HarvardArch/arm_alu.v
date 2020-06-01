@@ -7,7 +7,8 @@ module arm_alu
 	output [15:0] d_out,
 	output wen,
 	output ldr,
-	output reg_mux
+	output reg_mux,
+	input [15:0] mult
 );
 	wire arm, cin;
 	wire exec1, exec2;
