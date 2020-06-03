@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect 232 352 400 368)
+	(rect 232 400 400 416)
 	(text "INPUT" (rect 125 0 156 10)(font "Arial" (font_size 6)))
 	(text "CLK" (rect 5 0 25 13)(font "Intel Clear" ))
 	(pt 168 8)
@@ -213,35 +213,6 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 728 368 937 443))
 )
 (symbol
-	(rect 336 256 488 336)
-	(text "executor" (rect 5 0 48 11)(font "Arial" ))
-	(text "inst" (rect 8 64 26 75)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "s[1..0]" (rect 0 0 30 11)(font "Arial" ))
-		(text "s[1..0]" (rect 21 27 51 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "e" (rect 0 0 5 11)(font "Arial" ))
-		(text "e" (rect 21 43 26 54)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 152 32)
-		(output)
-		(text "n[1..0]" (rect 0 0 33 11)(font "Arial" ))
-		(text "n[1..0]" (rect 104 27 131 38)(font "Arial" ))
-		(line (pt 152 32)(pt 136 32)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 136 64))
-	)
-)
-(symbol
 	(rect 768 152 832 200)
 	(text "NOR2" (rect 1 0 28 10)(font "Arial" (font_size 6)))
 	(text "inst1" (rect 3 37 30 50)(font "Intel Clear" ))
@@ -273,6 +244,59 @@ refer to the applicable agreement for further details.
 		(arc (pt 5 29)(pt 5 19)(rect -16 8 17 41))
 		(arc (pt 23 35)(pt 46 24)(rect -6 -23 53 36))
 		(circle (rect 46 20 54 28))
+	)
+)
+(symbol
+	(rect 336 256 488 368)
+	(text "executor" (rect 5 0 48 11)(font "Arial" ))
+	(text "inst" (rect 8 96 26 107)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "s[1..0]" (rect 0 0 30 11)(font "Arial" ))
+		(text "s[1..0]" (rect 21 27 51 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "e" (rect 0 0 5 11)(font "Arial" ))
+		(text "e" (rect 21 43 26 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "m" (rect 0 0 10 11)(font "Arial" ))
+		(text "m" (rect 21 59 31 70)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "n[1..0]" (rect 0 0 33 11)(font "Arial" ))
+		(text "n[1..0]" (rect 104 27 131 38)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 96))
+	)
+)
+(symbol
+	(rect 296 336 328 368)
+	(text "GND" (rect 8 16 30 26)(font "Arial" (font_size 6)))
+	(text "inst21" (rect 3 21 37 34)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
 	)
 )
 (connector
@@ -389,14 +413,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 504 360)
-	(pt 400 360)
-)
-(connector
-	(pt 504 328)
-	(pt 504 360)
-)
-(connector
 	(text "Q[1]" (rect 696 188 709 209)(font "Intel Clear" )(vertical))
 	(pt 712 216)
 	(pt 712 168)
@@ -414,6 +430,22 @@ refer to the applicable agreement for further details.
 	(pt 712 216)
 	(pt 744 216)
 	(bus)
+)
+(connector
+	(pt 504 408)
+	(pt 400 408)
+)
+(connector
+	(pt 504 328)
+	(pt 504 408)
+)
+(connector
+	(pt 336 320)
+	(pt 312 320)
+)
+(connector
+	(pt 312 320)
+	(pt 312 336)
 )
 (junction (pt 776 240))
 (junction (pt 744 216))

@@ -10,7 +10,7 @@ module arm_alu
 	output reg_mux,
 	input [15:0] mult
 );
-	wire arm, cin;
+	wire arm, cin, mul;
 	wire exec1, exec2;
 	reg [15:0] sum;
 
@@ -27,14 +27,16 @@ module arm_alu
 				3'b010 : sum = rs_data + cin; // mov
 				3'b011 : sum = {1'b0,rs_data[15:1]}; // lsr
 				3'b100 : sum = rs_data + 16'hFFFF; // dec
+				3'b101 : sum = mult; // mul
 				default : sum = rd_data;
 			endcase;
 		end
 
 	// assign values to outputs
    assign ldr = inst[15] & inst[14] & inst[13] & ~inst[12];
-	assign wen = exec1 & arm | ldr & exec2;
+	assign mul = inst[15] & inst[14] & ~inst[13] & inst[12];
+	assign wen = (exec1 & arm & ~ldr & ~mul) | (exec2 & (ldr | mul));
 	assign d_out = sum[15:0];
-	assign reg_mux = ~inst[15] & ~inst[14] & inst[13];
+	assign reg_mux = ~inst[15] & inst[14];
 
 endmodule 

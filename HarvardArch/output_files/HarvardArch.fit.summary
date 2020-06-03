@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Jun  3 11:31:16 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : HarvardArch
+Top-level Entity Name : HarvardArch
+Family : Cyclone IV E
+Device : EP4CE15F23C6
+Timing Models : Final
+Total logic elements : 768 / 15,408 ( 5 % )
+    Total combinational functions : 669 / 15,408 ( 4 % )
+    Dedicated logic registers : 272 / 15,408 ( 2 % )
+Total registers : 272
+Total pins : 186 / 344 ( 54 % )
+Total virtual pins : 0
+Total memory bits : 65,536 / 516,096 ( 13 % )
+Embedded Multiplier 9-bit elements : 0 / 112 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
