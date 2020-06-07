@@ -1,0 +1,28 @@
+module mult_p1
+(
+  input [15:0] rs_data,
+  input [15:0] rd_data,
+  output [15:0] s0,
+  output [15:0] s1,
+  output [15:0] s2,
+  output [15:0] s3
+);
+
+  assign s0 = ({16{rd_data[0]}} & {rs_data[15:0]}) +
+				({{{15{rd_data[1]}} & rs_data[14:0]}, 1'b0}) +
+				({{{14{rd_data[2]}} & rs_data[13:0]}, 2'b00}) +
+				({{{13{rd_data[3]}} & rs_data[12:0]}, 3'b000});
+  assign s1 = ({{{12{rd_data[4]}} & rs_data[11:0]}, 4'h0}) +
+				({{{11{rd_data[5]}} & rs_data[10:0]}, 5'b00000}) +
+				({{{10{rd_data[6]}} & rs_data[9:0]}, 6'b000000}) +
+				({{{9{rd_data[7]}} & rs_data[8:0]}, 7'b0000000});
+  assign s2 = ({{{8{rd_data[8]}} & rs_data[7:0]}, 8'h00}) +
+				({{{7{rd_data[9]}} & rs_data[6:0]}, 9'b000000000}) +
+				({{{6{rd_data[10]}} & rs_data[5:0]}, 10'b0000000000}) +
+				({{{5{rd_data[11]}} & rs_data[4:0]}, 11'b00000000000});
+  assign s3 = ({{{4{rd_data[12]}} & rs_data[3:0]}, 12'h000}) +
+				({{{3{rd_data[13]}} & rs_data[2:0]}, 13'b0000000000000}) +
+				({{{2{rd_data[14]}} & rs_data[1:0]}, 14'b00000000000000}) +
+				({{rd_data[015] & rs_data[0]}, 15'b000000000000000});
+
+endmodule 

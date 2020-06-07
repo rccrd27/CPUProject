@@ -3,7 +3,7 @@ $comment
 		vcd file HarvardArchNoPipeline.msim.vcd -direction
 $end
 $date
-	Fri May 29 10:30:12 2020
+	Fri May 29 11:37:49 2020
 $end
 $version
 	ModelSim Version 10.5b
@@ -260,7 +260,7 @@ $var wire 1 V" inst21|MUX4B|auto_generated|l3_w10_n0_mux_dataout~0_combout $end
 $var wire 1 W" inst21|MUX4B|auto_generated|l3_w10_n0_mux_dataout~1_combout $end
 $var wire 1 X" inst21|MUX4B|auto_generated|l3_w10_n0_mux_dataout~2_combout $end
 $var wire 1 Y" inst12|Mux0~0_combout $end
-$var wire 1 Z" inst12|Mux3~0_combout $end
+$var wire 1 Z" inst12|Mux7~0_combout $end
 $var wire 1 [" inst21|MUX4A|auto_generated|l3_w12_n0_mux_dataout~0_combout $end
 $var wire 1 \" inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~0_combout $end
 $var wire 1 ]" inst21|MUX4A|auto_generated|l3_w0_n0_mux_dataout~1_combout $end
@@ -467,8 +467,8 @@ $var wire 1 i$ inst12|Add1~34 $end
 $var wire 1 j$ inst12|Add1~29_sumout $end
 $var wire 1 k$ inst12|Add3~34 $end
 $var wire 1 l$ inst12|Add3~29_sumout $end
-$var wire 1 m$ inst12|Mux7~0_combout $end
-$var wire 1 n$ inst12|Mux7~1_combout $end
+$var wire 1 m$ inst12|Mux7~1_combout $end
+$var wire 1 n$ inst12|Mux7~2_combout $end
 $var wire 1 o$ inst16|$00000|auto_generated|l1_w8_n0_mux_dataout~0_combout $end
 $var wire 1 p$ inst21|MUX4B|auto_generated|l3_w8_n0_mux_dataout~0_combout $end
 $var wire 1 q$ inst21|MUX4B|auto_generated|l3_w8_n0_mux_dataout~1_combout $end
@@ -679,7 +679,7 @@ $var wire 1 #' inst12|Mux2~0_combout $end
 $var wire 1 $' inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~1_combout $end
 $var wire 1 %' inst16|$00000|auto_generated|l1_w13_n0_mux_dataout~0_combout $end
 $var wire 1 &' inst21|MUX4B|auto_generated|l3_w13_n0_mux_dataout~1_combout $end
-$var wire 1 '' inst12|Mux3~1_combout $end
+$var wire 1 '' inst12|Mux3~0_combout $end
 $var wire 1 (' inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~1_combout $end
 $var wire 1 )' inst16|$00000|auto_generated|l1_w12_n0_mux_dataout~0_combout $end
 $var wire 1 *' inst21|MUX4B|auto_generated|l3_w12_n0_mux_dataout~0_combout $end
@@ -810,7 +810,7 @@ $var wire 1 H( inst12|Mux0~4_combout $end
 $var wire 1 I( inst12|Mux0~5_combout $end
 $var wire 1 J( inst12|Mux1~1_combout $end
 $var wire 1 K( inst12|Mux2~1_combout $end
-$var wire 1 L( inst12|Mux3~2_combout $end
+$var wire 1 L( inst12|Mux3~1_combout $end
 $var wire 1 M( inst12|Mux4~1_combout $end
 $var wire 1 N( inst12|Mux5~1_combout $end
 $var wire 1 O( inst9|inst5~combout $end
