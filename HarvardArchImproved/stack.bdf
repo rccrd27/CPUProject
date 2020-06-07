@@ -1294,7 +1294,7 @@ refer to the applicable agreement for further details.
 		(pt 152 80)
 		(output)
 		(text "n[2..0]" (rect 0 0 34 11)(font "Arial" ))
-		(text "n[2..0]" (rect 103 74 131 85)(font "Arial" ))
+		(text "n[2..0]" (rect 103 74 137 85)(font "Arial" ))
 		(line (pt 152 80)(pt 136 80)(line_width 3))
 	)
 	(drawing
