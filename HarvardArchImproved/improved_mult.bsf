@@ -20,8 +20,8 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.2"))
 (symbol
-	(rect 16 16 208 112)
-	(text "mult_pipelined" (rect 5 0 98 15)(font "Intel Clear" (font_size 8)))
+	(rect 16 16 224 112)
+	(text "improved_mult" (rect 5 0 95 15)(font "Intel Clear" (font_size 8)))
 	(text "inst" (rect 8 79 29 92)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
@@ -45,13 +45,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 64)(pt 16 64))
 	)
 	(port
-		(pt 192 32)
+		(pt 208 32)
 		(output)
-		(text "p[15..0]" (rect 0 0 48 15)(font "Intel Clear" (font_size 8)))
-		(text "p[15..0]" (rect 123 27 171 42)(font "Intel Clear" (font_size 8)))
-		(line (pt 192 32)(pt 176 32)(line_width 3))
+		(text "prod[15..0]" (rect 0 0 69 15)(font "Intel Clear" (font_size 8)))
+		(text "prod[15..0]" (rect 118 27 187 42)(font "Intel Clear" (font_size 8)))
+		(line (pt 208 32)(pt 192 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 176 80))
+		(rectangle (rect 16 16 192 80))
 	)
 )
