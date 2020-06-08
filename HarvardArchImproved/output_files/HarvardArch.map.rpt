@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HarvardArch
-Sun Jun  7 22:10:19 2020
+Mon Jun  8 11:35:56 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -88,13 +88,13 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Jun  7 22:10:19 2020           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jun  8 11:35:55 2020           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; HarvardArch                                     ;
 ; Top-level Entity Name              ; HarvardArch                                     ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 655                                             ;
-;     Total combinational functions  ; 487                                             ;
+; Total logic elements               ; 657                                             ;
+;     Total combinational functions  ; 489                                             ;
 ;     Dedicated logic registers      ; 200                                             ;
 ; Total registers                    ; 200                                             ;
 ; Total pins                         ; 97                                              ;
@@ -203,7 +203,8 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -275,16 +276,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 655       ;
+; Estimated Total logic elements              ; 657       ;
 ;                                             ;           ;
-; Total combinational functions               ; 487       ;
+; Total combinational functions               ; 489       ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 247       ;
-;     -- 3 input functions                    ; 154       ;
-;     -- <=2 input functions                  ; 86        ;
+;     -- 3 input functions                    ; 155       ;
+;     -- <=2 input functions                  ; 87        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 345       ;
+;     -- normal mode                          ; 347       ;
 ;     -- arithmetic mode                      ; 142       ;
 ;                                             ;           ;
 ; Total registers                             ; 200       ;
@@ -297,9 +298,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 232       ;
-; Total fan-out                               ; 3577      ;
-; Average fan-out                             ; 3.79      ;
+; Maximum fan-out                             ; 264       ;
+; Total fan-out                               ; 3614      ;
+; Average fan-out                             ; 3.82      ;
 +---------------------------------------------+-----------+
 
 
@@ -308,12 +309,12 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |HarvardArch                                 ; 487 (1)             ; 200 (0)                   ; 73728       ; 0            ; 0       ; 0         ; 97   ; 0            ; |HarvardArch                                                                                               ; HarvardArch     ; work         ;
+; |HarvardArch                                 ; 489 (1)             ; 200 (0)                   ; 73728       ; 0            ; 0       ; 0         ; 97   ; 0            ; |HarvardArch                                                                                               ; HarvardArch     ; work         ;
 ;    |Decoder:inst2|                           ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|Decoder:inst2                                                                                 ; Decoder         ; work         ;
 ;    |StateMachine:inst9|                      ; 3 (1)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9                                                                            ; StateMachine    ; work         ;
 ;       |executor:inst|                        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|executor:inst                                                              ; executor        ; work         ;
 ;       |lpm_ff:inst2|                         ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|lpm_ff:inst2                                                               ; lpm_ff          ; work         ;
-;    |arm_alu:inst12|                          ; 132 (132)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                                ; arm_alu         ; work         ;
+;    |arm_alu:inst12|                          ; 128 (128)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                                ; arm_alu         ; work         ;
 ;    |busmux:inst10|                           ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst10                                                                                 ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                       ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst10|lpm_mux:$00000                                                                  ; lpm_mux         ; work         ;
 ;          |mux_tsc:auto_generated|            ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst10|lpm_mux:$00000|mux_tsc:auto_generated                                           ; mux_tsc         ; work         ;
@@ -356,10 +357,10 @@ refer to the applicable agreement for further details.
 ;    |prog_mem:inst|                           ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|prog_mem:inst                                                                                 ; prog_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|prog_mem:inst|altsyncram:altsyncram_component                                                 ; altsyncram      ; work         ;
 ;          |altsyncram_poi1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|prog_mem:inst|altsyncram:altsyncram_component|altsyncram_poi1:auto_generated                  ; altsyncram_poi1 ; work         ;
-;    |regfile5:inst11|                         ; 118 (1)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11                                                                               ; regfile5        ; work         ;
+;    |regfile5:inst11|                         ; 124 (1)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11                                                                               ; regfile5        ; work         ;
 ;       |lpm_decode:DEMUX4|                    ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_decode:DEMUX4                                                             ; lpm_decode      ; work         ;
 ;          |decode_ivf:auto_generated|         ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_decode:DEMUX4|decode_ivf:auto_generated                                   ; decode_ivf      ; work         ;
-;       |lpm_ff:R0|                            ; 16 (16)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R0                                                                     ; lpm_ff          ; work         ;
+;       |lpm_ff:R0|                            ; 22 (22)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R0                                                                     ; lpm_ff          ; work         ;
 ;       |lpm_ff:R1|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R1                                                                     ; lpm_ff          ; work         ;
 ;       |lpm_ff:R2|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R2                                                                     ; lpm_ff          ; work         ;
 ;       |lpm_ff:R3|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R3                                                                     ; lpm_ff          ; work         ;
@@ -1523,20 +1524,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 168                         ;
 ;     ENA SLD           ; 27                          ;
 ;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 487                         ;
+; cycloneiii_lcell_comb ; 489                         ;
 ;     arith             ; 142                         ;
 ;         2 data inputs ; 61                          ;
 ;         3 data inputs ; 81                          ;
-;     normal            ; 345                         ;
+;     normal            ; 347                         ;
 ;         0 data inputs ; 8                           ;
 ;         1 data inputs ; 7                           ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 73                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 74                          ;
 ;         4 data inputs ; 247                         ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.90                        ;
-; Average LUT depth     ; 7.03                        ;
+; Max LUT depth         ; 10.50                       ;
+; Average LUT depth     ; 7.26                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1555,7 +1556,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Sun Jun  7 22:10:07 2020
+    Info: Processing started: Mon Jun  8 11:35:44 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HarvardArchImproved -c HarvardArch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
@@ -1736,7 +1737,6 @@ Warning (275080): Converted elements in bus name "p32" using legacy naming rules
 Warning (275080): Converted elements in bus name "p33" using legacy naming rules. Make any assignments on the new names, not on the original names.
     Warning (275081): Converted element name(s) from "p33[7..0]" to "p337..0"
     Warning (275081): Converted element name(s) from "p33[3..0]" to "p333..0"
-Warning (275009): Pin "CLK" not connected
 Info (12128): Elaborating entity "add7x4" for hierarchy "improved_mult:inst7|add7x4:inst12"
 Info (12128): Elaborating entity "LUT4" for hierarchy "improved_mult:inst7|LUT4:inst1"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component" File: /home/es1219/nfshome/HarvardArchImproved/LUT4.v Line: 97
@@ -1847,47 +1847,15 @@ Warning (14284): Synthesized away the following node(s):
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst5|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a3" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a7" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a7" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a6" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a6" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a5" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a5" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a4" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a4" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a3" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a3" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a2" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a2" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a1" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a1" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a3" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a2" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a1" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst5|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a2" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst5|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a1" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst5|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst4|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a3" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst4|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a2" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst4|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a1" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst4|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a0" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a7" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a6" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a5" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Warning (15400): WYSIWYG primitive "improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|ram_block1a4" has a port clk0 that is stuck at GND File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 34
-Info (21057): Implemented 835 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 837 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 96 output pins
-    Info (21061): Implemented 674 logic cells
+    Info (21061): Implemented 676 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 91 warnings
-    Info: Peak virtual memory: 1185 megabytes
-    Info: Processing ended: Sun Jun  7 22:10:19 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 1197 megabytes
+    Info: Processing ended: Mon Jun  8 11:35:56 2020
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:28
 
 

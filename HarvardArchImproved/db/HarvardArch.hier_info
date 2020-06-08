@@ -2982,6 +2982,11 @@ prod[12] <= p30.DB_MAX_OUTPUT_PORT_TYPE
 prod[13] <= p31.DB_MAX_OUTPUT_PORT_TYPE
 prod[14] <= p32.DB_MAX_OUTPUT_PORT_TYPE
 prod[15] <= p33.DB_MAX_OUTPUT_PORT_TYPE
+CLK => LUT4:inst1.clock
+CLK => LUT4:inst3.clock
+CLK => LUT4:inst4.clock
+CLK => LUT4:inst5.clock
+CLK => LUT4:inst.clock
 rs_data[0] => LUT4:inst1.address_b[4]
 rs_data[0] => LUT4:inst5.address_a[4]
 rs_data[0] => LUT4:inst.address_a[4]
@@ -3062,7 +3067,6 @@ rd_data[12] => LUT4:inst5.address_a[0]
 rd_data[13] => LUT4:inst5.address_a[1]
 rd_data[14] => LUT4:inst5.address_a[2]
 rd_data[15] => LUT4:inst5.address_a[3]
-CLK => ~NO_FANOUT~
 
 
 |HarvardArch|improved_mult:inst7|add7x4:inst12

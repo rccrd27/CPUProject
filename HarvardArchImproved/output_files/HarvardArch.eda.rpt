@@ -1,5 +1,5 @@
 EDA Netlist Writer report for HarvardArch
-Sun Jun  7 22:10:25 2020
+Mon Jun  8 11:36:02 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Jun  7 22:10:25 2020 ;
+; EDA Netlist Writer Status ; Successful - Mon Jun  8 11:36:02 2020 ;
 ; Revision Name             ; HarvardArch                           ;
 ; Top-level Entity Name     ; HarvardArch                           ;
 ; Family                    ; Cyclone IV E                          ;
@@ -93,7 +93,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: the sole purpose of programming logic devices manufactured by
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details.
-    Info: Processing started: Sun Jun  7 22:10:24 2020
+    Info: Processing started: Mon Jun  8 11:36:01 2020
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/es1219/nfshome/HarvardArchImproved/simulation/qsim/ HarvardArchImproved -c HarvardArch
 Info (119004): Automatically selected device EP4CE6F17C6 for design HarvardArch
 Info (119005): Fitting design with smaller device may be possible, but smaller device must be specified
@@ -102,8 +102,8 @@ Warning (18550): Found RAM instances implemented as ROM because the write logic 
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file HarvardArch.vo in folder "/home/es1219/nfshome/HarvardArchImproved/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 1163 megabytes
-    Info: Processing ended: Sun Jun  7 22:10:25 2020
+    Info: Peak virtual memory: 1162 megabytes
+    Info: Processing ended: Mon Jun  8 11:36:02 2020
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

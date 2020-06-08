@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Jun  7 22:10:19 2020
+Analysis & Synthesis Status : Successful - Mon Jun  8 11:35:55 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : HarvardArch
 Top-level Entity Name : HarvardArch
 Family : Cyclone IV E
-Total logic elements : 655
-    Total combinational functions : 487
+Total logic elements : 657
+    Total combinational functions : 489
     Dedicated logic registers : 200
 Total registers : 200
 Total pins : 97
