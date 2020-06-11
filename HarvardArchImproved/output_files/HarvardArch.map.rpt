@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HarvardArch
-Wed Jun 10 15:05:08 2020
+Thu Jun 11 12:51:25 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -44,51 +44,52 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
  36. Parameter Settings for User Entity Instance: LPM_MUX:inst19
  37. Parameter Settings for User Entity Instance: data_mem:inst1|altsyncram:altsyncram_component
  38. Parameter Settings for User Entity Instance: BUSMUX:inst8
- 39. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component
- 40. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component
- 41. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst4|altsyncram:altsyncram_component
- 42. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst5|altsyncram:altsyncram_component
- 43. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component
- 44. Parameter Settings for User Entity Instance: BUSMUX:inst16
- 45. Parameter Settings for User Entity Instance: stack:inst20|LPM_MUX:MUX4B
- 46. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R0
- 47. Parameter Settings for User Entity Instance: stack:inst20|LPM_DECODE:DEMUX4
- 48. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:inst2
- 49. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R1
- 50. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R2
- 51. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R3
- 52. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R4
- 53. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R5
- 54. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R6
- 55. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R7
- 56. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R14
- 57. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R15
- 58. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R8
- 59. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R9
- 60. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R10
- 61. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R11
- 62. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R12
- 63. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R13
- 64. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R16
- 65. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R24
- 66. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R17
- 67. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R25
- 68. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R18
- 69. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R26
- 70. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R19
- 71. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R27
- 72. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R20
- 73. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R28
- 74. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R21
- 75. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R29
- 76. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R22
- 77. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R23
- 78. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R30
- 79. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R31
- 80. altsyncram Parameter Settings by Entity Instance
- 81. Post-Synthesis Netlist Statistics for Top Partition
- 82. Elapsed Time Per Partition
- 83. Analysis & Synthesis Messages
+ 39. Parameter Settings for User Entity Instance: BUSMUX:inst21
+ 40. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst1|altsyncram:altsyncram_component
+ 41. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst3|altsyncram:altsyncram_component
+ 42. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst4|altsyncram:altsyncram_component
+ 43. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst5|altsyncram:altsyncram_component
+ 44. Parameter Settings for User Entity Instance: improved_mult:inst7|LUT4:inst|altsyncram:altsyncram_component
+ 45. Parameter Settings for User Entity Instance: BUSMUX:inst16
+ 46. Parameter Settings for User Entity Instance: stack:inst20|LPM_MUX:MUX4B
+ 47. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R0
+ 48. Parameter Settings for User Entity Instance: stack:inst20|LPM_DECODE:DEMUX4
+ 49. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:inst2
+ 50. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R1
+ 51. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R2
+ 52. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R3
+ 53. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R4
+ 54. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R5
+ 55. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R6
+ 56. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R7
+ 57. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R14
+ 58. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R15
+ 59. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R8
+ 60. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R9
+ 61. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R10
+ 62. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R11
+ 63. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R12
+ 64. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R13
+ 65. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R16
+ 66. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R24
+ 67. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R17
+ 68. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R25
+ 69. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R18
+ 70. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R26
+ 71. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R19
+ 72. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R27
+ 73. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R20
+ 74. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R28
+ 75. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R21
+ 76. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R29
+ 77. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R22
+ 78. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R23
+ 79. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R30
+ 80. Parameter Settings for User Entity Instance: stack:inst20|LPM_FF:R31
+ 81. altsyncram Parameter Settings by Entity Instance
+ 82. Post-Synthesis Netlist Statistics for Top Partition
+ 83. Elapsed Time Per Partition
+ 84. Analysis & Synthesis Messages
 
 
 
@@ -114,13 +115,13 @@ refer to the applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 10 15:05:08 2020           ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 11 12:51:25 2020           ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                      ; HarvardArch                                     ;
 ; Top-level Entity Name              ; HarvardArch                                     ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 1,158                                           ;
-;     Total combinational functions  ; 726                                             ;
+; Total logic elements               ; 1,164                                           ;
+;     Total combinational functions  ; 743                                             ;
 ;     Dedicated logic registers      ; 466                                             ;
 ; Total registers                    ; 466                                             ;
 ; Total pins                         ; 81                                              ;
@@ -229,14 +230,15 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
 ;     Processor 8            ;   0.0%      ;
-;     Processors 9-16        ;   0.0%      ;
+;     Processor 9            ;   0.0%      ;
+;     Processors 10-16       ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -264,6 +266,7 @@ refer to the applicable agreement for further details.
 ; add3x4.v                         ; yes             ; User Verilog HDL File              ; /home/es1219/nfshome/HarvardArchImproved/add3x4.v                              ;         ;
 ; LUT4.v                           ; yes             ; User Wizard-Generated File         ; /home/es1219/nfshome/HarvardArchImproved/LUT4.v                                ;         ;
 ; improved_mult.bdf                ; yes             ; User Block Diagram/Schematic File  ; /home/es1219/nfshome/HarvardArchImproved/improved_mult.bdf                     ;         ;
+; sel_inc.v                        ; yes             ; User Verilog HDL File              ; /home/es1219/nfshome/HarvardArchImproved/sel_inc.v                             ;         ;
 ; lpm_mux.tdf                      ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf             ;         ;
 ; aglobal181.inc                   ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/aglobal181.inc          ;         ;
 ; muxlut.inc                       ; yes             ; Megafunction                       ; /usr/local/altera/18.1/quartus/libraries/megafunctions/muxlut.inc              ;         ;
@@ -309,17 +312,17 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,158     ;
+; Estimated Total logic elements              ; 1,164     ;
 ;                                             ;           ;
-; Total combinational functions               ; 726       ;
+; Total combinational functions               ; 743       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 470       ;
-;     -- 3 input functions                    ; 163       ;
-;     -- <=2 input functions                  ; 93        ;
+;     -- 4 input functions                    ; 474       ;
+;     -- 3 input functions                    ; 180       ;
+;     -- <=2 input functions                  ; 89        ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 584       ;
-;     -- arithmetic mode                      ; 142       ;
+;     -- normal mode                          ; 600       ;
+;     -- arithmetic mode                      ; 143       ;
 ;                                             ;           ;
 ; Total registers                             ; 466       ;
 ;     -- Dedicated logic registers            ; 466       ;
@@ -332,7 +335,7 @@ refer to the applicable agreement for further details.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; CLK~input ;
 ; Maximum fan-out                             ; 530       ;
-; Total fan-out                               ; 5306      ;
+; Total fan-out                               ; 5366      ;
 ; Average fan-out                             ; 3.74      ;
 +---------------------------------------------+-----------+
 
@@ -342,18 +345,21 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                        ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |HarvardArch                                 ; 726 (1)             ; 466 (0)                   ; 73728       ; 0            ; 0       ; 0         ; 81   ; 0            ; |HarvardArch                                                                                               ; HarvardArch     ; work         ;
-;    |Decoder:inst2|                           ; 12 (12)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|Decoder:inst2                                                                                 ; Decoder         ; work         ;
-;    |StateMachine:inst9|                      ; 3 (1)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9                                                                            ; StateMachine    ; work         ;
-;       |executor:inst|                        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|executor:inst                                                              ; executor        ; work         ;
+; |HarvardArch                                 ; 743 (1)             ; 466 (0)                   ; 73728       ; 0            ; 0       ; 0         ; 81   ; 0            ; |HarvardArch                                                                                               ; HarvardArch     ; work         ;
+;    |Decoder:inst2|                           ; 17 (17)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|Decoder:inst2                                                                                 ; Decoder         ; work         ;
+;    |StateMachine:inst9|                      ; 3 (0)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9                                                                            ; StateMachine    ; work         ;
+;       |executor:inst|                        ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|executor:inst                                                              ; executor        ; work         ;
 ;       |lpm_ff:inst2|                         ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|StateMachine:inst9|lpm_ff:inst2                                                               ; lpm_ff          ; work         ;
-;    |arm_alu:inst12|                          ; 124 (124)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                                ; arm_alu         ; work         ;
+;    |arm_alu:inst12|                          ; 126 (126)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|arm_alu:inst12                                                                                ; arm_alu         ; work         ;
 ;    |busmux:inst10|                           ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst10                                                                                 ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                       ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst10|lpm_mux:$00000                                                                  ; lpm_mux         ; work         ;
 ;          |mux_tsc:auto_generated|            ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst10|lpm_mux:$00000|mux_tsc:auto_generated                                           ; mux_tsc         ; work         ;
 ;    |busmux:inst17|                           ; 11 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst17                                                                                 ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                       ; 11 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst17|lpm_mux:$00000                                                                  ; lpm_mux         ; work         ;
 ;          |mux_osc:auto_generated|            ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst17|lpm_mux:$00000|mux_osc:auto_generated                                           ; mux_osc         ; work         ;
+;    |busmux:inst21|                           ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst21                                                                                 ; busmux          ; work         ;
+;       |lpm_mux:$00000|                       ; 16 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst21|lpm_mux:$00000                                                                  ; lpm_mux         ; work         ;
+;          |mux_tsc:auto_generated|            ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst21|lpm_mux:$00000|mux_tsc:auto_generated                                           ; mux_tsc         ; work         ;
 ;    |busmux:inst8|                            ; 11 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst8                                                                                  ; busmux          ; work         ;
 ;       |lpm_mux:$00000|                       ; 11 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst8|lpm_mux:$00000                                                                   ; lpm_mux         ; work         ;
 ;          |mux_osc:auto_generated|            ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|busmux:inst8|lpm_mux:$00000|mux_osc:auto_generated                                            ; mux_osc         ; work         ;
@@ -380,18 +386,17 @@ refer to the applicable agreement for further details.
 ;       |add5x4:inst11|                        ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|improved_mult:inst7|add5x4:inst11                                                             ; add5x4          ; work         ;
 ;       |add7x4:inst12|                        ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|improved_mult:inst7|add7x4:inst12                                                             ; add7x4          ; work         ;
 ;    |increment:inst15|                        ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|increment:inst15                                                                              ; increment       ; work         ;
-;    |increment:inst23|                        ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|increment:inst23                                                                              ; increment       ; work         ;
-;    |lpm_counter:inst3|                       ; 13 (0)              ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|lpm_counter:inst3                                                                             ; lpm_counter     ; work         ;
-;       |cntr_dnh:auto_generated|              ; 13 (13)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|lpm_counter:inst3|cntr_dnh:auto_generated                                                     ; cntr_dnh        ; work         ;
+;    |lpm_counter:inst3|                       ; 11 (0)              ; 11 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|lpm_counter:inst3                                                                             ; lpm_counter     ; work         ;
+;       |cntr_dnh:auto_generated|              ; 11 (11)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|lpm_counter:inst3|cntr_dnh:auto_generated                                                     ; cntr_dnh        ; work         ;
 ;    |lpm_ff:inst4|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|lpm_ff:inst4                                                                                  ; lpm_ff          ; work         ;
 ;    |lpm_mux:inst19|                          ; 24 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|lpm_mux:inst19                                                                                ; lpm_mux         ; work         ;
 ;       |mux_qsc:auto_generated|               ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|lpm_mux:inst19|mux_qsc:auto_generated                                                         ; mux_qsc         ; work         ;
 ;    |prog_mem:inst|                           ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|prog_mem:inst                                                                                 ; prog_mem        ; work         ;
 ;       |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|prog_mem:inst|altsyncram:altsyncram_component                                                 ; altsyncram      ; work         ;
 ;          |altsyncram_nhi1:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|prog_mem:inst|altsyncram:altsyncram_component|altsyncram_nhi1:auto_generated                  ; altsyncram_nhi1 ; work         ;
-;    |regfile5:inst11|                         ; 131 (1)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11                                                                               ; regfile5        ; work         ;
-;       |lpm_decode:DEMUX4|                    ; 6 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_decode:DEMUX4                                                             ; lpm_decode      ; work         ;
-;          |decode_ivf:auto_generated|         ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_decode:DEMUX4|decode_ivf:auto_generated                                   ; decode_ivf      ; work         ;
+;    |regfile5:inst11|                         ; 130 (1)             ; 80 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11                                                                               ; regfile5        ; work         ;
+;       |lpm_decode:DEMUX4|                    ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_decode:DEMUX4                                                             ; lpm_decode      ; work         ;
+;          |decode_ivf:auto_generated|         ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_decode:DEMUX4|decode_ivf:auto_generated                                   ; decode_ivf      ; work         ;
 ;       |lpm_ff:R0|                            ; 28 (28)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R0                                                                     ; lpm_ff          ; work         ;
 ;       |lpm_ff:R1|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R1                                                                     ; lpm_ff          ; work         ;
 ;       |lpm_ff:R2|                            ; 0 (0)               ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_ff:R2                                                                     ; lpm_ff          ; work         ;
@@ -401,7 +406,8 @@ refer to the applicable agreement for further details.
 ;          |mux_2tc:auto_generated|            ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_mux:MUX4A|mux_2tc:auto_generated                                          ; mux_2tc         ; work         ;
 ;       |lpm_mux:MUX4B|                        ; 48 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_mux:MUX4B                                                                 ; lpm_mux         ; work         ;
 ;          |mux_2tc:auto_generated|            ; 48 (48)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|regfile5:inst11|lpm_mux:MUX4B|mux_2tc:auto_generated                                          ; mux_2tc         ; work         ;
-;    |stack:inst20|                            ; 292 (0)             ; 357 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20                                                                                  ; stack           ; work         ;
+;    |sel_inc:inst22|                          ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|sel_inc:inst22                                                                                ; sel_inc         ; work         ;
+;    |stack:inst20|                            ; 288 (0)             ; 357 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20                                                                                  ; stack           ; work         ;
 ;       |lpm_decode:DEMUX4|                    ; 36 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_decode:DEMUX4                                                                ; lpm_decode      ; work         ;
 ;          |decode_41g:auto_generated|         ; 36 (36)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_decode:DEMUX4|decode_41g:auto_generated                                      ; decode_41g      ; work         ;
 ;       |lpm_ff:R0|                            ; 0 (0)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_ff:R0                                                                        ; lpm_ff          ; work         ;
@@ -437,9 +443,9 @@ refer to the applicable agreement for further details.
 ;       |lpm_ff:R8|                            ; 0 (0)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_ff:R8                                                                        ; lpm_ff          ; work         ;
 ;       |lpm_ff:R9|                            ; 0 (0)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_ff:R9                                                                        ; lpm_ff          ; work         ;
 ;       |lpm_ff:inst2|                         ; 0 (0)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_ff:inst2                                                                     ; lpm_ff          ; work         ;
-;       |lpm_mux:MUX4B|                        ; 247 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_mux:MUX4B                                                                    ; lpm_mux         ; work         ;
-;          |mux_muc:auto_generated|            ; 247 (247)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_mux:MUX4B|mux_muc:auto_generated                                             ; mux_muc         ; work         ;
-;       |stack_pointer:inst3|                  ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|stack_pointer:inst3                                                              ; stack_pointer   ; work         ;
+;       |lpm_mux:MUX4B|                        ; 242 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_mux:MUX4B                                                                    ; lpm_mux         ; work         ;
+;          |mux_muc:auto_generated|            ; 242 (242)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|lpm_mux:MUX4B|mux_muc:auto_generated                                             ; mux_muc         ; work         ;
+;       |stack_pointer:inst3|                  ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |HarvardArch|stack:inst20|stack_pointer:inst3                                                              ; stack_pointer   ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1015,8 +1021,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |HarvardArch|regfile5:inst11|lpm_ff:R0|dffs[9]                    ;
-; 8:1                ; 15 bits   ; 75 LEs        ; 75 LEs               ; 0 LEs                  ; No         ; |HarvardArch|arm_alu:inst12|Mux7                                  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |HarvardArch|regfile5:inst11|lpm_ff:R0|dffs[8]                    ;
+; 8:1                ; 15 bits   ; 75 LEs        ; 75 LEs               ; 0 LEs                  ; No         ; |HarvardArch|arm_alu:inst12|Mux5                                  ;
 ; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |HarvardArch|lpm_mux:inst19|mux_qsc:auto_generated|result_node[5] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
 
@@ -1498,6 +1504,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------+
 ; WIDTH          ; 11    ; Untyped                          ;
 +----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst21 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; WIDTH          ; 16    ; Untyped                           ;
++----------------+-------+-----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -2577,20 +2593,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 432                         ;
 ;     ENA SLD           ; 27                          ;
 ;     plain             ; 7                           ;
-; cycloneiii_lcell_comb ; 726                         ;
-;     arith             ; 142                         ;
-;         2 data inputs ; 61                          ;
+; cycloneiii_lcell_comb ; 743                         ;
+;     arith             ; 143                         ;
+;         2 data inputs ; 62                          ;
 ;         3 data inputs ; 81                          ;
-;     normal            ; 584                         ;
+;     normal            ; 600                         ;
 ;         0 data inputs ; 8                           ;
-;         1 data inputs ; 7                           ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 82                          ;
-;         4 data inputs ; 470                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 99                          ;
+;         4 data inputs ; 474                         ;
 ; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.90                       ;
-; Average LUT depth     ; 7.31                        ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 7.24                        ;
 +-----------------------+-----------------------------+
 
 
@@ -2609,10 +2625,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Wed Jun 10 15:04:54 2020
+    Info: Processing started: Thu Jun 11 12:51:11 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HarvardArchImproved -c HarvardArch
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 24 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file regfile4.bdf
+    Info (12023): Found entity 1: regfile4
 Info (12021): Found 1 design units, including 1 entities, in source file HarvardArch.bdf
     Info (12023): Found entity 1: HarvardArch
 Info (12021): Found 1 design units, including 1 entities, in source file prog_mem.v
@@ -2625,7 +2643,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file Decoder
     Info (12023): Found entity 1: Decoder File: /home/es1219/nfshome/HarvardArchImproved/Decoder.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file StateMachine.bdf
     Info (12023): Found entity 1: StateMachine
-Warning (12019): Can't analyze file -- file regfile.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file arm_alu.v
     Info (12023): Found entity 1: arm_alu File: /home/es1219/nfshome/HarvardArchImproved/arm_alu.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file increment.v
@@ -2642,7 +2659,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file mult_p1
     Info (12023): Found entity 1: mult_p1 File: /home/es1219/nfshome/HarvardArchImproved/mult_p1.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file mult_p2.v
     Info (12023): Found entity 1: mult_p2 File: /home/es1219/nfshome/HarvardArchImproved/mult_p2.v Line: 1
-Warning (12019): Can't analyze file -- file FunnyMultiplier.bdf is missing
 Info (12021): Found 1 design units, including 1 entities, in source file add7x4.v
     Info (12023): Found entity 1: add7x4 File: /home/es1219/nfshome/HarvardArchImproved/add7x4.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file add5x4.v
@@ -2655,6 +2671,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file old_mul
     Info (12023): Found entity 1: old_mult_pipelined
 Info (12021): Found 1 design units, including 1 entities, in source file improved_mult.bdf
     Info (12023): Found entity 1: improved_mult
+Info (12021): Found 1 design units, including 1 entities, in source file sel_inc.v
+    Info (12023): Found entity 1: sel_inc File: /home/es1219/nfshome/HarvardArchImproved/sel_inc.v Line: 1
 Info (12127): Elaborating entity "HarvardArch" for the top level hierarchy
 Info (12128): Elaborating entity "regfile5" for hierarchy "regfile5:inst11"
 Info (12128): Elaborating entity "LPM_MUX" for hierarchy "regfile5:inst11|LPM_MUX:MUX4A"
@@ -2688,6 +2706,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
     Info (12023): Found entity 1: mux_tsc File: /home/es1219/nfshome/HarvardArchImproved/db/mux_tsc.tdf Line: 22
 Info (12128): Elaborating entity "mux_tsc" for hierarchy "regfile5:inst11|BUSMUX:MUX2|LPM_MUX:$00000|mux_tsc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
 Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:inst2"
+Warning (10036): Verilog HDL or VHDL warning at Decoder.v(20): object "fetch" assigned a value but never read File: /home/es1219/nfshome/HarvardArchImproved/Decoder.v Line: 20
+Warning (10036): Verilog HDL or VHDL warning at Decoder.v(20): object "exec3" assigned a value but never read File: /home/es1219/nfshome/HarvardArchImproved/Decoder.v Line: 20
 Info (12128): Elaborating entity "LPM_OR" for hierarchy "LPM_OR:inst18"
 Info (12130): Elaborated megafunction instantiation "LPM_OR:inst18"
 Info (12133): Instantiated megafunction "LPM_OR:inst18" with the following parameter:
@@ -2734,6 +2754,7 @@ Info (12131): Elaborated megafunction instantiation "BUSMUX:inst17|LPM_MUX:$0000
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_osc.tdf
     Info (12023): Found entity 1: mux_osc File: /home/es1219/nfshome/HarvardArchImproved/db/mux_osc.tdf Line: 22
 Info (12128): Elaborating entity "mux_osc" for hierarchy "BUSMUX:inst17|LPM_MUX:$00000|mux_osc:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_mux.tdf Line: 86
+Info (12128): Elaborating entity "sel_inc" for hierarchy "sel_inc:inst22"
 Info (12128): Elaborating entity "LPM_COUNTER" for hierarchy "LPM_COUNTER:inst3"
 Info (12130): Elaborated megafunction instantiation "LPM_COUNTER:inst3"
 Info (12133): Instantiated megafunction "LPM_COUNTER:inst3" with the following parameter:
@@ -2741,7 +2762,6 @@ Info (12133): Instantiated megafunction "LPM_COUNTER:inst3" with the following p
 Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_dnh.tdf
     Info (12023): Found entity 1: cntr_dnh File: /home/es1219/nfshome/HarvardArchImproved/db/cntr_dnh.tdf Line: 25
 Info (12128): Elaborating entity "cntr_dnh" for hierarchy "LPM_COUNTER:inst3|cntr_dnh:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/lpm_counter.tdf Line: 258
-Info (12128): Elaborating entity "increment" for hierarchy "increment:inst23"
 Info (12128): Elaborating entity "LPM_MUX" for hierarchy "LPM_MUX:inst19"
 Info (12130): Elaborated megafunction instantiation "LPM_MUX:inst19"
 Info (12133): Instantiated megafunction "LPM_MUX:inst19" with the following parameter:
@@ -2786,6 +2806,7 @@ Info (12133): Instantiated megafunction "data_mem:inst1|altsyncram:altsyncram_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2sj2.tdf
     Info (12023): Found entity 1: altsyncram_2sj2 File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_2sj2.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_2sj2" for hierarchy "data_mem:inst1|altsyncram:altsyncram_component|altsyncram_2sj2:auto_generated" File: /usr/local/altera/18.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "increment" for hierarchy "increment:inst15"
 Info (12128): Elaborating entity "improved_mult" for hierarchy "improved_mult:inst7"
 Warning (275083): Bus "p10[3..0]" found using same base name as "p10", which might lead to a name conflict.
 Warning (275083): Bus "p11[3..0]" found using same base name as "p11", which might lead to a name conflict.
@@ -2896,7 +2917,6 @@ Info (12130): Elaborated megafunction instantiation "stack:inst20|LPM_FF:inst2"
 Info (12133): Instantiated megafunction "stack:inst20|LPM_FF:inst2" with the following parameter:
     Info (12134): Parameter "LPM_WIDTH" = "5"
 Info (12128): Elaborating entity "stack_pointer" for hierarchy "stack:inst20|stack_pointer:inst3"
-Warning (10230): Verilog HDL assignment warning at stack_pointer.v(11): truncated value with size 32 to match size of target (1) File: /home/es1219/nfshome/HarvardArchImproved/stack_pointer.v Line: 11
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "improved_mult:inst7|LUT4:inst5|altsyncram:altsyncram_component|altsyncram_h0j2:auto_generated|q_a[4]" File: /home/es1219/nfshome/HarvardArchImproved/db/altsyncram_h0j2.tdf Line: 192
@@ -2911,15 +2931,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 512 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1324 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1341 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 80 output pins
-    Info (21061): Implemented 1179 logic cells
+    Info (21061): Implemented 1196 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 1199 megabytes
-    Info: Processing ended: Wed Jun 10 15:05:08 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info: Peak virtual memory: 1204 megabytes
+    Info: Processing ended: Thu Jun 11 12:51:25 2020
     Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Total CPU time (on all processors): 00:00:30
 
 

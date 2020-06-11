@@ -52,13 +52,13 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name BDF_FILE regfile4.bdf
 set_global_assignment -name BDF_FILE HarvardArch.bdf
 set_global_assignment -name QIP_FILE prog_mem.qip
 set_global_assignment -name QIP_FILE data_mem.qip
 set_global_assignment -name VERILOG_FILE executor.v
 set_global_assignment -name VERILOG_FILE Decoder.v
 set_global_assignment -name BDF_FILE StateMachine.bdf
-set_global_assignment -name BDF_FILE regfile.bdf
 set_global_assignment -name VERILOG_FILE arm_alu.v
 set_global_assignment -name VERILOG_FILE increment.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
@@ -75,7 +75,6 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform1.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
 set_global_assignment -name MIF_FILE fib_data.mif
 set_global_assignment -name MIF_FILE fib_prog.mif
-set_global_assignment -name BDF_FILE FunnyMultiplier.bdf
 set_global_assignment -name MIF_FILE FunnyMultiplier.mif
 set_global_assignment -name VERILOG_FILE add7x4.v
 set_global_assignment -name VERILOG_FILE add5x4.v
@@ -85,4 +84,5 @@ set_global_assignment -name BDF_FILE old_mult_pipelined.bdf
 set_global_assignment -name BDF_FILE improved_mult.bdf
 set_global_assignment -name MIF_FILE list_data.mif
 set_global_assignment -name MIF_FILE list_prog.mif
+set_global_assignment -name VERILOG_FILE sel_inc.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
