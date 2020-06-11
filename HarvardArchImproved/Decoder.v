@@ -13,7 +13,6 @@ module Decoder
 	output push,
 	output pop,
 	output data_mux,
-	output load_mux,
 	output reg_mux
 );
 	wire lda, sta, jmp, stp, jms, bbl, ldr, str, mul, jeq, jmc;
@@ -39,15 +38,14 @@ module Decoder
 	assign e = lda | ldr | mul;
 	assign m = mul;
 	assign WrEn = exec1 & (sta | str);
-	assign pc_load = exec1 & (stp | jmp | jeq & ~eq | bbl | jms);
+	assign pc_load = jmp | jeq & ~eq | bbl | jms;
 	assign pc_inc = exec1 & ~stp; // fetch | (exec1 & ~e) | (exec2 & ~m) | exec3;
 	assign acc_load = exec2 & (lda | ldr);
 	assign jump_mux[0] = bbl;
 	assign jump_mux[1] = jmc;
-	assign push = jms & exec1;
-	assign pop = bbl & exec1;
+	assign push = jms;
+	assign pop = bbl;
 	assign data_mux = ldr;
-	assign load_mux = bbl;
 	assign reg_mux = str;
 
 endmodule

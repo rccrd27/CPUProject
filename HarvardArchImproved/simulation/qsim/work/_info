@@ -9,67 +9,67 @@ z2
 cModel Technology
 Z0 d/home/es1219/nfshome/HarvardArchImproved/simulation/qsim
 vhard_block
-Z1 !s110 1591819345
+!s110 1591819345
 !i10b 1
 !s100 GE@G5jVjP9WHbmVOa8R_d2
 IXL5HC4NM8R4OB8X`J7O7m1
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1591819344
-Z4 8HarvardArch.vo
-Z5 FHarvardArch.vo
+w1591819344
+Z2 8HarvardArch.vo
+Z3 FHarvardArch.vo
 L0 29217
-Z6 OV;L;10.5b;63
+Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1591819345.000000
-Z8 !s107 HarvardArch.vo|
-Z9 !s90 -work|work|HarvardArch.vo|
+!s108 1591819345.000000
+Z5 !s107 HarvardArch.vo|
+Z6 !s90 -work|work|HarvardArch.vo|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
+Z7 o-work work
+Z8 tCvgOpt 0
 vHarvardArch
-R1
+Z9 !s110 1591880548
 !i10b 1
-!s100 =48:>nK<^=@h3;];A^DfE1
-IQz0L7GTgQ6Pdc?1E8PB^C0
-R2
+!s100 SY>mVALhn[dkViTHBm3Oa0
+Icai[Io860RiZQU7dz3FM52
+R1
 R0
+w1591880547
+R2
 R3
-R4
-R5
 L0 31
-R6
+R4
 r1
 !s85 0
 31
+Z10 !s108 1591880548.000000
+R5
+R6
+!i113 1
 R7
 R8
-R9
-!i113 1
-R10
-R11
 n@harvard@arch
 vHarvardArch_vlg_vec_tst
-!s110 1591819346
+R9
 !i10b 1
-!s100 K=I<KMh1bkBX@77iM4F[m3
-I[dFZAN<34<Q8ScX9M`8oG3
-R2
+!s100 7]m0IPDS>eNizB^M[RY8a2
+IiQG:_n7RP8<@7P?1nD[Oe1
+R1
 R0
-w1591819343
+w1591880545
 8Waveform2.vwf.vt
 FWaveform2.vwf.vt
 L0 29
-R6
+R4
 r1
 !s85 0
 31
-!s108 1591819346.000000
+R10
 !s107 Waveform2.vwf.vt|
 !s90 -work|work|Waveform2.vwf.vt|
 !i113 1
-R10
-R11
+R7
+R8
 n@harvard@arch_vlg_vec_tst

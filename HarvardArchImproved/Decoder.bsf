@@ -117,16 +117,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 200 192)
 		(output)
-		(text "load_mux" (rect 0 0 38 12)(font "Arial" ))
-		(text "load_mux" (rect 141 187 179 199)(font "Arial" ))
-		(line (pt 200 192)(pt 184 192)(line_width 1))
-	)
-	(port
-		(pt 200 208)
-		(output)
 		(text "reg_mux" (rect 0 0 36 12)(font "Arial" ))
-		(text "reg_mux" (rect 143 203 179 215)(font "Arial" ))
-		(line (pt 200 208)(pt 184 208)(line_width 1))
+		(text "reg_mux" (rect 143 187 179 199)(font "Arial" ))
+		(line (pt 200 192)(pt 184 192)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 184 224)(line_width 1))
