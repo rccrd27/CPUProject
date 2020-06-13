@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 using namespace std;
 
 int lcong(const unsigned int a, const unsigned int b, const int n, const unsigned int s){
@@ -23,3 +22,6 @@ cin >> a >> b >> n >> s;
 
     cout << "sum = " << lcong(a, b, n, s) << endl;
 }
+
+
+

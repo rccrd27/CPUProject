@@ -28,29 +28,28 @@ item_t* find(const int x, item_t* head){
     return head;
 }
 
-
 int main()
 {
-    cerr << "input value to find" << endl;
+    cerr << "input value to find in the list:" << endl;
     int x;
     cin >> x;
 
     struct item *head = new item;
 
-    initNode(head, 202);
-    addNode(head, 204);
-    addNode(head, 206);
-    addNode(head, 208);
-    addNode(head, 522);
-    addNode(head, 212);
-    addNode(head, 214);
-    addNode(head, 216);
-    addNode(head, 218);
-    addNode(head, 220);
+    initNode(head, 0);
+    addNode(head, 1);
+    addNode(head, 2);
+    addNode(head, 3);
+    addNode(head, 4);
+    addNode(head, 5);
+    addNode(head, 6);
+    addNode(head, 7);
+    addNode(head, 8);
+    addNode(head, 9);
     
     if (item* p = find(x, head)){
         cout << p->value << " is in the list" << endl;
     }else{
-        cout << x << " is not in the list" << endl;
+        cout << "inputed value is not in the list" << endl;
     }
 }
