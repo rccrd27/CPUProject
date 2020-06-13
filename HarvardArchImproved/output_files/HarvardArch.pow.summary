@@ -1,12 +1,12 @@
-Power Analyzer Status : Successful - Sun Jun  7 22:05:53 2020
+Power Analyzer Status : Successful - Thu Jun 11 12:48:49 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : HarvardArch
 Top-level Entity Name : HarvardArch
 Family : Cyclone IV E
 Device : EP4CE6F17C6
 Power Models : Final
-Total Thermal Power Dissipation : 121.21 mW
-Core Dynamic Thermal Power Dissipation : 17.40 mW
-Core Static Thermal Power Dissipation : 42.98 mW
-I/O Thermal Power Dissipation : 60.83 mW
+Total Thermal Power Dissipation : 129.32 mW
+Core Dynamic Thermal Power Dissipation : 26.36 mW
+Core Static Thermal Power Dissipation : 43.04 mW
+I/O Thermal Power Dissipation : 59.92 mW
 Power Estimation Confidence : Low: user provided insufficient toggle rate data

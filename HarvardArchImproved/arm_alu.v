@@ -9,7 +9,7 @@ module arm_alu
 	output [15:0] d_out,
 	output wen
 );
-	wire arm, cin, mul, ldr;
+	wire arm, cin, mul, ldr, str;
 	wire exec1, exec2, exec3;
 	reg [15:0] sum;
 
@@ -35,8 +35,9 @@ module arm_alu
 
 	// assign values to outputs
    assign ldr = inst[4] & inst[3] & inst[2] & ~inst[1];
+	assign str = inst[4] & inst[3] & inst[2] & inst[1];
 	assign mul = inst[4] & inst[3] & ~inst[2] & inst[1];
-	assign wen = (exec1 & arm & ~ldr & ~mul) | (exec2 & ldr) | (exec3 & mul);
+	assign wen = (exec1 & arm & ~ldr & ~mul & ~str) | (exec2 & ldr) | (exec3 & mul);
 	assign d_out = sum[15:0];
 
 endmodule 

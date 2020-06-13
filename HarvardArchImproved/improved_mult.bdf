@@ -1037,10 +1037,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (connector
-	(pt 448 1104)
-	(pt 440 1104)
-)
-(connector
 	(pt 448 912)
 	(pt 440 912)
 )
@@ -1115,373 +1111,6 @@ refer to the applicable agreement for further details.
 	(pt 704 1040)
 	(pt 776 1040)
 	(bus)
-)
-(connector
-	(text "rs[3..0],rd[7..4]" (rect 378 272 446 285)(font "Intel Clear" ))
-	(pt 368 288)
-	(pt 440 288)
-	(bus)
-)
-(connector
-	(pt 440 288)
-	(pt 448 288)
-	(bus)
-)
-(connector
-	(pt 336 304)
-	(pt 440 304)
-)
-(connector
-	(pt 440 304)
-	(pt 448 304)
-)
-(connector
-	(pt 312 400)
-	(pt 440 400)
-	(bus)
-)
-(connector
-	(pt 440 400)
-	(pt 448 400)
-	(bus)
-)
-(connector
-	(pt 440 304)
-	(pt 440 336)
-)
-(connector
-	(text "rs[7..4],rd[3..0]" (rect 378 400 446 413)(font "Intel Clear" ))
-	(pt 368 416)
-	(pt 440 416)
-	(bus)
-)
-(connector
-	(pt 440 416)
-	(pt 448 416)
-	(bus)
-)
-(connector
-	(pt 440 336)
-	(pt 440 400)
-)
-(connector
-	(pt 336 432)
-	(pt 440 432)
-)
-(connector
-	(pt 440 432)
-	(pt 448 432)
-)
-(connector
-	(pt 440 400)
-	(pt 440 416)
-)
-(connector
-	(pt 312 464)
-	(pt 440 464)
-	(bus)
-)
-(connector
-	(pt 440 464)
-	(pt 448 464)
-	(bus)
-)
-(connector
-	(pt 440 416)
-	(pt 440 432)
-)
-(connector
-	(text "rs[3..0],rd[11..8]" (rect 362 464 437 477)(font "Intel Clear" ))
-	(pt 352 480)
-	(pt 440 480)
-	(bus)
-)
-(connector
-	(pt 440 480)
-	(pt 448 480)
-	(bus)
-)
-(connector
-	(pt 440 432)
-	(pt 440 464)
-)
-(connector
-	(pt 336 496)
-	(pt 440 496)
-)
-(connector
-	(pt 440 496)
-	(pt 448 496)
-)
-(connector
-	(pt 440 464)
-	(pt 440 480)
-)
-(connector
-	(pt 440 480)
-	(pt 440 496)
-)
-(connector
-	(pt 312 592)
-	(pt 440 592)
-	(bus)
-)
-(connector
-	(pt 440 592)
-	(pt 448 592)
-	(bus)
-)
-(connector
-	(pt 440 496)
-	(pt 440 528)
-)
-(connector
-	(text "rs[11..8],rd[3..0]" (rect 362 592 437 605)(font "Intel Clear" ))
-	(pt 352 608)
-	(pt 440 608)
-	(bus)
-)
-(connector
-	(pt 440 608)
-	(pt 448 608)
-	(bus)
-)
-(connector
-	(pt 440 528)
-	(pt 440 592)
-)
-(connector
-	(pt 336 624)
-	(pt 440 624)
-)
-(connector
-	(pt 440 624)
-	(pt 448 624)
-)
-(connector
-	(pt 440 592)
-	(pt 440 608)
-)
-(connector
-	(pt 312 656)
-	(pt 440 656)
-	(bus)
-)
-(connector
-	(pt 440 656)
-	(pt 448 656)
-	(bus)
-)
-(connector
-	(pt 440 608)
-	(pt 440 624)
-)
-(connector
-	(text "rs[7..4],rd[7..4]" (rect 362 656 430 669)(font "Intel Clear" ))
-	(pt 352 672)
-	(pt 440 672)
-	(bus)
-)
-(connector
-	(pt 440 672)
-	(pt 448 672)
-	(bus)
-)
-(connector
-	(pt 440 624)
-	(pt 440 656)
-)
-(connector
-	(pt 336 688)
-	(pt 440 688)
-)
-(connector
-	(pt 440 688)
-	(pt 448 688)
-)
-(connector
-	(pt 440 656)
-	(pt 440 672)
-)
-(connector
-	(pt 440 672)
-	(pt 440 688)
-)
-(connector
-	(pt 312 784)
-	(pt 440 784)
-	(bus)
-)
-(connector
-	(pt 440 784)
-	(pt 448 784)
-	(bus)
-)
-(connector
-	(pt 440 688)
-	(pt 440 720)
-)
-(connector
-	(text "rs[11..8],rd[7..4]" (rect 362 784 437 797)(font "Intel Clear" ))
-	(pt 352 800)
-	(pt 440 800)
-	(bus)
-)
-(connector
-	(pt 440 800)
-	(pt 448 800)
-	(bus)
-)
-(connector
-	(pt 440 720)
-	(pt 440 784)
-)
-(connector
-	(pt 336 816)
-	(pt 440 816)
-)
-(connector
-	(pt 440 816)
-	(pt 448 816)
-)
-(connector
-	(pt 440 784)
-	(pt 440 800)
-)
-(connector
-	(pt 312 848)
-	(pt 440 848)
-	(bus)
-)
-(connector
-	(pt 440 848)
-	(pt 448 848)
-	(bus)
-)
-(connector
-	(pt 440 800)
-	(pt 440 816)
-)
-(connector
-	(text "rs[15..12],rd[3..0]" (rect 362 848 445 861)(font "Intel Clear" ))
-	(pt 352 864)
-	(pt 440 864)
-	(bus)
-)
-(connector
-	(pt 440 864)
-	(pt 448 864)
-	(bus)
-)
-(connector
-	(pt 440 816)
-	(pt 440 848)
-)
-(connector
-	(pt 336 880)
-	(pt 440 880)
-)
-(connector
-	(pt 440 880)
-	(pt 448 880)
-)
-(connector
-	(pt 440 848)
-	(pt 440 864)
-)
-(connector
-	(pt 440 864)
-	(pt 440 880)
-)
-(connector
-	(pt 312 976)
-	(pt 440 976)
-	(bus)
-)
-(connector
-	(pt 440 976)
-	(pt 448 976)
-	(bus)
-)
-(connector
-	(pt 440 880)
-	(pt 440 912)
-)
-(connector
-	(text "rs[3..0],rd[15..12]" (rect 362 976 445 989)(font "Intel Clear" ))
-	(pt 352 992)
-	(pt 440 992)
-	(bus)
-)
-(connector
-	(pt 440 992)
-	(pt 448 992)
-	(bus)
-)
-(connector
-	(pt 440 912)
-	(pt 440 976)
-)
-(connector
-	(pt 336 1008)
-	(pt 440 1008)
-)
-(connector
-	(pt 440 1008)
-	(pt 448 1008)
-)
-(connector
-	(pt 440 976)
-	(pt 440 992)
-)
-(connector
-	(pt 312 1040)
-	(pt 440 1040)
-	(bus)
-)
-(connector
-	(pt 440 1040)
-	(pt 448 1040)
-	(bus)
-)
-(connector
-	(pt 440 992)
-	(pt 440 1008)
-)
-(connector
-	(text "rs[7..4],rd[11..8]" (rect 362 1040 437 1053)(font "Intel Clear" ))
-	(pt 352 1056)
-	(pt 440 1056)
-	(bus)
-)
-(connector
-	(pt 440 1056)
-	(pt 448 1056)
-	(bus)
-)
-(connector
-	(pt 440 1008)
-	(pt 440 1040)
-)
-(connector
-	(pt 440 1040)
-	(pt 440 1056)
-)
-(connector
-	(pt 440 1056)
-	(pt 440 1072)
-)
-(connector
-	(pt 440 1072)
-	(pt 440 1104)
-)
-(connector
-	(pt 336 1072)
-	(pt 440 1072)
-)
-(connector
-	(pt 440 1072)
-	(pt 448 1072)
 )
 (connector
 	(pt 312 208)
@@ -1710,108 +1339,185 @@ refer to the applicable agreement for further details.
 	(pt 440 152)
 )
 (connector
-	(pt 312 208)
-	(pt 440 208)
+	(text "p3[3..0], p2[3..0], p1[3..0], p0[3..0]" (rect 514 104 669 117)(font "Intel Clear" ))
+	(pt 656 120)
+	(pt 504 120)
 	(bus)
 )
 (connector
-	(pt 440 208)
+	(pt 448 1104)
+	(pt 440 1104)
+)
+(connector
+	(pt 336 1072)
+	(pt 448 1072)
+)
+(connector
+	(text "rs[7..4],rd[11..8]" (rect 362 1040 437 1053)(font "Intel Clear" ))
+	(pt 352 1056)
+	(pt 448 1056)
+	(bus)
+)
+(connector
+	(pt 312 1040)
+	(pt 448 1040)
+	(bus)
+)
+(connector
+	(pt 336 1008)
+	(pt 448 1008)
+)
+(connector
+	(text "rs[3..0],rd[15..12]" (rect 362 976 445 989)(font "Intel Clear" ))
+	(pt 352 992)
+	(pt 448 992)
+	(bus)
+)
+(connector
+	(pt 312 976)
+	(pt 448 976)
+	(bus)
+)
+(connector
+	(pt 336 880)
+	(pt 448 880)
+)
+(connector
+	(text "rs[15..12],rd[3..0]" (rect 362 848 445 861)(font "Intel Clear" ))
+	(pt 352 864)
+	(pt 448 864)
+	(bus)
+)
+(connector
+	(pt 312 848)
+	(pt 448 848)
+	(bus)
+)
+(connector
+	(pt 336 816)
+	(pt 448 816)
+)
+(connector
+	(text "rs[11..8],rd[7..4]" (rect 362 784 437 797)(font "Intel Clear" ))
+	(pt 352 800)
+	(pt 448 800)
+	(bus)
+)
+(connector
+	(pt 312 784)
+	(pt 448 784)
+	(bus)
+)
+(connector
+	(pt 336 688)
+	(pt 448 688)
+)
+(connector
+	(text "rs[7..4],rd[7..4]" (rect 362 656 430 669)(font "Intel Clear" ))
+	(pt 352 672)
+	(pt 448 672)
+	(bus)
+)
+(connector
+	(pt 312 656)
+	(pt 448 656)
+	(bus)
+)
+(connector
+	(text "rs[11..8],rd[3..0]" (rect 362 592 437 605)(font "Intel Clear" ))
+	(pt 352 608)
+	(pt 448 608)
+	(bus)
+)
+(connector
+	(pt 336 624)
+	(pt 448 624)
+)
+(connector
+	(pt 312 592)
+	(pt 448 592)
+	(bus)
+)
+(connector
+	(pt 336 496)
+	(pt 448 496)
+)
+(connector
+	(text "rs[3..0],rd[11..8]" (rect 362 464 437 477)(font "Intel Clear" ))
+	(pt 352 480)
+	(pt 448 480)
+	(bus)
+)
+(connector
+	(pt 312 464)
+	(pt 448 464)
+	(bus)
+)
+(connector
+	(pt 336 432)
+	(pt 448 432)
+)
+(connector
+	(text "rs[7..4],rd[3..0]" (rect 378 400 446 413)(font "Intel Clear" ))
+	(pt 368 416)
+	(pt 448 416)
+	(bus)
+)
+(connector
+	(pt 312 400)
+	(pt 448 400)
+	(bus)
+)
+(connector
+	(pt 336 304)
+	(pt 448 304)
+)
+(connector
+	(text "rs[3..0],rd[7..4]" (rect 378 272 446 285)(font "Intel Clear" ))
+	(pt 368 288)
+	(pt 448 288)
+	(bus)
+)
+(connector
+	(pt 312 272)
+	(pt 448 272)
+	(bus)
+)
+(connector
+	(pt 312 208)
 	(pt 448 208)
 	(bus)
 )
 (connector
 	(text "rs[3..0],rd[3..0]" (rect 378 208 446 221)(font "Intel Clear" ))
 	(pt 368 224)
-	(pt 440 224)
-	(bus)
-)
-(connector
-	(pt 440 224)
 	(pt 448 224)
 	(bus)
 )
 (connector
-	(pt 440 152)
-	(pt 440 208)
-)
-(connector
 	(pt 336 240)
-	(pt 440 240)
-)
-(connector
-	(pt 440 240)
 	(pt 448 240)
 )
 (connector
-	(pt 440 208)
-	(pt 440 224)
+	(pt 440 152)
+	(pt 440 336)
 )
 (connector
-	(pt 312 272)
-	(pt 440 272)
-	(bus)
+	(pt 440 336)
+	(pt 440 528)
 )
 (connector
-	(pt 440 272)
-	(pt 448 272)
-	(bus)
+	(pt 440 528)
+	(pt 440 720)
 )
 (connector
-	(pt 440 224)
-	(pt 440 240)
+	(pt 440 720)
+	(pt 440 912)
 )
 (connector
-	(pt 440 240)
-	(pt 440 272)
+	(pt 440 912)
+	(pt 440 1104)
 )
-(connector
-	(pt 440 272)
-	(pt 440 288)
-)
-(connector
-	(pt 440 288)
-	(pt 440 304)
-)
-(connector
-	(text "p3[3..0], p2[3..0], p1[3..0], p0[3..0]" (rect 514 104 669 117)(font "Intel Clear" ))
-	(pt 656 120)
-	(pt 504 120)
-	(bus)
-)
-(junction (pt 440 208))
-(junction (pt 440 224))
-(junction (pt 440 240))
-(junction (pt 440 272))
-(junction (pt 440 288))
-(junction (pt 440 304))
-(junction (pt 440 336))
-(junction (pt 440 400))
-(junction (pt 440 416))
-(junction (pt 440 432))
-(junction (pt 440 464))
-(junction (pt 440 480))
-(junction (pt 440 496))
-(junction (pt 440 528))
-(junction (pt 440 592))
-(junction (pt 440 608))
-(junction (pt 440 624))
-(junction (pt 440 656))
-(junction (pt 440 672))
-(junction (pt 440 688))
-(junction (pt 440 720))
-(junction (pt 440 784))
-(junction (pt 440 800))
-(junction (pt 440 816))
-(junction (pt 440 848))
-(junction (pt 440 864))
-(junction (pt 440 880))
-(junction (pt 440 912))
-(junction (pt 440 976))
-(junction (pt 440 992))
-(junction (pt 440 1008))
-(junction (pt 440 1040))
-(junction (pt 440 1056))
-(junction (pt 440 1072))
 (junction (pt 312 272))
 (junction (pt 312 400))
 (junction (pt 312 464))
@@ -1830,3 +1536,7 @@ refer to the applicable agreement for further details.
 (junction (pt 336 880))
 (junction (pt 336 1008))
 (junction (pt 336 1072))
+(junction (pt 440 336))
+(junction (pt 440 528))
+(junction (pt 440 720))
+(junction (pt 440 912))
